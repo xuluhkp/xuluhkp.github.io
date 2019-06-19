@@ -1,0 +1,1757 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>(一)Redis数据库 · 备课文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="黑马旅游网一.html" />
+    
+    
+    <link rel="prev" href="../第六章：WEB项目练习.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    项目简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../第一章：数据库技术.html">
+            
+                <a href="../第一章：数据库技术.html">
+            
+                    
+                    第一章:数据库技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../第一章：数据库技术/数据库基础.html">
+            
+                <a href="../第一章：数据库技术/数据库基础.html">
+            
+                    
+                    (一)数据库基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../第一章：数据库技术/简单查询语句与约束.html">
+            
+                <a href="../第一章：数据库技术/简单查询语句与约束.html">
+            
+                    
+                    (二)简单查询语句与约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../第一章：数据库技术/多表设计与查询.html">
+            
+                <a href="../第一章：数据库技术/多表设计与查询.html">
+            
+                    
+                    (三)多表设计与查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../第一章：数据库技术/数据库事物与权限.html">
+            
+                <a href="../第一章：数据库技术/数据库事物与权限.html">
+            
+                    
+                    (四)数据库事物与权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../第二章：JDBC技术.html">
+            
+                <a href="../第二章：JDBC技术.html">
+            
+                    
+                    第二章:JDBC技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../第二章：JDBC技术/JDBC基础.html">
+            
+                <a href="../第二章：JDBC技术/JDBC基础.html">
+            
+                    
+                    (一)JDBC基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../第二章：JDBC技术/数据库连接池与Spring-JDBC介绍.html">
+            
+                <a href="../第二章：JDBC技术/数据库连接池与Spring-JDBC介绍.html">
+            
+                    
+                    (二)数据库连接池与Spring-JDBC介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../第三章：WEB前端技术.html">
+            
+                <a href="../第三章：WEB前端技术.html">
+            
+                    
+                    第三章:WEB前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../第三章：WEB前端技术/WEB前端技术-HTML.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-HTML.html">
+            
+                    
+                    (一)WEB前端技术-HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../第三章：WEB前端技术/WEB前端技术-HTML表单与CSS.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-HTML表单与CSS.html">
+            
+                    
+                    (二)WEB前端技术-HTML表单与CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../第三章：WEB前端技术/WEB前端技术-JavaScript基础.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-JavaScript基础.html">
+            
+                    
+                    (三)WEB前端技术-JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../第三章：WEB前端技术/WEB前端技术-JavaScript高级.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-JavaScript高级.html">
+            
+                    
+                    (四)WEB前端技术-JavaScript高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../第三章：WEB前端技术/WEB前端技术-综合练习.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-综合练习.html">
+            
+                    
+                    (五)WEB前端技术-综合练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../第三章：WEB前端技术/WEB前端技术-XML介绍与解析.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-XML介绍与解析.html">
+            
+                    
+                    (六)WEB前端技术-XML介绍与解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../第四章：WEB核心技术.html">
+            
+                <a href="../第四章：WEB核心技术.html">
+            
+                    
+                    第四章:WEB核心技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../第四章：WEB核心技术/Tomcat与Servlet入门.html">
+            
+                <a href="../第四章：WEB核心技术/Tomcat与Servlet入门.html">
+            
+                    
+                    (一)Tomcat与Servlet入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../第四章：WEB核心技术/Http协议请求与Request对象.html">
+            
+                <a href="../第四章：WEB核心技术/Http协议请求与Request对象.html">
+            
+                    
+                    (二)Http协议请求与Request对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../第四章：WEB核心技术/Http协议响应与Response对象.html">
+            
+                <a href="../第四章：WEB核心技术/Http协议响应与Response对象.html">
+            
+                    
+                    (三)Http协议响应与Response对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../第四章：WEB核心技术/会话技术-Cookie与Session.html">
+            
+                <a href="../第四章：WEB核心技术/会话技术-Cookie与Session.html">
+            
+                    
+                    (四)会话技术-Cookie与Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../第四章：WEB核心技术/JSP与EL与JSTL.html">
+            
+                <a href="../第四章：WEB核心技术/JSP与EL与JSTL.html">
+            
+                    
+                    (五)JSP与EL与JSTL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../第四章：WEB核心技术/综合练习.html">
+            
+                <a href="../第四章：WEB核心技术/综合练习.html">
+            
+                    
+                    (六)综合练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../第四章：WEB核心技术/过滤器与监听器.html">
+            
+                <a href="../第四章：WEB核心技术/过滤器与监听器.html">
+            
+                    
+                    (七)过滤器与监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../第五章：Jquery与异步Ajax.html">
+            
+                <a href="../第五章：Jquery与异步Ajax.html">
+            
+                    
+                    第五章:Jquery与异步Ajax
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../第五章：Jquery与异步Ajax/Jquery基础.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery基础.html">
+            
+                    
+                    (一)Jquery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../第五章：Jquery与异步Ajax/Jquery高级.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery高级.html">
+            
+                    
+                    (二)Jquery高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../第五章：Jquery与异步Ajax/Jquery与异步Ajax.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery与异步Ajax.html">
+            
+                    
+                    (三)Jquery与异步Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../第六章：WEB项目练习.html">
+            
+                <a href="../第六章：WEB项目练习.html">
+            
+                    
+                    第六章:WEB项目练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="Redis数据库.html">
+            
+                <a href="Redis数据库.html">
+            
+                    
+                    (一)Redis数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="黑马旅游网一.html">
+            
+                <a href="黑马旅游网一.html">
+            
+                    
+                    (二)黑马旅游网一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="黑马旅游网二.html">
+            
+                <a href="黑马旅游网二.html">
+            
+                    
+                    (三)黑马旅游网二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="黑马旅游网三.html">
+            
+                <a href="黑马旅游网三.html">
+            
+                    
+                    (四)黑马旅游网三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="黑马旅游网四.html">
+            
+                <a href="黑马旅游网四.html">
+            
+                    
+                    (五)黑马旅游网四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="黑马旅游网五.html">
+            
+                <a href="黑马旅游网五.html">
+            
+                    
+                    (六)黑马旅游网五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="Linux基础一.html">
+            
+                <a href="Linux基础一.html">
+            
+                    
+                    (七)Linux基础一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="Linux基础二.html">
+            
+                <a href="Linux基础二.html">
+            
+                    
+                    (八)Linux基础二
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../第七章：Mybatis框架.html">
+            
+                <a href="../第七章：Mybatis框架.html">
+            
+                    
+                    第七章:Mybatis框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../第七章：Mybatis框架/Mybatis框架一.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架一.html">
+            
+                    
+                    (一)Mybatis框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../第七章：Mybatis框架/Mybatis框架二.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架二.html">
+            
+                    
+                    (二)Mybatis框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../第七章：Mybatis框架/Mybatis框架三.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架三.html">
+            
+                    
+                    (三)Mybatis框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../第七章：Mybatis框架/Mybatis框架四.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架四.html">
+            
+                    
+                    (四)Mybatis框架四
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../第八章：Spring框架.html">
+            
+                <a href="../第八章：Spring框架.html">
+            
+                    
+                    第八章:Spring框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../第八章：Spring框架/Spring框架一.html">
+            
+                <a href="../第八章：Spring框架/Spring框架一.html">
+            
+                    
+                    (一)Spring框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../第八章：Spring框架/Spring框架二.html">
+            
+                <a href="../第八章：Spring框架/Spring框架二.html">
+            
+                    
+                    (二)Spring框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../第八章：Spring框架/Spring框架三.html">
+            
+                <a href="../第八章：Spring框架/Spring框架三.html">
+            
+                    
+                    (三)Spring框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../第八章：Spring框架/Spring框架四.html">
+            
+                <a href="../第八章：Spring框架/Spring框架四.html">
+            
+                    
+                    (四)Spring框架四
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../第九章：SpringMVC框架.html">
+            
+                <a href="../第九章：SpringMVC框架.html">
+            
+                    
+                    第九章:SpringMVC框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../第九章：SpringMVC框架/SpringMVC框架一.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架一.html">
+            
+                    
+                    (一)SpringMVC框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../第九章：SpringMVC框架/SpringMVC框架二.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架二.html">
+            
+                    
+                    (二)SpringMVC框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../第九章：SpringMVC框架/SpringMVC框架三.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架三.html">
+            
+                    
+                    (三)SpringMVC框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../第十章：Oracle与Maven.html">
+            
+                <a href="../第十章：Oracle与Maven.html">
+            
+                    
+                    第十章:Oracle与Maven
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../第十章：Oracle与Maven/racle数据库一.html">
+            
+                <a href="../第十章：Oracle与Maven/racle数据库一.html">
+            
+                    
+                    (一)Oracle数据库一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../第十章：Oracle与Maven/racle数据库二.html">
+            
+                <a href="../第十章：Oracle与Maven/racle数据库二.html">
+            
+                    
+                    (二)Oracle数据库二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../第十章：Oracle与Maven/Maven基础.html">
+            
+                <a href="../第十章：Oracle与Maven/Maven基础.html">
+            
+                    
+                    (三)Maven基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../第十章：Oracle与Maven/Maven高级.html">
+            
+                <a href="../第十章：Oracle与Maven/Maven高级.html">
+            
+                    
+                    (四)Maven高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../第十一章：SSM框架练习.html">
+            
+                <a href="../第十一章：SSM框架练习.html">
+            
+                    
+                    第十一章:SSM框架练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../第十一章：SSM框架练习/SSM框架练习一.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习一.html">
+            
+                    
+                    (一)SSM框架练习一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../第十一章：SSM框架练习/SSM框架练习二.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习二.html">
+            
+                    
+                    (二)SSM框架练习二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../第十一章：SSM框架练习/SSM框架练习三.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习三.html">
+            
+                    
+                    (三)SSM框架练习三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../第十一章：SSM框架练习/SSM框架练习四.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习四.html">
+            
+                    
+                    (四)SSM框架练习四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../第十一章：SSM框架练习/SSM框架练习五.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习五.html">
+            
+                    
+                    (四)SSM框架练习五
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../第十二章：全文检索.html">
+            
+                <a href="../第十二章：全文检索.html">
+            
+                    
+                    第十二章:全文检索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../第十二章：全文检索/Lucene.html">
+            
+                <a href="../第十二章：全文检索/Lucene.html">
+            
+                    
+                    (一)Lucene
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../第十二章：全文检索/ElasticSearch基础.html">
+            
+                <a href="../第十二章：全文检索/ElasticSearch基础.html">
+            
+                    
+                    (二)ElasticSearch基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../第十二章：全文检索/ElasticSearch高级.html">
+            
+                <a href="../第十二章：全文检索/ElasticSearch高级.html">
+            
+                    
+                    (三)ElasticSearch高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >(一)Redis数据库</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#redis&#x6570;&#x636E;&#x5E93;"><b>1. </b>Redis&#x6570;&#x636E;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><b>2. </b>&#x6982;&#x5FF5;(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#nosql&#x4E86;&#x89E3;"><b>2.1. </b>NOSQL(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;nosql&#x4E86;&#x89E3;"><b>2.1.1. </b>&#x4EC0;&#x4E48;&#x662F;NOSQL?(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#nosql&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;&#x4E86;&#x89E3;"><b>2.1.2. </b>NOSQL&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x4E3B;&#x6D41;&#x7684;nosql&#x4EA7;&#x54C1;&#x4E86;&#x89E3;"><b>2.1.3. </b>&#x4E3B;&#x6D41;&#x7684;NOSQL&#x4EA7;&#x54C1;(&#x4E86;&#x89E3;)</a></li></ul><li><span class="title-icon "></span><a href="#redis&#x4E86;&#x89E3;"><b>2.2. </b>Redis(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#redis&#x6982;&#x8FF0;&#x4E86;&#x89E3;"><b>2.2.1. </b>Redis&#x6982;&#x8FF0;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E86;&#x89E3;"><b>2.2.2. </b>Redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E86;&#x89E3;"><b>2.2.3. </b>redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x4E86;&#x89E3;"><b>2.2.4. </b>Redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;(&#x4E86;&#x89E3;)</a></li></ul></ul><li><span class="title-icon "></span><a href="#redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x719F;&#x6089;"><b>3. </b>Redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><b>3.1. </b>redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;-string&#x719F;&#x6089;"><b>3.1.1. </b>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; string(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash&#x719F;&#x6089;"><b>3.1.2. </b>&#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5217;&#x8868;&#x7C7B;&#x578B;-list&#x719F;&#x6089;"><b>3.1.3. </b>&#x5217;&#x8868;&#x7C7B;&#x578B; list(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x96C6;&#x5408;&#x7C7B;&#x578B;-set--&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><b>3.1.4. </b>&#x96C6;&#x5408;&#x7C7B;&#x578B; set : &#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x719F;&#x6089;"><b>3.1.5. </b>&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x901A;&#x7528;&#x547D;&#x4EE4;&#x719F;&#x6089;"><b>3.1.6. </b>&#x901A;&#x7528;&#x547D;&#x4EE4;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#x4E86;&#x89E3;"><b>3.2. </b>Redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#rdb&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x4E86;&#x89E3;"><b>3.2.1. </b>RDB:&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#aof&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x4E86;&#x89E3;"><b>3.2.2. </b>AOF:&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;(&#x4E86;&#x89E3;)</a></li></ul></ul><li><span class="title-icon "></span><a href="#java&#x5BA2;&#x6237;&#x7AEF;-jedis&#x719F;&#x6089;"><b>4. </b>Java&#x5BA2;&#x6237;&#x7AEF; Jedis(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x719F;&#x6089;"><b>4.1. </b>&#x4F7F;&#x7528;&#x6B65;&#x9AA4;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><b>4.2. </b>Jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;--string&#x719F;&#x6089;"><b>4.2.1. </b>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; : string(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash--map&#x683C;&#x5F0F;&#x719F;&#x6089;"><b>4.2.2. </b>&#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash : map&#x683C;&#x5F0F;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5217;&#x8868;&#x7C7B;&#x578B;-list--linkedlist&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20;-&#x719F;&#x6089;"><b>4.2.3. </b>&#x5217;&#x8868;&#x7C7B;&#x578B; list : LinkedList&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20; (&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x96C6;&#x5408;&#x7C7B;&#x578B;-set---&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><b>4.2.4. </b>&#x96C6;&#x5408;&#x7C7B;&#x578B; set  : &#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F;-&#x719F;&#x6089;"><b>4.2.5. </b>&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset:&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F; (&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#jedis&#x8FDE;&#x63A5;&#x6C60;-jedispool&#x719F;&#x6089;"><b>4.3. </b>jedis&#x8FDE;&#x63A5;&#x6C60;: JedisPool(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#jedispool&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x719F;&#x6089;"><b>4.3.1. </b>JedisPool&#x57FA;&#x672C;&#x4F7F;&#x7528;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;jedispoolutils&#x719F;&#x6089;"><b>4.3.2. </b>&#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;JedisPoolUtils(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#&#x6848;&#x4F8B;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;&#x638C;&#x63E1;"><b>4.4. </b>&#x6848;&#x4F8B;:&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;(&#x638C;&#x63E1;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x9700;&#x6C42;&#x7406;&#x89E3;"><b>4.4.1. </b>&#x9700;&#x6C42;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x6790;&#x7406;&#x89E3;"><b>4.4.2. </b>&#x5206;&#x6790;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x638C;&#x63E1;"><b>4.4.3. </b>&#x51C6;&#x5907;&#x5DE5;&#x4F5C;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x638C;&#x63E1;"><b>4.4.4. </b>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x7406;&#x89E3;"><b>4.4.5. </b>&#x4F7F;&#x7528;Redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;&#x7406;&#x89E3;"><b>4.4.6. </b>&#x6CE8;&#x610F;:&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;(&#x7406;&#x89E3;)</a></li></ul></ul></ul></div><a href="#redis&#x6570;&#x636E;&#x5E93;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="redis&#x6570;&#x636E;&#x5E93;"><a name="redis&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#redis&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Redis&#x6570;&#x636E;&#x5E93;</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#redis&#x6570;&#x636E;&#x5E93;"><b>1. </b>Redis&#x6570;&#x636E;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><b>2. </b>&#x6982;&#x5FF5;(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#nosql&#x4E86;&#x89E3;"><b>2.1. </b>NOSQL(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;nosql&#x4E86;&#x89E3;"><b>2.1.1. </b>&#x4EC0;&#x4E48;&#x662F;NOSQL?(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#nosql&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;&#x4E86;&#x89E3;"><b>2.1.2. </b>NOSQL&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x4E3B;&#x6D41;&#x7684;nosql&#x4EA7;&#x54C1;&#x4E86;&#x89E3;"><b>2.1.3. </b>&#x4E3B;&#x6D41;&#x7684;NOSQL&#x4EA7;&#x54C1;(&#x4E86;&#x89E3;)</a></li></ul><li><span class="title-icon "></span><a href="#redis&#x4E86;&#x89E3;"><b>2.2. </b>Redis(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#redis&#x6982;&#x8FF0;&#x4E86;&#x89E3;"><b>2.2.1. </b>Redis&#x6982;&#x8FF0;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E86;&#x89E3;"><b>2.2.2. </b>Redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E86;&#x89E3;"><b>2.2.3. </b>redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x4E86;&#x89E3;"><b>2.2.4. </b>Redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;(&#x4E86;&#x89E3;)</a></li></ul></ul><li><span class="title-icon "></span><a href="#redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x719F;&#x6089;"><b>3. </b>Redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><b>3.1. </b>redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;-string&#x719F;&#x6089;"><b>3.1.1. </b>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; string(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash&#x719F;&#x6089;"><b>3.1.2. </b>&#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5217;&#x8868;&#x7C7B;&#x578B;-list&#x719F;&#x6089;"><b>3.1.3. </b>&#x5217;&#x8868;&#x7C7B;&#x578B; list(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x96C6;&#x5408;&#x7C7B;&#x578B;-set--&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><b>3.1.4. </b>&#x96C6;&#x5408;&#x7C7B;&#x578B; set : &#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x719F;&#x6089;"><b>3.1.5. </b>&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x901A;&#x7528;&#x547D;&#x4EE4;&#x719F;&#x6089;"><b>3.1.6. </b>&#x901A;&#x7528;&#x547D;&#x4EE4;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#x4E86;&#x89E3;"><b>3.2. </b>Redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;(&#x4E86;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#rdb&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x4E86;&#x89E3;"><b>3.2.1. </b>RDB:&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#aof&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x4E86;&#x89E3;"><b>3.2.2. </b>AOF:&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;(&#x4E86;&#x89E3;)</a></li></ul></ul><li><span class="title-icon "></span><a href="#java&#x5BA2;&#x6237;&#x7AEF;-jedis&#x719F;&#x6089;"><b>4. </b>Java&#x5BA2;&#x6237;&#x7AEF; Jedis(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x719F;&#x6089;"><b>4.1. </b>&#x4F7F;&#x7528;&#x6B65;&#x9AA4;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><b>4.2. </b>Jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;--string&#x719F;&#x6089;"><b>4.2.1. </b>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; : string(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash--map&#x683C;&#x5F0F;&#x719F;&#x6089;"><b>4.2.2. </b>&#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash : map&#x683C;&#x5F0F;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5217;&#x8868;&#x7C7B;&#x578B;-list--linkedlist&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20;-&#x719F;&#x6089;"><b>4.2.3. </b>&#x5217;&#x8868;&#x7C7B;&#x578B; list : LinkedList&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20; (&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x96C6;&#x5408;&#x7C7B;&#x578B;-set---&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><b>4.2.4. </b>&#x96C6;&#x5408;&#x7C7B;&#x578B; set  : &#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F;-&#x719F;&#x6089;"><b>4.2.5. </b>&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset:&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F; (&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#jedis&#x8FDE;&#x63A5;&#x6C60;-jedispool&#x719F;&#x6089;"><b>4.3. </b>jedis&#x8FDE;&#x63A5;&#x6C60;: JedisPool(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#jedispool&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x719F;&#x6089;"><b>4.3.1. </b>JedisPool&#x57FA;&#x672C;&#x4F7F;&#x7528;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;jedispoolutils&#x719F;&#x6089;"><b>4.3.2. </b>&#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;JedisPoolUtils(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#&#x6848;&#x4F8B;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;&#x638C;&#x63E1;"><b>4.4. </b>&#x6848;&#x4F8B;:&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;(&#x638C;&#x63E1;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x9700;&#x6C42;&#x7406;&#x89E3;"><b>4.4.1. </b>&#x9700;&#x6C42;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x5206;&#x6790;&#x7406;&#x89E3;"><b>4.4.2. </b>&#x5206;&#x6790;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x638C;&#x63E1;"><b>4.4.3. </b>&#x51C6;&#x5907;&#x5DE5;&#x4F5C;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x638C;&#x63E1;"><b>4.4.4. </b>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x7406;&#x89E3;"><b>4.4.5. </b>&#x4F7F;&#x7528;Redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;&#x7406;&#x89E3;"><b>4.4.6. </b>&#x6CE8;&#x610F;:&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;(&#x7406;&#x89E3;)</a></li></ul></ul></ul></div>
+
+<h1 id="&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><a name="&#x6982;&#x5FF5;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x6982;&#x5FF5;(&#x4E86;&#x89E3;)</h1>
+<p>Redis&#x662F;&#x4E00;&#x6B3E;&#x9AD8;&#x6027;&#x80FD;&#x7684;<code>NOSQL</code>&#x7CFB;&#x5217;&#x7684;&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;</p>
+<h2 id="nosql&#x4E86;&#x89E3;"><a name="nosql&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#nosql&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. NOSQL(&#x4E86;&#x89E3;)</h2>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;nosql&#x4E86;&#x89E3;"><a name="&#x4EC0;&#x4E48;&#x662F;nosql&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;nosql&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.1. &#x4EC0;&#x4E48;&#x662F;NOSQL?(&#x4E86;&#x89E3;)</h3>
+<pre><code>NoSQL(NoSQL = Not Only SQL)&#xFF0C;&#x610F;&#x5373;&#x201C;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;SQL&#x201D;&#xFF0C;&#x662F;&#x4E00;&#x9879;&#x5168;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5E93;&#x7406;&#x5FF5;&#xFF0C;&#x6CDB;&#x6307;&#x975E;&#x5173;&#x7CFB;&#x578B;&#x7684;&#x6570;&#x636E;&#x5E93;&#x3002;
+
+&#x968F;&#x7740;&#x4E92;&#x8054;&#x7F51;web2.0&#x7F51;&#x7AD9;&#x7684;&#x5174;&#x8D77;&#xFF0C;&#x4F20;&#x7EDF;&#x7684;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x5728;&#x5E94;&#x4ED8;web2.0&#x7F51;&#x7AD9;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x8D85;&#x5927;&#x89C4;&#x6A21;&#x548C;&#x9AD8;&#x5E76;&#x53D1;&#x7684;SNS&#x7C7B;&#x578B;&#x7684;web2.0&#x7EAF;&#x52A8;&#x6001;&#x7F51;&#x7AD9;&#x5DF2;&#x7ECF;&#x663E;&#x5F97;&#x529B;&#x4E0D;&#x4ECE;&#x5FC3;&#xFF0C;&#x66B4;&#x9732;&#x4E86;&#x5F88;&#x591A;&#x96BE;&#x4EE5;&#x514B;&#x670D;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x975E;&#x5173;&#x7CFB;&#x578B;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5219;&#x7531;&#x4E8E;&#x5176;&#x672C;&#x8EAB;&#x7684;&#x7279;&#x70B9;&#x5F97;&#x5230;&#x4E86;&#x975E;&#x5E38;&#x8FC5;&#x901F;&#x7684;&#x53D1;&#x5C55;&#x3002;
+
+NoSQL&#x6570;&#x636E;&#x5E93;&#x7684;&#x4EA7;&#x751F;&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x5927;&#x89C4;&#x6A21;&#x6570;&#x636E;&#x96C6;&#x5408;&#x591A;&#x91CD;&#x6570;&#x636E;&#x79CD;&#x7C7B;&#x5E26;&#x6765;&#x7684;&#x6311;&#x6218;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5927;&#x6570;&#x636E;&#x5E94;&#x7528;&#x96BE;&#x9898;&#x3002;
+</code></pre><h3 id="nosql&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;&#x4E86;&#x89E3;"><a name="nosql&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#nosql&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.2. NOSQL&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6BD4;&#x8F83;(&#x4E86;&#x89E3;)</h3>
+<h4 id="&#x4F18;&#x70B9;"><a name="&#x4F18;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F18;&#x70B9;</h4>
+<pre><code>1&#xFF09;&#x6210;&#x672C;:nosql&#x6570;&#x636E;&#x5E93;&#x7B80;&#x5355;&#x6613;&#x90E8;&#x7F72;&#xFF0C;&#x57FA;&#x672C;&#x90FD;&#x662F;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x50CF;&#x4F7F;&#x7528;oracle&#x90A3;&#x6837;&#x82B1;&#x8D39;&#x5927;&#x91CF;&#x6210;&#x672C;&#x8D2D;&#x4E70;&#x4F7F;&#x7528;&#xFF0C;&#x76F8;&#x6BD4;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4EF7;&#x683C;&#x4FBF;&#x5B9C;&#x3002;
+2&#xFF09;&#x67E5;&#x8BE2;&#x901F;&#x5EA6;:nosql&#x6570;&#x636E;&#x5E93;&#x5C06;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x4E8E;&#x7F13;&#x5B58;&#x4E4B;&#x4E2D;&#xFF0C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5C06;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728;&#x786C;&#x76D8;&#x4E2D;&#xFF0C;&#x81EA;&#x7136;&#x67E5;&#x8BE2;&#x901F;&#x5EA6;&#x8FDC;&#x4E0D;&#x53CA;nosql&#x6570;&#x636E;&#x5E93;&#x3002;
+3&#xFF09;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;:nosql&#x7684;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x662F;key,value&#x5F62;&#x5F0F;&#x3001;&#x6587;&#x6863;&#x5F62;&#x5F0F;&#x3001;&#x56FE;&#x7247;&#x5F62;&#x5F0F;&#x7B49;&#x7B49;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#x4EE5;&#x53CA;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x662F;&#x96C6;&#x5408;&#x7B49;&#x5404;&#x79CD;&#x683C;&#x5F0F;&#xFF0C;&#x800C;&#x6570;&#x636E;&#x5E93;&#x5219;&#x53EA;&#x652F;&#x6301;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#x3002;
+4&#xFF09;&#x6269;&#x5C55;&#x6027;:&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x6709;&#x7C7B;&#x4F3C;join&#x8FD9;&#x6837;&#x7684;&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x673A;&#x5236;&#x7684;&#x9650;&#x5236;&#x5BFC;&#x81F4;&#x6269;&#x5C55;&#x5F88;&#x8270;&#x96BE;&#x3002;
+</code></pre><h4 id="&#x7F3A;&#x70B9;"><a name="&#x7F3A;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x7F3A;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F3A;&#x70B9;</h4>
+<pre><code>1&#xFF09;&#x7EF4;&#x62A4;&#x7684;&#x5DE5;&#x5177;&#x548C;&#x8D44;&#x6599;&#x6709;&#x9650;&#xFF0C;&#x56E0;&#x4E3A;nosql&#x662F;&#x5C5E;&#x4E8E;&#x65B0;&#x7684;&#x6280;&#x672F;&#xFF0C;&#x4E0D;&#x80FD;&#x548C;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;10&#x51E0;&#x5E74;&#x7684;&#x6280;&#x672F;&#x540C;&#x65E5;&#x800C;&#x8BED;&#x3002;
+2&#xFF09;&#x4E0D;&#x63D0;&#x4F9B;&#x5BF9;sql&#x7684;&#x652F;&#x6301;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x652F;&#x6301;sql&#x8FD9;&#x6837;&#x7684;&#x5DE5;&#x4E1A;&#x6807;&#x51C6;&#xFF0C;&#x5C06;&#x4EA7;&#x751F;&#x4E00;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x5B66;&#x4E60;&#x548C;&#x4F7F;&#x7528;&#x6210;&#x672C;&#x3002;
+3&#xFF09;&#x4E0D;&#x63D0;&#x4F9B;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x4E8B;&#x52A1;&#x7684;&#x5904;&#x7406;&#x3002;
+</code></pre><h4 id="&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;"><a name="&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;" class="anchor-navigation-ex-anchor" href="#&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x975E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;</h4>
+<pre><code>1&#xFF09;&#x6027;&#x80FD;NOSQL&#x662F;&#x57FA;&#x4E8E;&#x952E;&#x503C;&#x5BF9;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x60F3;&#x8C61;&#x6210;&#x8868;&#x4E2D;&#x7684;&#x4E3B;&#x952E;&#x548C;&#x503C;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#xFF0C;&#x800C;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x7ECF;&#x8FC7;SQL&#x5C42;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x6240;&#x4EE5;&#x6027;&#x80FD;&#x975E;&#x5E38;&#x9AD8;&#x3002;
+2&#xFF09;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x540C;&#x6837;&#x4E5F;&#x662F;&#x56E0;&#x4E3A;&#x57FA;&#x4E8E;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x6570;&#x636E;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x8026;&#x5408;&#x6027;&#xFF0C;&#x6240;&#x4EE5;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x6C34;&#x5E73;&#x6269;&#x5C55;&#x3002;
+</code></pre><h4 id="&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;"><a name="&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4F18;&#x52BF;</h4>
+<pre><code>1&#xFF09;&#x590D;&#x6742;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x7528;SQL&#x8BED;&#x53E5;&#x65B9;&#x4FBF;&#x7684;&#x5728;&#x4E00;&#x4E2A;&#x8868;&#x4EE5;&#x53CA;&#x591A;&#x4E2A;&#x8868;&#x4E4B;&#x95F4;&#x505A;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x3002;
+2&#xFF09;&#x4E8B;&#x52A1;&#x652F;&#x6301;&#x4F7F;&#x5F97;&#x5BF9;&#x4E8E;&#x5B89;&#x5168;&#x6027;&#x80FD;&#x5F88;&#x9AD8;&#x7684;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x8981;&#x6C42;&#x5F97;&#x4EE5;&#x5B9E;&#x73B0;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E24;&#x7C7B;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5BF9;&#x65B9;&#x7684;&#x4F18;&#x52BF;&#x5C31;&#x662F;&#x81EA;&#x5DF1;&#x7684;&#x5F31;&#x52BF;&#xFF0C;&#x53CD;&#x4E4B;&#x4EA6;&#x7136;&#x3002;
+</code></pre><h4 id="&#x603B;&#x7ED3;"><a name="&#x603B;&#x7ED3;" class="anchor-navigation-ex-anchor" href="#&#x603B;&#x7ED3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x603B;&#x7ED3;</h4>
+<pre><code>&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E0E;NoSQL&#x6570;&#x636E;&#x5E93;&#x5E76;&#x975E;&#x5BF9;&#x7ACB;&#x800C;&#x662F;&#x4E92;&#x8865;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5373;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x7528;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5728;&#x9002;&#x5408;&#x4F7F;&#x7528;NoSQL&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;NoSQL&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x8BA9;NoSQL&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x4E0D;&#x8DB3;&#x8FDB;&#x884C;&#x5F25;&#x8865;&#x3002;
+
+&#x4E00;&#x822C;&#x4F1A;&#x5C06;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x5728;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF0C;&#x5728;nosql&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5907;&#x4EFD;&#x5B58;&#x50A8;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6570;&#x636E;
+</code></pre><h3 id="&#x4E3B;&#x6D41;&#x7684;nosql&#x4EA7;&#x54C1;&#x4E86;&#x89E3;"><a name="&#x4E3B;&#x6D41;&#x7684;nosql&#x4EA7;&#x54C1;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x4E3B;&#x6D41;&#x7684;nosql&#x4EA7;&#x54C1;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1.3. &#x4E3B;&#x6D41;&#x7684;NOSQL&#x4EA7;&#x54C1;(&#x4E86;&#x89E3;)</h3>
+<h4 id="&#x952E;&#x503C;key-value&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;"><a name="&#x952E;&#x503C;key-value&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x952E;&#x503C;key-value&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x952E;&#x503C;(Key-Value)&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;</h4>
+<pre><code>&#x76F8;&#x5173;&#x4EA7;&#x54C1;: Tokyo Cabinet/Tyrant&#x3001;Redis&#x3001;Voldemort&#x3001;Berkeley DB
+&#x5178;&#x578B;&#x5E94;&#x7528;: &#x5185;&#x5BB9;&#x7F13;&#x5B58;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x5927;&#x91CF;&#x6570;&#x636E;&#x7684;&#x9AD8;&#x8BBF;&#x95EE;&#x8D1F;&#x8F7D;&#x3002;
+&#x6570;&#x636E;&#x6A21;&#x578B;: &#x4E00;&#x7CFB;&#x5217;&#x952E;&#x503C;&#x5BF9;
+&#x4F18;&#x52BF;: &#x5FEB;&#x901F;&#x67E5;&#x8BE2;
+&#x52A3;&#x52BF;: &#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x7F3A;&#x5C11;&#x7ED3;&#x6784;&#x5316;
+</code></pre><h4 id="&#x5217;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;"><a name="&#x5217;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x5217;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5217;&#x5B58;&#x50A8;&#x6570;&#x636E;&#x5E93;</h4>
+<pre><code>&#x76F8;&#x5173;&#x4EA7;&#x54C1;:Cassandra, HBase, Riak
+&#x5178;&#x578B;&#x5E94;&#x7528;:&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;
+&#x6570;&#x636E;&#x6A21;&#x578B;:&#x4EE5;&#x5217;&#x7C07;&#x5F0F;&#x5B58;&#x50A8;&#xFF0C;&#x5C06;&#x540C;&#x4E00;&#x5217;&#x6570;&#x636E;&#x5B58;&#x5728;&#x4E00;&#x8D77;
+&#x4F18;&#x52BF;:&#x67E5;&#x627E;&#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x5F3A;&#xFF0C;&#x66F4;&#x5BB9;&#x6613;&#x8FDB;&#x884C;&#x5206;&#x5E03;&#x5F0F;&#x6269;&#x5C55;
+&#x52A3;&#x52BF;:&#x529F;&#x80FD;&#x76F8;&#x5BF9;&#x5C40;&#x9650;
+</code></pre><h4 id="&#x6587;&#x6863;&#x578B;&#x6570;&#x636E;&#x5E93;"><a name="&#x6587;&#x6863;&#x578B;&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x6587;&#x6863;&#x578B;&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6587;&#x6863;&#x578B;&#x6570;&#x636E;&#x5E93;</h4>
+<pre><code>&#x76F8;&#x5173;&#x4EA7;&#x54C1;:CouchDB&#x3001;MongoDB
+&#x5178;&#x578B;&#x5E94;&#x7528;:Web&#x5E94;&#x7528;&#xFF08;&#x4E0E;Key-Value&#x7C7B;&#x4F3C;&#xFF0C;Value&#x662F;&#x7ED3;&#x6784;&#x5316;&#x7684;&#xFF09;
+&#x6570;&#x636E;&#x6A21;&#x578B;: &#x4E00;&#x7CFB;&#x5217;&#x952E;&#x503C;&#x5BF9;
+&#x4F18;&#x52BF;:&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8981;&#x6C42;&#x4E0D;&#x4E25;&#x683C;
+&#x52A3;&#x52BF;: &#x67E5;&#x8BE2;&#x6027;&#x80FD;&#x4E0D;&#x9AD8;&#xFF0C;&#x800C;&#x4E14;&#x7F3A;&#x4E4F;&#x7EDF;&#x4E00;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x6CD5;
+</code></pre><h4 id="&#x56FE;&#x5F62;graph&#x6570;&#x636E;&#x5E93;"><a name="&#x56FE;&#x5F62;graph&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x56FE;&#x5F62;graph&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56FE;&#x5F62;(Graph)&#x6570;&#x636E;&#x5E93;</h4>
+<pre><code>&#x76F8;&#x5173;&#x6570;&#x636E;&#x5E93;:Neo4J&#x3001;InfoGrid&#x3001;Infinite Graph
+&#x5178;&#x578B;&#x5E94;&#x7528;:&#x793E;&#x4EA4;&#x7F51;&#x7EDC;
+&#x6570;&#x636E;&#x6A21;&#x578B;:&#x56FE;&#x7ED3;&#x6784;
+&#x4F18;&#x52BF;:&#x5229;&#x7528;&#x56FE;&#x7ED3;&#x6784;&#x76F8;&#x5173;&#x7B97;&#x6CD5;&#x3002;
+&#x52A3;&#x52BF;:&#x9700;&#x8981;&#x5BF9;&#x6574;&#x4E2A;&#x56FE;&#x505A;&#x8BA1;&#x7B97;&#x624D;&#x80FD;&#x5F97;&#x51FA;&#x7ED3;&#x679C;&#xFF0C;&#x4E0D;&#x5BB9;&#x6613;&#x505A;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x96C6;&#x7FA4;&#x65B9;&#x6848;&#x3002;
+</code></pre><h2 id="redis&#x4E86;&#x89E3;"><a name="redis&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#redis&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. Redis(&#x4E86;&#x89E3;)</h2>
+<h3 id="redis&#x6982;&#x8FF0;&#x4E86;&#x89E3;"><a name="redis&#x6982;&#x8FF0;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#redis&#x6982;&#x8FF0;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.1. Redis&#x6982;&#x8FF0;(&#x4E86;&#x89E3;)</h3>
+<pre><code>Redis&#x662F;&#x7528;C&#x8BED;&#x8A00;&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x7684;&#x9AD8;&#x6027;&#x80FD;&#x952E;&#x503C;&#x5BF9;&#xFF08;key-value&#xFF09;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5B98;&#x65B9;&#x63D0;&#x4F9B;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#xFF0C;50&#x4E2A;&#x5E76;&#x53D1;&#x6267;&#x884C;100000&#x4E2A;&#x8BF7;&#x6C42;,&#x8BFB;&#x7684;&#x901F;&#x5EA6;&#x662F;110000&#x6B21;/s,&#x5199;&#x7684;&#x901F;&#x5EA6;&#x662F;81000&#x6B21;/s &#xFF0C;&#x4E14;Redis&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x591A;&#x79CD;&#x952E;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6765;&#x9002;&#x5E94;&#x4E0D;&#x540C;&#x573A;&#x666F;&#x4E0B;&#x7684;&#x5B58;&#x50A8;&#x9700;&#x6C42;
+</code></pre><h3 id="redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E86;&#x89E3;"><a name="redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.2. Redis&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;(&#x4E86;&#x89E3;)</h3>
+<p>&#x76EE;&#x524D;&#x4E3A;&#x6B62;Redis&#x652F;&#x6301;&#x7684;&#x952E;&#x503C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5982;&#x4E0B;:
+    1) &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; string
+    2) &#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash
+    3) &#x5217;&#x8868;&#x7C7B;&#x578B; list
+    4) &#x96C6;&#x5408;&#x7C7B;&#x578B; set
+    5) &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset</p>
+<h3 id="redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E86;&#x89E3;"><a name="redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.3. redis&#x7684;&#x5E94;&#x7528;&#x573A;&#x666F;(&#x4E86;&#x89E3;)</h3>
+<pre><code>1) &#x7F13;&#x5B58;&#xFF08;&#x6570;&#x636E;&#x67E5;&#x8BE2;&#x3001;&#x77ED;&#x8FDE;&#x63A5;&#x3001;&#x65B0;&#x95FB;&#x5185;&#x5BB9;&#x3001;&#x5546;&#x54C1;&#x5185;&#x5BB9;&#x7B49;&#x7B49;&#xFF09;
+2) &#x804A;&#x5929;&#x5BA4;&#x7684;&#x5728;&#x7EBF;&#x597D;&#x53CB;&#x5217;&#x8868;
+3) &#x4EFB;&#x52A1;&#x961F;&#x5217;&#x3002;&#xFF08;&#x79D2;&#x6740;&#x3001;&#x62A2;&#x8D2D;&#x3001;12306&#x7B49;&#x7B49;&#xFF09;
+4) &#x5E94;&#x7528;&#x6392;&#x884C;&#x699C;
+5) &#x7F51;&#x7AD9;&#x8BBF;&#x95EE;&#x7EDF;&#x8BA1;
+6) &#x6570;&#x636E;&#x8FC7;&#x671F;&#x5904;&#x7406;&#xFF08;&#x53EF;&#x4EE5;&#x7CBE;&#x786E;&#x5230;&#x6BEB;&#x79D2;)
+7) &#x5206;&#x5E03;&#x5F0F;&#x96C6;&#x7FA4;&#x67B6;&#x6784;&#x4E2D;&#x7684;session&#x5206;&#x79BB;
+</code></pre><h3 id="redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x4E86;&#x89E3;"><a name="redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.4. Redis&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;(&#x4E86;&#x89E3;)</h3>
+<pre><code>1. &#x5B98;&#x7F51;:https://redis.io
+2. &#x4E2D;&#x6587;&#x7F51;:http://www.redis.net.cn/
+3. &#x89E3;&#x538B;&#x76F4;&#x63A5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;:
+  * redis.windows.conf:&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+  * redis-cli.exe:redis&#x7684;&#x5BA2;&#x6237;&#x7AEF;
+  * redis-server.exe:redis&#x670D;&#x52A1;&#x5668;&#x7AEF;
+</code></pre><h1 id="redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x719F;&#x6089;"><a name="redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3. Redis&#x547D;&#x4EE4;&#x64CD;&#x4F5C;(&#x719F;&#x6089;)</h1>
+<h2 id="redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><a name="redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. redis&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</h2>
+<pre><code>* redis&#x5B58;&#x50A8;&#x7684;&#x662F;:key,value&#x683C;&#x5F0F;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5176;&#x4E2D;key&#x90FD;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;value&#x6709;5&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;
+* value&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;:
+    1) &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; string
+    2) &#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash : map&#x683C;&#x5F0F;  
+    3) &#x5217;&#x8868;&#x7C7B;&#x578B; list : linkedlist&#x683C;&#x5F0F;&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20;
+    4) &#x96C6;&#x5408;&#x7C7B;&#x578B; set  : &#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;
+    5) &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset:&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F;
+</code></pre><h3 id="&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;-string&#x719F;&#x6089;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;-string&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;-string&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.1. &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; string(&#x719F;&#x6089;)</h3>
+<h4 id="1-&#x5B58;&#x50A8;-set-key-value"><a name="1-&#x5B58;&#x50A8;-set-key-value" class="anchor-navigation-ex-anchor" href="#1-&#x5B58;&#x50A8;-set-key-value"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B58;&#x50A8;: <code>set key value</code></h4>
+<pre><code>127.0.0.1:6379&gt; set username zhangsan
+OK
+</code></pre><h4 id="2-&#x83B7;&#x53D6;-get-key"><a name="2-&#x83B7;&#x53D6;-get-key" class="anchor-navigation-ex-anchor" href="#2-&#x83B7;&#x53D6;-get-key"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x83B7;&#x53D6;: <code>get key</code></h4>
+<pre><code>127.0.0.1:6379&gt; get username
+&quot;zhangsan&quot;
+</code></pre><h4 id="3-&#x5220;&#x9664;del-key"><a name="3-&#x5220;&#x9664;del-key" class="anchor-navigation-ex-anchor" href="#3-&#x5220;&#x9664;del-key"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5220;&#x9664;:<code>del key</code></h4>
+<pre><code>127.0.0.1:6379&gt; del age
+(integer) 1
+</code></pre><h3 id="&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash&#x719F;&#x6089;"><a name="&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.2. &#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash(&#x719F;&#x6089;)</h3>
+<h4 id="1-&#x5B58;&#x50A8;-hset-key-field-value"><a name="1-&#x5B58;&#x50A8;-hset-key-field-value" class="anchor-navigation-ex-anchor" href="#1-&#x5B58;&#x50A8;-hset-key-field-value"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B58;&#x50A8;: <code>hset key field value</code></h4>
+<pre><code>127.0.0.1:6379&gt; hset myhash username lisi
+(integer) 1
+
+127.0.0.1:6379&gt; hset myhash password 123
+(integer) 1
+</code></pre><h4 id="2-&#x83B7;&#x53D6;hget-key-fieldhgetall-key"><a name="2-&#x83B7;&#x53D6;hget-key-fieldhgetall-key" class="anchor-navigation-ex-anchor" href="#2-&#x83B7;&#x53D6;hget-key-fieldhgetall-key"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x83B7;&#x53D6;:<code>hget key field</code>/<code>hgetall key</code></h4>
+<p>hget key field: &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7684;field&#x5BF9;&#x5E94;&#x7684;&#x503C;</p>
+<pre><code>127.0.0.1:6379&gt; hget myhash username
+&quot;lisi&quot;
+</code></pre><p>hgetall key:&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;field&#x548C;value</p>
+<pre><code>127.0.0.1:6379&gt; hgetall myhash
+1) &quot;username&quot;
+2) &quot;lisi&quot;
+3) &quot;password&quot;
+4) &quot;123&quot;
+</code></pre><h4 id="3-&#x5220;&#x9664;-hdel-key-field"><a name="3-&#x5220;&#x9664;-hdel-key-field" class="anchor-navigation-ex-anchor" href="#3-&#x5220;&#x9664;-hdel-key-field"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5220;&#x9664;: <code>hdel key field</code></h4>
+<pre><code>127.0.0.1:6379&gt; hdel myhash username
+(integer) 1
+</code></pre><h3 id="&#x5217;&#x8868;&#x7C7B;&#x578B;-list&#x719F;&#x6089;"><a name="&#x5217;&#x8868;&#x7C7B;&#x578B;-list&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5217;&#x8868;&#x7C7B;&#x578B;-list&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.3. &#x5217;&#x8868;&#x7C7B;&#x578B; list(&#x719F;&#x6089;)</h3>
+<p>&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x5217;&#x8868;&#x7684;&#x5934;&#x90E8;&#xFF08;&#x5DE6;&#x8FB9;&#xFF09;&#x6216;&#x8005;&#x5C3E;&#x90E8;&#xFF08;&#x53F3;&#x8FB9;&#xFF09;</p>
+<h4 id="1-&#x6DFB;&#x52A0;lpush-key-valuerpush-key-value"><a name="1-&#x6DFB;&#x52A0;lpush-key-valuerpush-key-value" class="anchor-navigation-ex-anchor" href="#1-&#x6DFB;&#x52A0;lpush-key-valuerpush-key-value"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x6DFB;&#x52A0;:<code>lpush key value</code>/<code>rpush key value</code></h4>
+<p>lpush key value: &#x5C06;&#x5143;&#x7D20;&#x52A0;&#x5165;&#x5217;&#x8868;&#x5DE6;&#x8868;</p>
+<pre><code>127.0.0.1:6379&gt; lpush myList a
+(integer) 1
+127.0.0.1:6379&gt; lpush myList b
+(integer) 2
+</code></pre><p>rpush key value:&#x5C06;&#x5143;&#x7D20;&#x52A0;&#x5165;&#x5217;&#x8868;&#x53F3;&#x8FB9;</p>
+<pre><code>127.0.0.1:6379&gt; rpush myList c
+(integer) 3
+</code></pre><h4 id="2-&#x83B7;&#x53D6;lrange-key-start-end"><a name="2-&#x83B7;&#x53D6;lrange-key-start-end" class="anchor-navigation-ex-anchor" href="#2-&#x83B7;&#x53D6;lrange-key-start-end"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x83B7;&#x53D6;:<code>lrange key start end</code></h4>
+<p>lrange key start end :&#x8303;&#x56F4;&#x83B7;&#x53D6;</p>
+<pre><code>127.0.0.1:6379&gt; lrange myList 0 -1
+&quot;b&quot;
+&quot;a&quot;
+&quot;c&quot;
+</code></pre><h4 id="3-&#x5220;&#x9664;"><a name="3-&#x5220;&#x9664;" class="anchor-navigation-ex-anchor" href="#3-&#x5220;&#x9664;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5220;&#x9664;:</h4>
+<p>lpop key: &#x5220;&#x9664;&#x5217;&#x8868;&#x6700;&#x5DE6;&#x8FB9;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5C06;&#x5143;&#x7D20;&#x8FD4;&#x56DE;</p>
+<pre><code>127.0.0.1:6379&gt; lpop myList
+&quot;b&quot;
+</code></pre><p>rpop key: &#x5220;&#x9664;&#x5217;&#x8868;&#x6700;&#x53F3;&#x8FB9;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x5C06;&#x5143;&#x7D20;&#x8FD4;&#x56DE;</p>
+<pre><code>127.0.0.1:6379&gt; rpop myList
+&quot;c&quot;
+</code></pre><h3 id="&#x96C6;&#x5408;&#x7C7B;&#x578B;-set--&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><a name="&#x96C6;&#x5408;&#x7C7B;&#x578B;-set--&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x96C6;&#x5408;&#x7C7B;&#x578B;-set--&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.4. &#x96C6;&#x5408;&#x7C7B;&#x578B; set : &#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;(&#x719F;&#x6089;)</h3>
+<h4 id="1-&#x5B58;&#x50A8;sadd-key-value"><a name="1-&#x5B58;&#x50A8;sadd-key-value" class="anchor-navigation-ex-anchor" href="#1-&#x5B58;&#x50A8;sadd-key-value"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B58;&#x50A8;:sadd key value</h4>
+<pre><code>127.0.0.1:6379&gt; sadd myset a
+(integer) 1
+
+127.0.0.1:6379&gt; sadd myset a
+(integer) 0
+</code></pre><h4 id="2-&#x83B7;&#x53D6;smembers-key&#x83B7;&#x53D6;set&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x5143;&#x7D20;"><a name="2-&#x83B7;&#x53D6;smembers-key&#x83B7;&#x53D6;set&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x5143;&#x7D20;" class="anchor-navigation-ex-anchor" href="#2-&#x83B7;&#x53D6;smembers-key&#x83B7;&#x53D6;set&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x5143;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x83B7;&#x53D6;:smembers key:&#x83B7;&#x53D6;set&#x96C6;&#x5408;&#x4E2D;&#x6240;&#x6709;&#x5143;&#x7D20;</h4>
+<pre><code>127.0.0.1:6379&gt; smembers myset
+&quot;a&quot;
+</code></pre><h4 id="3-&#x5220;&#x9664;srem-key-value&#x5220;&#x9664;set&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;"><a name="3-&#x5220;&#x9664;srem-key-value&#x5220;&#x9664;set&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;" class="anchor-navigation-ex-anchor" href="#3-&#x5220;&#x9664;srem-key-value&#x5220;&#x9664;set&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5220;&#x9664;:srem key value:&#x5220;&#x9664;set&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5143;&#x7D20;</h4>
+<pre><code>127.0.0.1:6379&gt; srem myset a
+(integer) 1
+</code></pre><h3 id="&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x719F;&#x6089;"><a name="&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.5. &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset(&#x719F;&#x6089;)</h3>
+<p>&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F;.&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x4F1A;&#x5173;&#x8054;&#x4E00;&#x4E2A;double&#x7C7B;&#x578B;&#x7684;&#x5206;&#x6570;&#x3002;redis&#x6B63;&#x662F;&#x901A;&#x8FC7;&#x5206;&#x6570;&#x6765;&#x4E3A;&#x96C6;&#x5408;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x8FDB;&#x884C;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x7684;&#x6392;&#x5E8F;&#x3002;</p>
+<h4 id="1-&#x5B58;&#x50A8;zadd-key-score-value"><a name="1-&#x5B58;&#x50A8;zadd-key-score-value" class="anchor-navigation-ex-anchor" href="#1-&#x5B58;&#x50A8;zadd-key-score-value"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B58;&#x50A8;:zadd key score value</h4>
+<pre><code>127.0.0.1:6379&gt; zadd mysort 60 zhangsan
+(integer) 1
+
+127.0.0.1:6379&gt; zadd mysort 50 lisi
+(integer) 1
+
+127.0.0.1:6379&gt; zadd mysort 80 wangwu
+(integer) 1
+</code></pre><h4 id="2-&#x83B7;&#x53D6;zrange-key-start-end-withscores"><a name="2-&#x83B7;&#x53D6;zrange-key-start-end-withscores" class="anchor-navigation-ex-anchor" href="#2-&#x83B7;&#x53D6;zrange-key-start-end-withscores"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x83B7;&#x53D6;:zrange key start end [withscores]</h4>
+<pre><code>127.0.0.1:6379&gt; zrange mysort 0 -1
+&quot;lisi&quot;
+&quot;zhangsan&quot;
+&quot;wangwu&quot;
+
+127.0.0.1:6379&gt; zrange mysort 0 -1 withscores
+&quot;zhangsan&quot;
+&quot;60&quot;
+&quot;wangwu&quot;
+&quot;80&quot;
+&quot;lisi&quot;
+&quot;500&quot;
+</code></pre><h4 id="3-&#x5220;&#x9664;zrem-key-value"><a name="3-&#x5220;&#x9664;zrem-key-value" class="anchor-navigation-ex-anchor" href="#3-&#x5220;&#x9664;zrem-key-value"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5220;&#x9664;:zrem key value</h4>
+<pre><code>127.0.0.1:6379&gt; zrem mysort lisi
+(integer) 1
+</code></pre><h3 id="&#x901A;&#x7528;&#x547D;&#x4EE4;&#x719F;&#x6089;"><a name="&#x901A;&#x7528;&#x547D;&#x4EE4;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x901A;&#x7528;&#x547D;&#x4EE4;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.6. &#x901A;&#x7528;&#x547D;&#x4EE4;(&#x719F;&#x6089;)</h3>
+<pre><code>1. `keys *` : &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7684;&#x952E;
+2. `type key` : &#x83B7;&#x53D6;&#x952E;&#x5BF9;&#x5E94;&#x7684;value&#x7684;&#x7C7B;&#x578B;
+3. `del key`:&#x5220;&#x9664;&#x6307;&#x5B9A;&#x7684;key value
+</code></pre><h2 id="redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#x4E86;&#x89E3;"><a name="redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. Redis&#x6301;&#x4E45;&#x5316;&#x673A;&#x5236;(&#x4E86;&#x89E3;)</h2>
+<p>redis&#x662F;&#x4E00;&#x4E2A;&#x5185;&#x5B58;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5F53;redis&#x670D;&#x52A1;&#x5668;&#x91CD;&#x542F;&#xFF0C;&#x83B7;&#x53D6;&#x7535;&#x8111;&#x91CD;&#x542F;&#xFF0C;&#x6570;&#x636E;&#x4F1A;&#x4E22;&#x5931;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06;redis&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x4FDD;&#x5B58;&#x5230;&#x786C;&#x76D8;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<h3 id="rdb&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x4E86;&#x89E3;"><a name="rdb&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#rdb&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.1. RDB:&#x9ED8;&#x8BA4;&#x65B9;&#x5F0F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x9ED8;&#x8BA4;&#x5C31;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x673A;&#x5236;(&#x4E86;&#x89E3;)</h3>
+<pre><code>* &#x5728;&#x4E00;&#x5B9A;&#x7684;&#x95F4;&#x9694;&#x65F6;&#x95F4;&#x4E2D;&#xFF0C;&#x68C0;&#x6D4B;key&#x7684;&#x53D8;&#x5316;&#x60C5;&#x51B5;&#xFF0C;&#x7136;&#x540E;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;
+
+1. &#x7F16;&#x8F91;`redis.windwos.conf`&#x6587;&#x4EF6;
+    #   after 900 sec (15 min) if at least 1 key changed
+    save 900 1
+    #   after 300 sec (5 min) if at least 10 keys changed
+    save 300 10
+    #   after 60 sec if at least 10000 keys changed
+    save 60 10000
+
+2. &#x91CD;&#x65B0;&#x542F;&#x52A8;redis&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5E76;&#x6307;&#x5B9A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x540D;&#x79F0;
+    `D:\JavaWeb2018\day23_redis\&#x8D44;&#x6599;\redis\windows-64\redis-2.8.9&gt;redis-server.exe redis.windows.conf`
+</code></pre><h3 id="aof&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x4E86;&#x89E3;"><a name="aof&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#aof&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.2. AOF:&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;(&#x4E86;&#x89E3;)</h3>
+<pre><code>* &#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x6BCF;&#x4E00;&#x6761;&#x547D;&#x4EE4;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x53EF;&#x4EE5;&#x6BCF;&#x4E00;&#x6B21;&#x547D;&#x4EE4;&#x64CD;&#x4F5C;&#x540E;&#xFF0C;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;
+
+1. &#x7F16;&#x8F91;`redis.windwos.conf`&#x6587;&#x4EF6;
+    appendonly no&#xFF08;&#x5173;&#x95ED;aof&#xFF09; --&gt; appendonly yes &#xFF08;&#x5F00;&#x542F;aof&#xFF09;
+
+    # appendfsync always : &#x6BCF;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;&#x90FD;&#x8FDB;&#x884C;&#x6301;&#x4E45;&#x5316;
+    appendfsync everysec : &#x6BCF;&#x9694;&#x4E00;&#x79D2;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x6301;&#x4E45;&#x5316;
+    # appendfsync no     : &#x4E0D;&#x8FDB;&#x884C;&#x6301;&#x4E45;&#x5316;
+</code></pre><h1 id="java&#x5BA2;&#x6237;&#x7AEF;-jedis&#x719F;&#x6089;"><a name="java&#x5BA2;&#x6237;&#x7AEF;-jedis&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#java&#x5BA2;&#x6237;&#x7AEF;-jedis&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4. Java&#x5BA2;&#x6237;&#x7AEF; Jedis(&#x719F;&#x6089;)</h1>
+<p>Jedis: &#x4E00;&#x6B3E;java&#x64CD;&#x4F5C;redis&#x6570;&#x636E;&#x5E93;&#x7684;&#x5DE5;&#x5177;.</p>
+<h2 id="&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x719F;&#x6089;"><a name="&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.1. &#x4F7F;&#x7528;&#x6B65;&#x9AA4;(&#x719F;&#x6089;)</h2>
+<pre><code>1. &#x4E0B;&#x8F7D;jedis&#x7684;jar&#x5305;
+2. &#x5728;&#x9879;&#x76EE;&#x4E2D;&#x5BFC;&#x5165;jar&#x5305;
+3. &#x83B7;&#x53D6;&#x4E0E;Redis&#x7684;&#x8FDE;&#x63A5;  Jedis jedis = new Jedis(&quot;localhost&quot;,6379);
+4. &#x5B8C;&#x6210;CRUD&#x64CD;&#x4F5C;  jedis.set(&quot;username&quot;,&quot;zhangsan&quot;);
+5. &#x5173;&#x95ED;&#x8FDE;&#x63A5;  jedis.close();
+</code></pre><h2 id="jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><a name="jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2. Jedis&#x64CD;&#x4F5C;&#x5404;&#x79CD;redis&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</h2>
+<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;--string&#x719F;&#x6089;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;--string&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;--string&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.1. &#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B; : string(&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * string &#x6570;&#x636E;&#x7ED3;&#x6784;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test2</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">//1. &#x83B7;&#x53D6;&#x8FDE;&#x63A5;</span>
+    Jedis jedis = <span class="hljs-keyword">new</span> Jedis();<span class="hljs-comment">//&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7A7A;&#x53C2;&#x6784;&#x9020;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; &quot;localhost&quot;,6379&#x7AEF;&#x53E3;</span>
+    <span class="hljs-comment">//2. &#x64CD;&#x4F5C;</span>
+    <span class="hljs-comment">//&#x5B58;&#x50A8;</span>
+    jedis.set(<span class="hljs-string">&quot;username&quot;</span>,<span class="hljs-string">&quot;zhangsan&quot;</span>);
+    <span class="hljs-comment">//&#x83B7;&#x53D6;</span>
+    String username = jedis.get(<span class="hljs-string">&quot;username&quot;</span>);
+    System.out.println(username);
+
+    <span class="hljs-comment">//&#x53EF;&#x4EE5;&#x4F7F;&#x7528;setex()&#x65B9;&#x6CD5;&#x5B58;&#x50A8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x7684; key value</span>
+    jedis.setex(<span class="hljs-string">&quot;activecode&quot;</span>,<span class="hljs-number">20</span>,<span class="hljs-string">&quot;hehe&quot;</span>);<span class="hljs-comment">//&#x5C06;activecode:hehe&#x952E;&#x503C;&#x5BF9;&#x5B58;&#x5165;redis&#xFF0C;&#x5E76;&#x4E14;20&#x79D2;&#x540E;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x8BE5;&#x952E;&#x503C;&#x5BF9;</span>
+
+    <span class="hljs-comment">//3. &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+    jedis.close();
+}
+</code></pre>
+<h3 id="&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash--map&#x683C;&#x5F0F;&#x719F;&#x6089;"><a name="&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash--map&#x683C;&#x5F0F;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x54C8;&#x5E0C;&#x7C7B;&#x578B;-hash--map&#x683C;&#x5F0F;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.2. &#x54C8;&#x5E0C;&#x7C7B;&#x578B; hash : map&#x683C;&#x5F0F;(&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * hash &#x6570;&#x636E;&#x7ED3;&#x6784;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test3</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">//1. &#x83B7;&#x53D6;&#x8FDE;&#x63A5;</span>
+    Jedis jedis = <span class="hljs-keyword">new</span> Jedis();<span class="hljs-comment">//&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7A7A;&#x53C2;&#x6784;&#x9020;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; &quot;localhost&quot;,6379&#x7AEF;&#x53E3;</span>
+    <span class="hljs-comment">//2. &#x64CD;&#x4F5C;</span>
+    <span class="hljs-comment">// &#x5B58;&#x50A8;hash</span>
+    jedis.hset(<span class="hljs-string">&quot;user&quot;</span>,<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;lisi&quot;</span>);
+    jedis.hset(<span class="hljs-string">&quot;user&quot;</span>,<span class="hljs-string">&quot;age&quot;</span>,<span class="hljs-string">&quot;23&quot;</span>);
+    jedis.hset(<span class="hljs-string">&quot;user&quot;</span>,<span class="hljs-string">&quot;gender&quot;</span>,<span class="hljs-string">&quot;female&quot;</span>);
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;hash</span>
+    String name = jedis.hget(<span class="hljs-string">&quot;user&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>);
+    System.out.println(name);
+
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;hash&#x7684;&#x6240;&#x6709;map&#x4E2D;&#x7684;&#x6570;&#x636E;</span>
+    Map&lt;String, String&gt; user = jedis.hgetAll(<span class="hljs-string">&quot;user&quot;</span>);
+
+    <span class="hljs-comment">// keyset</span>
+    Set&lt;String&gt; keySet = user.keySet();
+    <span class="hljs-keyword">for</span> (String key : keySet) {
+        <span class="hljs-comment">//&#x83B7;&#x53D6;value</span>
+        String value = user.get(key);
+        System.out.println(key + <span class="hljs-string">&quot;:&quot;</span> + value);
+    }
+
+    <span class="hljs-comment">//3. &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+    jedis.close();
+}
+</code></pre>
+<h3 id="&#x5217;&#x8868;&#x7C7B;&#x578B;-list--linkedlist&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20;-&#x719F;&#x6089;"><a name="&#x5217;&#x8868;&#x7C7B;&#x578B;-list--linkedlist&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20;-&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5217;&#x8868;&#x7C7B;&#x578B;-list--linkedlist&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20;-&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.3. &#x5217;&#x8868;&#x7C7B;&#x578B; list : LinkedList&#x3002;&#x652F;&#x6301;&#x91CD;&#x590D;&#x5143;&#x7D20; (&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * list &#x6570;&#x636E;&#x7ED3;&#x6784;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test4</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">//1. &#x83B7;&#x53D6;&#x8FDE;&#x63A5;</span>
+    Jedis jedis = <span class="hljs-keyword">new</span> Jedis();<span class="hljs-comment">//&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7A7A;&#x53C2;&#x6784;&#x9020;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; &quot;localhost&quot;,6379&#x7AEF;&#x53E3;</span>
+    <span class="hljs-comment">//2. &#x64CD;&#x4F5C;</span>
+    <span class="hljs-comment">// list &#x5B58;&#x50A8;</span>
+    jedis.lpush(<span class="hljs-string">&quot;mylist&quot;</span>,<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;b&quot;</span>,<span class="hljs-string">&quot;c&quot;</span>);<span class="hljs-comment">//&#x4ECE;&#x5DE6;&#x8FB9;&#x5B58;</span>
+    jedis.rpush(<span class="hljs-string">&quot;mylist&quot;</span>,<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;b&quot;</span>,<span class="hljs-string">&quot;c&quot;</span>);<span class="hljs-comment">//&#x4ECE;&#x53F3;&#x8FB9;&#x5B58;</span>
+
+    <span class="hljs-comment">// list &#x8303;&#x56F4;&#x83B7;&#x53D6;</span>
+    List&lt;String&gt; mylist = jedis.lrange(<span class="hljs-string">&quot;mylist&quot;</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>);
+    System.out.println(mylist);
+
+    <span class="hljs-comment">// list &#x5F39;&#x51FA;</span>
+    String element1 = jedis.lpop(<span class="hljs-string">&quot;mylist&quot;</span>);<span class="hljs-comment">//c</span>
+    System.out.println(element1);
+
+    String element2 = jedis.rpop(<span class="hljs-string">&quot;mylist&quot;</span>);<span class="hljs-comment">//c</span>
+    System.out.println(element2);
+
+    <span class="hljs-comment">// list &#x8303;&#x56F4;&#x83B7;&#x53D6;</span>
+    List&lt;String&gt; mylist2 = jedis.lrange(<span class="hljs-string">&quot;mylist&quot;</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>);
+    System.out.println(mylist2);
+
+    <span class="hljs-comment">//3. &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+    jedis.close();
+}
+</code></pre>
+<h3 id="&#x96C6;&#x5408;&#x7C7B;&#x578B;-set---&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><a name="&#x96C6;&#x5408;&#x7C7B;&#x578B;-set---&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x96C6;&#x5408;&#x7C7B;&#x578B;-set---&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.4. &#x96C6;&#x5408;&#x7C7B;&#x578B; set  : &#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;(&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+* set &#x6570;&#x636E;&#x7ED3;&#x6784;&#x64CD;&#x4F5C;
+*/</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test5</span><span class="hljs-params">()</span></span>{
+   <span class="hljs-comment">//1. &#x83B7;&#x53D6;&#x8FDE;&#x63A5;</span>
+   Jedis jedis = <span class="hljs-keyword">new</span> Jedis();<span class="hljs-comment">//&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7A7A;&#x53C2;&#x6784;&#x9020;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; &quot;localhost&quot;,6379&#x7AEF;&#x53E3;</span>
+   <span class="hljs-comment">//2. &#x64CD;&#x4F5C;</span>
+
+
+   <span class="hljs-comment">// set &#x5B58;&#x50A8;</span>
+   jedis.sadd(<span class="hljs-string">&quot;myset&quot;</span>,<span class="hljs-string">&quot;java&quot;</span>,<span class="hljs-string">&quot;php&quot;</span>,<span class="hljs-string">&quot;c++&quot;</span>);
+
+   <span class="hljs-comment">// set &#x83B7;&#x53D6;</span>
+   Set&lt;String&gt; myset = jedis.smembers(<span class="hljs-string">&quot;myset&quot;</span>);
+   System.out.println(myset);
+
+   <span class="hljs-comment">//3. &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+   jedis.close();
+}
+</code></pre>
+<h3 id="&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F;-&#x719F;&#x6089;"><a name="&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F;-&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B;-sortedset&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F;-&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.5. &#x6709;&#x5E8F;&#x96C6;&#x5408;&#x7C7B;&#x578B; sortedset:&#x4E0D;&#x5141;&#x8BB8;&#x91CD;&#x590D;&#x5143;&#x7D20;&#xFF0C;&#x4E14;&#x5143;&#x7D20;&#x6709;&#x987A;&#x5E8F; (&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * sortedset &#x6570;&#x636E;&#x7ED3;&#x6784;&#x64CD;&#x4F5C;
+ */</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test6</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-comment">//1. &#x83B7;&#x53D6;&#x8FDE;&#x63A5;</span>
+    Jedis jedis = <span class="hljs-keyword">new</span> Jedis();<span class="hljs-comment">//&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7A7A;&#x53C2;&#x6784;&#x9020;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; &quot;localhost&quot;,6379&#x7AEF;&#x53E3;</span>
+    <span class="hljs-comment">//2. &#x64CD;&#x4F5C;</span>
+    <span class="hljs-comment">// sortedset &#x5B58;&#x50A8;</span>
+    jedis.zadd(<span class="hljs-string">&quot;mysortedset&quot;</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&quot;&#x4E9A;&#x745F;&quot;</span>);
+    jedis.zadd(<span class="hljs-string">&quot;mysortedset&quot;</span>,<span class="hljs-number">30</span>,<span class="hljs-string">&quot;&#x540E;&#x88D4;&quot;</span>);
+    jedis.zadd(<span class="hljs-string">&quot;mysortedset&quot;</span>,<span class="hljs-number">55</span>,<span class="hljs-string">&quot;&#x5B59;&#x609F;&#x7A7A;&quot;</span>);
+
+    <span class="hljs-comment">// sortedset &#x83B7;&#x53D6;</span>
+    Set&lt;String&gt; mysortedset = jedis.zrange(<span class="hljs-string">&quot;mysortedset&quot;</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">1</span>);
+
+    System.out.println(mysortedset);
+
+
+    <span class="hljs-comment">//3. &#x5173;&#x95ED;&#x8FDE;&#x63A5;</span>
+    jedis.close();
+}
+</code></pre>
+<h2 id="jedis&#x8FDE;&#x63A5;&#x6C60;-jedispool&#x719F;&#x6089;"><a name="jedis&#x8FDE;&#x63A5;&#x6C60;-jedispool&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#jedis&#x8FDE;&#x63A5;&#x6C60;-jedispool&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3. jedis&#x8FDE;&#x63A5;&#x6C60;: JedisPool(&#x719F;&#x6089;)</h2>
+<h3 id="jedispool&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x719F;&#x6089;"><a name="jedispool&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#jedispool&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3.1. JedisPool&#x57FA;&#x672C;&#x4F7F;&#x7528;(&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+* jedis&#x8FDE;&#x63A5;&#x6C60;&#x4F7F;&#x7528;
+*/</span>
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test7</span><span class="hljs-params">()</span></span>{
+   <span class="hljs-comment">//0.&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;</span>
+   JedisPoolConfig config = <span class="hljs-keyword">new</span> JedisPoolConfig();
+   config.setMaxTotal(<span class="hljs-number">50</span>);
+   config.setMaxIdle(<span class="hljs-number">10</span>);
+
+   <span class="hljs-comment">//1.&#x521B;&#x5EFA;Jedis&#x8FDE;&#x63A5;&#x6C60;&#x5BF9;&#x8C61;</span>
+   JedisPool jedisPool = <span class="hljs-keyword">new</span> JedisPool(config,<span class="hljs-string">&quot;localhost&quot;</span>,<span class="hljs-number">6379</span>);
+
+   <span class="hljs-comment">//2.&#x83B7;&#x53D6;&#x8FDE;&#x63A5;</span>
+   Jedis jedis = jedisPool.getResource();
+   <span class="hljs-comment">//3. &#x4F7F;&#x7528;</span>
+   jedis.set(<span class="hljs-string">&quot;hehe&quot;</span>,<span class="hljs-string">&quot;heihei&quot;</span>);
+
+
+   <span class="hljs-comment">//4. &#x5173;&#x95ED; &#x5F52;&#x8FD8;&#x5230;&#x8FDE;&#x63A5;&#x6C60;&#x4E2D;</span>
+   jedis.close();;
+
+}
+</code></pre>
+<h3 id="&#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;jedispoolutils&#x719F;&#x6089;"><a name="&#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;jedispoolutils&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;jedispoolutils&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3.2. &#x8FDE;&#x63A5;&#x6C60;&#x5DE5;&#x5177;&#x7C7B;JedisPoolUtils(&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JedisPoolUtils</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> JedisPool jedisPool;
+
+    <span class="hljs-keyword">static</span>{
+        <span class="hljs-comment">//&#x8BFB;&#x53D6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</span>
+        InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(<span class="hljs-string">&quot;jedis.properties&quot;</span>);
+        <span class="hljs-comment">//&#x521B;&#x5EFA;Properties&#x5BF9;&#x8C61;</span>
+        Properties pro = <span class="hljs-keyword">new</span> Properties();
+        <span class="hljs-comment">//&#x5173;&#x8054;&#x6587;&#x4EF6;</span>
+        <span class="hljs-keyword">try</span> {
+            pro.load(is);
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            e.printStackTrace();
+        }
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x8BBE;&#x7F6E;&#x5230;JedisPoolConfig&#x4E2D;</span>
+        JedisPoolConfig config = <span class="hljs-keyword">new</span> JedisPoolConfig();
+        config.setMaxTotal(Integer.parseInt(pro.getProperty(<span class="hljs-string">&quot;maxTotal&quot;</span>)));
+        config.setMaxIdle(Integer.parseInt(pro.getProperty(<span class="hljs-string">&quot;maxIdle&quot;</span>)));
+
+        <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;JedisPool</span>
+        jedisPool = <span class="hljs-keyword">new</span> JedisPool(config,pro.getProperty(<span class="hljs-string">&quot;host&quot;</span>),Integer.parseInt(pro.getProperty(<span class="hljs-string">&quot;port&quot;</span>)));
+    }
+
+    <span class="hljs-comment">/**
+     * &#x83B7;&#x53D6;&#x8FDE;&#x63A5;&#x65B9;&#x6CD5;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Jedis <span class="hljs-title">getJedis</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> jedisPool.getResource();
+    }
+}
+</code></pre>
+<h2 id="&#x6848;&#x4F8B;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;&#x638C;&#x63E1;"><a name="&#x6848;&#x4F8B;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x6848;&#x4F8B;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4. &#x6848;&#x4F8B;:&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x7701;&#x4EFD;&#x6570;&#x636E;(&#x638C;&#x63E1;)</h2>
+<h3 id="&#x9700;&#x6C42;&#x7406;&#x89E3;"><a name="&#x9700;&#x6C42;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x9700;&#x6C42;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.1. &#x9700;&#x6C42;(&#x7406;&#x89E3;)</h3>
+<pre><code>    1. &#x63D0;&#x4F9B;index.html&#x9875;&#x9762;&#xFF0C;&#x9875;&#x9762;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;&#x7701;&#x4EFD; &#x4E0B;&#x62C9;&#x5217;&#x8868;
+    2. &#x5F53; &#x9875;&#x9762;&#x52A0;&#x8F7D;&#x5B8C;&#x6210;&#x540E; &#x53D1;&#x9001;ajax&#x8BF7;&#x6C42;&#xFF0C;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x7701;&#x4EFD;
+</code></pre><h3 id="&#x5206;&#x6790;&#x7406;&#x89E3;"><a name="&#x5206;&#x6790;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x5206;&#x6790;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.2. &#x5206;&#x6790;(&#x7406;&#x89E3;)</h3>
+<p><img src="assets/markdown-img-paste-20180812151436313.png" alt=""></p>
+<h3 id="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x638C;&#x63E1;"><a name="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.3. &#x51C6;&#x5907;&#x5DE5;&#x4F5C;(&#x638C;&#x63E1;)</h3>
+<h4 id="1-&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x53CA;&#x8868;"><a name="1-&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x53CA;&#x8868;" class="anchor-navigation-ex-anchor" href="#1-&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x53CA;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x53CA;&#x8868;</h4>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`province`</span> (
+  <span class="hljs-string">`pid`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+  <span class="hljs-string">`pname`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> AUTO_INCREMENT=<span class="hljs-number">37</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8;
+
+<span class="hljs-keyword">insert</span>  <span class="hljs-keyword">into</span> <span class="hljs-string">`province`</span>(<span class="hljs-string">`pid`</span>,<span class="hljs-string">`pname`</span>) <span class="hljs-keyword">values</span>
+(<span class="hljs-number">1</span>,<span class="hljs-string">&apos;&#x5317;&#x4EAC;&#x5E02;&apos;</span>),(<span class="hljs-number">2</span>,<span class="hljs-string">&apos;&#x5929;&#x6D25;&#x5E02;&apos;</span>),(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;&#x6CB3;&#x5317;&#x7701;&apos;</span>),(<span class="hljs-number">4</span>,<span class="hljs-string">&apos;&#x5C71;&#x897F;&#x7701;&apos;</span>),(<span class="hljs-number">5</span>,<span class="hljs-string">&apos;&#x5185;&#x8499;&#x53E4;&#x81EA;&#x6CBB;&#x533A;&apos;</span>),(<span class="hljs-number">6</span>,<span class="hljs-string">&apos;&#x8FBD;&#x5B81;&#x7701;&apos;</span>),(<span class="hljs-number">7</span>,<span class="hljs-string">&apos;&#x5409;&#x6797;&#x7701;&apos;</span>),(<span class="hljs-number">8</span>,<span class="hljs-string">&apos;&#x9ED1;&#x9F99;&#x6C5F;&#x7701;&apos;</span>),(<span class="hljs-number">9</span>,<span class="hljs-string">&apos;&#x4E0A;&#x6D77;&#x5E02;&apos;</span>),
+(<span class="hljs-number">10</span>,<span class="hljs-string">&apos;&#x6C5F;&#x82CF;&#x7701;&apos;</span>),(<span class="hljs-number">11</span>,<span class="hljs-string">&apos;&#x6D59;&#x6C5F;&#x7701;&apos;</span>),(<span class="hljs-number">12</span>,<span class="hljs-string">&apos;&#x5B89;&#x5FBD;&#x7701;&apos;</span>),(<span class="hljs-number">13</span>,<span class="hljs-string">&apos;&#x798F;&#x5EFA;&#x7701;&apos;</span>),(<span class="hljs-number">14</span>,<span class="hljs-string">&apos;&#x6C5F;&#x897F;&#x7701;&apos;</span>),(<span class="hljs-number">15</span>,<span class="hljs-string">&apos;&#x5C71;&#x4E1C;&#x7701;&apos;</span>),(<span class="hljs-number">16</span>,<span class="hljs-string">&apos;&#x6CB3;&#x5357;&#x7701;&apos;</span>),(<span class="hljs-number">17</span>,<span class="hljs-string">&apos;&#x6E56;&#x5317;&#x7701;&apos;</span>),(<span class="hljs-number">18</span>,<span class="hljs-string">&apos;&#x6E56;&#x5357;&#x7701;&apos;</span>),
+(<span class="hljs-number">19</span>,<span class="hljs-string">&apos;&#x5E7F;&#x4E1C;&#x7701;&apos;</span>),(<span class="hljs-number">20</span>,<span class="hljs-string">&apos;&#x5E7F;&#x897F;&#x58EE;&#x65CF;&#x81EA;&#x6CBB;&#x533A;&apos;</span>),(<span class="hljs-number">21</span>,<span class="hljs-string">&apos;&#x6D77;&#x5357;&#x7701;&apos;</span>),(<span class="hljs-number">22</span>,<span class="hljs-string">&apos;&#x91CD;&#x5E86;&#x5E02;&apos;</span>),(<span class="hljs-number">23</span>,<span class="hljs-string">&apos;&#x56DB;&#x5DDD;&#x7701;&apos;</span>),(<span class="hljs-number">24</span>,<span class="hljs-string">&apos;&#x8D35;&#x5DDE;&#x7701;&apos;</span>),(<span class="hljs-number">25</span>,<span class="hljs-string">&apos;&#x4E91;&#x5357;&#x7701;&apos;</span>),(<span class="hljs-number">26</span>,<span class="hljs-string">&apos;&#x897F;&#x85CF;&#x81EA;&#x6CBB;&#x533A;&apos;</span>),
+(<span class="hljs-number">27</span>,<span class="hljs-string">&apos;&#x9655;&#x897F;&#x7701;&apos;</span>),(<span class="hljs-number">28</span>,<span class="hljs-string">&apos;&#x7518;&#x8083;&#x7701;&apos;</span>),(<span class="hljs-number">29</span>,<span class="hljs-string">&apos;&#x9752;&#x6D77;&#x7701;&apos;</span>),(<span class="hljs-number">30</span>,<span class="hljs-string">&apos;&#x5B81;&#x590F;&#x56DE;&#x65CF;&#x81EA;&#x6CBB;&#x533A;&apos;</span>),(<span class="hljs-number">31</span>,<span class="hljs-string">&apos;&#x65B0;&#x7586;&#x7EF4;&#x543E;&#x5C14;&#x81EA;&#x6CBB;&#x533A;&apos;</span>),(<span class="hljs-number">32</span>,<span class="hljs-string">&apos;&#x53F0;&#x6E7E;&#x7701;&apos;</span>),(<span class="hljs-number">33</span>,<span class="hljs-string">&apos;&#x9999;&#x6E2F;&#x7279;&#x522B;&#x884C;&#x653F;&#x533A;&apos;</span>),
+(<span class="hljs-number">34</span>,<span class="hljs-string">&apos;&#x6FB3;&#x95E8;&#x7279;&#x522B;&#x884C;&#x653F;&#x533A;&apos;</span>),(<span class="hljs-number">35</span>,<span class="hljs-string">&apos;&#x6D77;&#x5916;&apos;</span>),(<span class="hljs-number">36</span>,<span class="hljs-string">&apos;&#x5176;&#x4ED6;&apos;</span>);
+</code></pre>
+<h4 id="2-&#x521B;&#x5EFA;web&#x9879;&#x76EE;&#x53CA;&#x5305;&#x7ED3;&#x6784;"><a name="2-&#x521B;&#x5EFA;web&#x9879;&#x76EE;&#x53CA;&#x5305;&#x7ED3;&#x6784;" class="anchor-navigation-ex-anchor" href="#2-&#x521B;&#x5EFA;web&#x9879;&#x76EE;&#x53CA;&#x5305;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x521B;&#x5EFA;web&#x9879;&#x76EE;,&#x53CA;&#x5305;&#x7ED3;&#x6784;</h4>
+<p><img src="assets/markdown-img-paste-20180812165052494.png" alt=""></p>
+<h4 id="3-&#x5BFC;&#x5165;&#x9875;&#x9762;&#x76F8;&#x5173;&#x8D44;&#x6E90;"><a name="3-&#x5BFC;&#x5165;&#x9875;&#x9762;&#x76F8;&#x5173;&#x8D44;&#x6E90;" class="anchor-navigation-ex-anchor" href="#3-&#x5BFC;&#x5165;&#x9875;&#x9762;&#x76F8;&#x5173;&#x8D44;&#x6E90;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5BFC;&#x5165;&#x9875;&#x9762;&#x76F8;&#x5173;&#x8D44;&#x6E90;</h4>
+<p><img src="assets/markdown-img-paste-20180812165257416.png" alt=""></p>
+<h4 id="4-&#x5BFC;&#x5165;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a name="4-&#x5BFC;&#x5165;&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#4-&#x5BFC;&#x5165;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5BFC;&#x5165;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h4>
+<p><img src="assets/markdown-img-paste-20180812165319959.png" alt=""></p>
+<h4 id="5-&#x5BFC;&#x5165;jar&#x5305;"><a name="5-&#x5BFC;&#x5165;jar&#x5305;" class="anchor-navigation-ex-anchor" href="#5-&#x5BFC;&#x5165;jar&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x5BFC;&#x5165;jar&#x5305;</h4>
+<p><img src="assets/markdown-img-paste-20180812165346917.png" alt=""></p>
+<h3 id="&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x638C;&#x63E1;"><a name="&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.4. &#x4EE3;&#x7801;&#x5B9E;&#x73B0;(&#x638C;&#x63E1;)</h3>
+<h4 id="web&#x5C42;"><a name="web&#x5C42;" class="anchor-navigation-ex-anchor" href="#web&#x5C42;"><i class="fa fa-link" aria-hidden="true"></i></a>web&#x5C42;</h4>
+<pre><code class="lang-java"><span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;/provinceServlet&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProvinceServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+
+        <span class="hljs-comment">//1.&#x8C03;&#x7528;service&#x67E5;&#x8BE2;</span>
+        ProvinceService service = <span class="hljs-keyword">new</span> ProvinceServiceImpl();
+        List&lt;Province&gt; list = service.findAll();
+        <span class="hljs-comment">//2.&#x5E8F;&#x5217;&#x5316;list&#x4E3A;json</span>
+        ObjectMapper mapper = <span class="hljs-keyword">new</span> ObjectMapper();
+        String json = mapper.writeValueAsString(list);
+        <span class="hljs-comment">//3.&#x5C06;JSON&#x54CD;&#x5E94;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;</span>
+        response.getWriter().write(json);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+        <span class="hljs-keyword">this</span>.doPost(request, response);
+    }
+}
+</code></pre>
+<h4 id="&#x4E1A;&#x52A1;&#x5C42;"><a name="&#x4E1A;&#x52A1;&#x5C42;" class="anchor-navigation-ex-anchor" href="#&#x4E1A;&#x52A1;&#x5C42;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E1A;&#x52A1;&#x5C42;</h4>
+<h5 id="&#x63A5;&#x53E3;provinceservice"><a name="&#x63A5;&#x53E3;provinceservice" class="anchor-navigation-ex-anchor" href="#&#x63A5;&#x53E3;provinceservice"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x53E3;<code>ProvinceService</code></h5>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.itheima.service;
+
+<span class="hljs-keyword">import</span> com.itheima.bean.Province;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ProvinceService</span> </span>{
+
+    <span class="hljs-comment">/**
+     * &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7701;&#x4EFD;&#x4FE1;&#x606F;  &#x8FD4;&#x56DE;&#x7701;&#x4EFD;&#x4FE1;&#x606F;&#x96C6;&#x5408;
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Province&gt; <span class="hljs-title">findAll</span><span class="hljs-params">()</span></span>;
+}
+</code></pre>
+<h5 id="&#x5B9E;&#x73B0;&#x7C7B;provinceserviceimpl"><a name="&#x5B9E;&#x73B0;&#x7C7B;provinceserviceimpl" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;&#x7C7B;provinceserviceimpl"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;&#x7C7B;<code>ProvinceServiceImpl</code></h5>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProvinceServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ProvinceService</span> </span>{
+    <span class="hljs-comment">//&#x58F0;&#x660E;dao</span>
+    <span class="hljs-keyword">private</span> ProvinceDao dao = <span class="hljs-keyword">new</span> ProvinceDaoImpl();
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Province&gt; <span class="hljs-title">findAll</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> dao.findAll();
+    }
+}
+</code></pre>
+<h4 id="&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C42;"><a name="&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C42;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C42;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x5C42;</h4>
+<h5 id="&#x63A5;&#x53E3;provincedao"><a name="&#x63A5;&#x53E3;provincedao" class="anchor-navigation-ex-anchor" href="#&#x63A5;&#x53E3;provincedao"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x53E3;<code>ProvinceDao</code></h5>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ProvinceDao</span> </span>{
+
+    <span class="hljs-comment">/**
+     * &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7701;&#x4EFD;&#x4FE1;&#x606F;
+     * <span class="hljs-doctag">@return</span> &#x7701;&#x4EFD;&#x96C6;&#x5408;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Province&gt; <span class="hljs-title">findAll</span><span class="hljs-params">()</span></span>;
+}
+</code></pre>
+<h5 id="&#x5B9E;&#x73B0;&#x7C7B;provincedaoimpl"><a name="&#x5B9E;&#x73B0;&#x7C7B;provincedaoimpl" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x73B0;&#x7C7B;provincedaoimpl"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x73B0;&#x7C7B;<code>ProvinceDaoImpl</code></h5>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProvinceDaoImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ProvinceDao</span> </span>{
+
+    <span class="hljs-comment">//1.&#x58F0;&#x660E;&#x6210;&#x5458;&#x53D8;&#x91CF; jdbctemplement</span>
+    <span class="hljs-keyword">private</span> JdbcTemplate template = <span class="hljs-keyword">new</span> JdbcTemplate(JDBCUtils.getDataSource());
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Province&gt; <span class="hljs-title">findAll</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//1.&#x5B9A;&#x4E49;sql</span>
+        String sql = <span class="hljs-string">&quot;select * from province &quot;</span>;
+        <span class="hljs-comment">//2.&#x6267;&#x884C;sql</span>
+        List&lt;Province&gt; list = template.query(sql, <span class="hljs-keyword">new</span> BeanPropertyRowMapper&lt;Province&gt;(Province.class));
+        <span class="hljs-keyword">return</span> list;
+    }
+}
+</code></pre>
+<h4 id="&#x5BA2;&#x6237;&#x7AEF;baiduhtml"><a name="&#x5BA2;&#x6237;&#x7AEF;baiduhtml" class="anchor-navigation-ex-anchor" href="#&#x5BA2;&#x6237;&#x7AEF;baiduhtml"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BA2;&#x6237;&#x7AEF;<code>baidu.html</code></h4>
+<pre><code class="lang-JavaScript">&lt;script src=<span class="hljs-string">&quot;js/jquery-3.2.1.min.js&quot;</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+&lt;script&gt;
+    $(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">//&#x53D1;&#x9001;ajax&#x8BF7;&#x6C42;&#xFF0C;&#x52A0;&#x8F7D;&#x6240;&#x6709;&#x7701;&#x4EFD;&#x6570;&#x636E;</span>
+        $.get(<span class="hljs-string">&quot;/web18/provinceServlet&quot;</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+            <span class="hljs-comment">//[{&quot;pid&quot;:1,&quot;pname&quot;:&quot;&#x5317;&#x4EAC;&quot;},{&quot;pid&quot;:2,&quot;pname&quot;:&quot;&#x4E0A;&#x6D77;&quot;},{&quot;pid&quot;:3,&quot;pname&quot;:&quot;&#x5E7F;&#x5DDE;&quot;},{&quot;pid&quot;:4,&quot;pname&quot;:&quot;&#x9655;&#x897F;&quot;}]</span>
+            <span class="hljs-comment">//1.&#x83B7;&#x53D6;select</span>
+            <span class="hljs-keyword">var</span> province = $(<span class="hljs-string">&quot;#province&quot;</span>);
+            <span class="hljs-comment">//2.&#x904D;&#x5386;json&#x6570;&#x7EC4;</span>
+            $(data).each(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                <span class="hljs-comment">//3.&#x521B;&#x5EFA;&lt;option&gt;</span>
+                <span class="hljs-keyword">var</span> option = <span class="hljs-string">&quot;&lt;option value=&apos;&quot;</span>+<span class="hljs-keyword">this</span>.pid+<span class="hljs-string">&quot;&apos;&gt;&quot;</span>+<span class="hljs-keyword">this</span>.pname+<span class="hljs-string">&quot;&lt;/option&gt;&quot;</span>;
+
+                <span class="hljs-comment">//4.&#x8C03;&#x7528;select&#x7684;append&#x8FFD;&#x52A0;option</span>
+                province.append(option);
+            });
+        });
+    });
+<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
+</code></pre>
+<h3 id="&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x7406;&#x89E3;"><a name="&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.5. &#x4F7F;&#x7528;Redis&#x7F13;&#x5B58;&#x4F18;&#x5316;&#x4EE3;&#x7801;(&#x7406;&#x89E3;)</h3>
+<p>&#x6BCF;&#x6B21;&#x67E5;&#x8BE2;&#x7701;&#x4EFD;&#x6570;&#x636E;&#x5148;&#x4ECE;Redis&#x4E2D;&#x83B7;&#x53D6;,&#x5982;&#x679C;&#x83B7;&#x53D6;&#x5230;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;,&#x5982;&#x679C;&#x83B7;&#x53D6;&#x4E0D;&#x5230;&#x518D;&#x4ECE;&#x6570;&#x636E;&#x83B7;&#x53D6;,&#x4E4B;&#x540E;&#x8F6C;&#x5316;&#x6210;JSON&#x683C;&#x5F0F;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;Redis&#x4E2D;</p>
+<h4 id="&#x4E1A;&#x52A1;&#x5C42;_1"><a name="&#x4E1A;&#x52A1;&#x5C42;_1" class="anchor-navigation-ex-anchor" href="#&#x4E1A;&#x52A1;&#x5C42;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E1A;&#x52A1;&#x5C42;</h4>
+<h5 id="&#x4E1A;&#x52A1;&#x5C42;&#x63A5;&#x53E3;provinceservice"><a name="&#x4E1A;&#x52A1;&#x5C42;&#x63A5;&#x53E3;provinceservice" class="anchor-navigation-ex-anchor" href="#&#x4E1A;&#x52A1;&#x5C42;&#x63A5;&#x53E3;provinceservice"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E1A;&#x52A1;&#x5C42;&#x63A5;&#x53E3;<code>ProvinceService</code></h5>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7701;&#x4EFD;&#x4FE1;&#x606F;,&#x8FD4;&#x56DE;json&#x683C;&#x5F0F;&#x6570;&#x636E;
+ * <span class="hljs-doctag">@return</span>
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">findAllJson</span><span class="hljs-params">()</span></span>;
+</code></pre>
+<h5 id="&#x4E1A;&#x52A1;&#x5C42;&#x5B9E;&#x73B0;&#x7C7B;provinceserviceimpl"><a name="&#x4E1A;&#x52A1;&#x5C42;&#x5B9E;&#x73B0;&#x7C7B;provinceserviceimpl" class="anchor-navigation-ex-anchor" href="#&#x4E1A;&#x52A1;&#x5C42;&#x5B9E;&#x73B0;&#x7C7B;provinceserviceimpl"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E1A;&#x52A1;&#x5C42;&#x5B9E;&#x73B0;&#x7C7B;<code>ProvinceServiceImpl</code></h5>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+    &#x4F7F;&#x7528;redis&#x7F13;&#x5B58;
+ */</span>
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">findAllJson</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">//1.&#x5148;&#x4ECE;redis&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;</span>
+    <span class="hljs-comment">//1.1&#x83B7;&#x53D6;redis&#x5BA2;&#x6237;&#x7AEF;&#x8FDE;&#x63A5;</span>
+    Jedis jedis = JedisPoolUtils.getJedis();
+    String province_json = jedis.get(<span class="hljs-string">&quot;province&quot;</span>);
+
+    <span class="hljs-comment">//&#x5982;&#x679C;&#x4ECE;redis&#x4E2D;&#x83B7;&#x53D6;&#x5230;&#x6570;&#x636E;,&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x5373;&#x53EF;</span>
+    <span class="hljs-keyword">if</span>(province_json!=<span class="hljs-keyword">null</span> &amp;&amp; province_json.length()&gt;<span class="hljs-number">0</span>){
+        System.out.println(<span class="hljs-string">&quot;redis&#x4E2D;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x67E5;&#x8BE2;&#x7F13;&#x5B58;...&quot;</span>);
+        <span class="hljs-keyword">return</span> province_json;
+    }
+
+    <span class="hljs-comment">//&#x5982;&#x679C;Redis&#x4E2D;&#x6CA1;&#x6709;&#x6570;&#x636E;,&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;</span>
+    System.out.println(<span class="hljs-string">&quot;redis&#x4E2D;&#x6CA1;&#x6570;&#x636E;&#xFF0C;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;...&quot;</span>);
+    <span class="hljs-comment">//2.1&#x4ECE;&#x6570;&#x636E;&#x4E2D;&#x67E5;&#x8BE2;</span>
+    List&lt;Province&gt; ps = dao.findAll();
+    <span class="hljs-comment">//2.2&#x5C06;list&#x5E8F;&#x5217;&#x5316;&#x4E3A;json</span>
+    ObjectMapper mapper = <span class="hljs-keyword">new</span> ObjectMapper();
+    <span class="hljs-keyword">try</span> {
+        province_json = mapper.writeValueAsString(ps);
+    } <span class="hljs-keyword">catch</span> (JsonProcessingException e) {
+        e.printStackTrace();
+    }
+    <span class="hljs-comment">//2.3 &#x5C06;json&#x6570;&#x636E;&#x5B58;&#x5165;redis</span>
+    jedis.set(<span class="hljs-string">&quot;province&quot;</span>,province_json);
+    <span class="hljs-comment">//&#x5F52;&#x8FD8;&#x8FDE;&#x63A5;</span>
+    jedis.close();
+    <span class="hljs-comment">//&#x8FD4;&#x56DE;json&#x6570;&#x636E;</span>
+    <span class="hljs-keyword">return</span> province_json;
+}
+</code></pre>
+<h4 id="web&#x5C42;_1"><a name="web&#x5C42;_1" class="anchor-navigation-ex-anchor" href="#web&#x5C42;_1"><i class="fa fa-link" aria-hidden="true"></i></a>web&#x5C42;</h4>
+<pre><code class="lang-java"><span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;/provinceServlet&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ProvinceServlet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+        <span class="hljs-comment">//1.&#x8C03;&#x7528;service&#x67E5;&#x8BE2;</span>
+        ProvinceService service = <span class="hljs-keyword">new</span> ProvinceServiceImpl();
+        String json = service.findAllJson();
+        <span class="hljs-comment">//3.&#x54CD;&#x5E94;&#x7ED3;&#x679C;</span>
+        response.setContentType(<span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);
+        response.getWriter().write(json);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+        <span class="hljs-keyword">this</span>.doPost(request, response);
+    }
+}
+</code></pre>
+<h3 id="&#x6CE8;&#x610F;&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;&#x7406;&#x89E3;"><a name="&#x6CE8;&#x610F;&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.6. &#x6CE8;&#x610F;:&#x4F7F;&#x7528;redis&#x7F13;&#x5B58;&#x4E00;&#x4E9B;&#x4E0D;&#x7ECF;&#x5E38;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x6570;&#x636E;&#x3002;(&#x7406;&#x89E3;)</h3>
+<pre><code>* &#x6570;&#x636E;&#x5E93;&#x7684;&#x6570;&#x636E;&#x4E00;&#x65E6;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x66F4;&#x65B0;&#x7F13;&#x5B58;&#x3002;
+* &#x6570;&#x636E;&#x5E93;&#x7684;&#x8868;&#x6267;&#x884C; &#x589E;&#x5220;&#x6539;&#x7684;&#x76F8;&#x5173;&#x64CD;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x5C06;redis&#x7F13;&#x5B58;&#x6570;&#x636E;&#x60C5;&#x51B5;&#xFF0C;&#x518D;&#x6B21;&#x5B58;&#x5165;
+* &#x5728;service&#x5BF9;&#x5E94;&#x7684;&#x589E;&#x5220;&#x6539;&#x65B9;&#x6CD5;&#x4E2D;&#xFF0C;&#x5C06;redis&#x6570;&#x636E;&#x5220;&#x9664;&#x3002;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../第六章：WEB项目练习.html" class="navigation navigation-prev " aria-label="Previous page: 第六章:WEB项目练习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="黑马旅游网一.html" class="navigation navigation-next " aria-label="Next page: (二)黑马旅游网一">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"(一)Redis数据库","level":"1.7.1","depth":2,"next":{"title":"(二)黑马旅游网一","level":"1.7.2","depth":2,"path":"docs/第六章：WEB项目练习/黑马旅游网一.md","ref":"docs/第六章：WEB项目练习/黑马旅游网一.md","articles":[]},"previous":{"title":"第六章:WEB项目练习","level":"1.7","depth":1,"path":"docs/第六章：WEB项目练习.md","ref":"docs/第六章：WEB项目练习.md","articles":[{"title":"(一)Redis数据库","level":"1.7.1","depth":2,"path":"docs/第六章：WEB项目练习/Redis数据库.md","ref":"docs/第六章：WEB项目练习/Redis数据库.md","articles":[]},{"title":"(二)黑马旅游网一","level":"1.7.2","depth":2,"path":"docs/第六章：WEB项目练习/黑马旅游网一.md","ref":"docs/第六章：WEB项目练习/黑马旅游网一.md","articles":[]},{"title":"(三)黑马旅游网二","level":"1.7.3","depth":2,"path":"docs/第六章：WEB项目练习/黑马旅游网二.md","ref":"docs/第六章：WEB项目练习/黑马旅游网二.md","articles":[]},{"title":"(四)黑马旅游网三","level":"1.7.4","depth":2,"path":"docs/第六章：WEB项目练习/黑马旅游网三.md","ref":"docs/第六章：WEB项目练习/黑马旅游网三.md","articles":[]},{"title":"(五)黑马旅游网四","level":"1.7.5","depth":2,"path":"docs/第六章：WEB项目练习/黑马旅游网四.md","ref":"docs/第六章：WEB项目练习/黑马旅游网四.md","articles":[]},{"title":"(六)黑马旅游网五","level":"1.7.6","depth":2,"path":"docs/第六章：WEB项目练习/黑马旅游网五.md","ref":"docs/第六章：WEB项目练习/黑马旅游网五.md","articles":[]},{"title":"(七)Linux基础一","level":"1.7.7","depth":2,"path":"docs/第六章：WEB项目练习/Linux基础一.md","ref":"docs/第六章：WEB项目练习/Linux基础一.md","articles":[]},{"title":"(八)Linux基础二","level":"1.7.8","depth":2,"path":"docs/第六章：WEB项目练习/Linux基础二.md","ref":"docs/第六章：WEB项目练习/Linux基础二.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","anchor-navigation-ex@1.0.10"],"styles":{"website":"website.css"},"pluginsConfig":{"expandable-chapters":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"备课文档","language":"zh","gitbook":"*","description":"备课文档"},"file":{"path":"docs/第六章：WEB项目练习/Redis数据库.md","mtime":"2018-08-13T10:31:55.056Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-21T00:30:29.955Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

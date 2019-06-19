@@ -1,0 +1,1688 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>(二)WEB前端技术-HTML表单与CSS · 备课文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="WEB前端技术-JavaScript基础.html" />
+    
+    
+    <link rel="prev" href="WEB前端技术-HTML.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    项目简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../第一章：数据库技术.html">
+            
+                <a href="../第一章：数据库技术.html">
+            
+                    
+                    第一章:数据库技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../第一章：数据库技术/数据库基础.html">
+            
+                <a href="../第一章：数据库技术/数据库基础.html">
+            
+                    
+                    (一)数据库基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../第一章：数据库技术/简单查询语句与约束.html">
+            
+                <a href="../第一章：数据库技术/简单查询语句与约束.html">
+            
+                    
+                    (二)简单查询语句与约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../第一章：数据库技术/多表设计与查询.html">
+            
+                <a href="../第一章：数据库技术/多表设计与查询.html">
+            
+                    
+                    (三)多表设计与查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../第一章：数据库技术/数据库事物与权限.html">
+            
+                <a href="../第一章：数据库技术/数据库事物与权限.html">
+            
+                    
+                    (四)数据库事物与权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../第二章：JDBC技术.html">
+            
+                <a href="../第二章：JDBC技术.html">
+            
+                    
+                    第二章:JDBC技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../第二章：JDBC技术/JDBC基础.html">
+            
+                <a href="../第二章：JDBC技术/JDBC基础.html">
+            
+                    
+                    (一)JDBC基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../第二章：JDBC技术/数据库连接池与Spring-JDBC介绍.html">
+            
+                <a href="../第二章：JDBC技术/数据库连接池与Spring-JDBC介绍.html">
+            
+                    
+                    (二)数据库连接池与Spring-JDBC介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../第三章：WEB前端技术.html">
+            
+                <a href="../第三章：WEB前端技术.html">
+            
+                    
+                    第三章:WEB前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="WEB前端技术-HTML.html">
+            
+                <a href="WEB前端技术-HTML.html">
+            
+                    
+                    (一)WEB前端技术-HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="WEB前端技术-HTML表单与CSS.html">
+            
+                <a href="WEB前端技术-HTML表单与CSS.html">
+            
+                    
+                    (二)WEB前端技术-HTML表单与CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="WEB前端技术-JavaScript基础.html">
+            
+                <a href="WEB前端技术-JavaScript基础.html">
+            
+                    
+                    (三)WEB前端技术-JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="WEB前端技术-JavaScript高级.html">
+            
+                <a href="WEB前端技术-JavaScript高级.html">
+            
+                    
+                    (四)WEB前端技术-JavaScript高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="WEB前端技术-综合练习.html">
+            
+                <a href="WEB前端技术-综合练习.html">
+            
+                    
+                    (五)WEB前端技术-综合练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="WEB前端技术-XML介绍与解析.html">
+            
+                <a href="WEB前端技术-XML介绍与解析.html">
+            
+                    
+                    (六)WEB前端技术-XML介绍与解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../第四章：WEB核心技术.html">
+            
+                <a href="../第四章：WEB核心技术.html">
+            
+                    
+                    第四章:WEB核心技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../第四章：WEB核心技术/Tomcat与Servlet入门.html">
+            
+                <a href="../第四章：WEB核心技术/Tomcat与Servlet入门.html">
+            
+                    
+                    (一)Tomcat与Servlet入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../第四章：WEB核心技术/Http协议请求与Request对象.html">
+            
+                <a href="../第四章：WEB核心技术/Http协议请求与Request对象.html">
+            
+                    
+                    (二)Http协议请求与Request对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../第四章：WEB核心技术/Http协议响应与Response对象.html">
+            
+                <a href="../第四章：WEB核心技术/Http协议响应与Response对象.html">
+            
+                    
+                    (三)Http协议响应与Response对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../第四章：WEB核心技术/会话技术-Cookie与Session.html">
+            
+                <a href="../第四章：WEB核心技术/会话技术-Cookie与Session.html">
+            
+                    
+                    (四)会话技术-Cookie与Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../第四章：WEB核心技术/JSP与EL与JSTL.html">
+            
+                <a href="../第四章：WEB核心技术/JSP与EL与JSTL.html">
+            
+                    
+                    (五)JSP与EL与JSTL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../第四章：WEB核心技术/综合练习.html">
+            
+                <a href="../第四章：WEB核心技术/综合练习.html">
+            
+                    
+                    (六)综合练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../第四章：WEB核心技术/过滤器与监听器.html">
+            
+                <a href="../第四章：WEB核心技术/过滤器与监听器.html">
+            
+                    
+                    (七)过滤器与监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../第五章：Jquery与异步Ajax.html">
+            
+                <a href="../第五章：Jquery与异步Ajax.html">
+            
+                    
+                    第五章:Jquery与异步Ajax
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../第五章：Jquery与异步Ajax/Jquery基础.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery基础.html">
+            
+                    
+                    (一)Jquery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../第五章：Jquery与异步Ajax/Jquery高级.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery高级.html">
+            
+                    
+                    (二)Jquery高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../第五章：Jquery与异步Ajax/Jquery与异步Ajax.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery与异步Ajax.html">
+            
+                    
+                    (三)Jquery与异步Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../第六章：WEB项目练习.html">
+            
+                <a href="../第六章：WEB项目练习.html">
+            
+                    
+                    第六章:WEB项目练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../第六章：WEB项目练习/Redis数据库.html">
+            
+                <a href="../第六章：WEB项目练习/Redis数据库.html">
+            
+                    
+                    (一)Redis数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../第六章：WEB项目练习/黑马旅游网一.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网一.html">
+            
+                    
+                    (二)黑马旅游网一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../第六章：WEB项目练习/黑马旅游网二.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网二.html">
+            
+                    
+                    (三)黑马旅游网二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../第六章：WEB项目练习/黑马旅游网三.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网三.html">
+            
+                    
+                    (四)黑马旅游网三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../第六章：WEB项目练习/黑马旅游网四.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网四.html">
+            
+                    
+                    (五)黑马旅游网四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../第六章：WEB项目练习/黑马旅游网五.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网五.html">
+            
+                    
+                    (六)黑马旅游网五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../第六章：WEB项目练习/Linux基础一.html">
+            
+                <a href="../第六章：WEB项目练习/Linux基础一.html">
+            
+                    
+                    (七)Linux基础一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../第六章：WEB项目练习/Linux基础二.html">
+            
+                <a href="../第六章：WEB项目练习/Linux基础二.html">
+            
+                    
+                    (八)Linux基础二
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../第七章：Mybatis框架.html">
+            
+                <a href="../第七章：Mybatis框架.html">
+            
+                    
+                    第七章:Mybatis框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../第七章：Mybatis框架/Mybatis框架一.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架一.html">
+            
+                    
+                    (一)Mybatis框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../第七章：Mybatis框架/Mybatis框架二.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架二.html">
+            
+                    
+                    (二)Mybatis框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../第七章：Mybatis框架/Mybatis框架三.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架三.html">
+            
+                    
+                    (三)Mybatis框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../第七章：Mybatis框架/Mybatis框架四.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架四.html">
+            
+                    
+                    (四)Mybatis框架四
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../第八章：Spring框架.html">
+            
+                <a href="../第八章：Spring框架.html">
+            
+                    
+                    第八章:Spring框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../第八章：Spring框架/Spring框架一.html">
+            
+                <a href="../第八章：Spring框架/Spring框架一.html">
+            
+                    
+                    (一)Spring框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../第八章：Spring框架/Spring框架二.html">
+            
+                <a href="../第八章：Spring框架/Spring框架二.html">
+            
+                    
+                    (二)Spring框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../第八章：Spring框架/Spring框架三.html">
+            
+                <a href="../第八章：Spring框架/Spring框架三.html">
+            
+                    
+                    (三)Spring框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../第八章：Spring框架/Spring框架四.html">
+            
+                <a href="../第八章：Spring框架/Spring框架四.html">
+            
+                    
+                    (四)Spring框架四
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../第九章：SpringMVC框架.html">
+            
+                <a href="../第九章：SpringMVC框架.html">
+            
+                    
+                    第九章:SpringMVC框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../第九章：SpringMVC框架/SpringMVC框架一.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架一.html">
+            
+                    
+                    (一)SpringMVC框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../第九章：SpringMVC框架/SpringMVC框架二.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架二.html">
+            
+                    
+                    (二)SpringMVC框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../第九章：SpringMVC框架/SpringMVC框架三.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架三.html">
+            
+                    
+                    (三)SpringMVC框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../第十章：Oracle与Maven.html">
+            
+                <a href="../第十章：Oracle与Maven.html">
+            
+                    
+                    第十章:Oracle与Maven
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../第十章：Oracle与Maven/racle数据库一.html">
+            
+                <a href="../第十章：Oracle与Maven/racle数据库一.html">
+            
+                    
+                    (一)Oracle数据库一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../第十章：Oracle与Maven/racle数据库二.html">
+            
+                <a href="../第十章：Oracle与Maven/racle数据库二.html">
+            
+                    
+                    (二)Oracle数据库二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../第十章：Oracle与Maven/Maven基础.html">
+            
+                <a href="../第十章：Oracle与Maven/Maven基础.html">
+            
+                    
+                    (三)Maven基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../第十章：Oracle与Maven/Maven高级.html">
+            
+                <a href="../第十章：Oracle与Maven/Maven高级.html">
+            
+                    
+                    (四)Maven高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../第十一章：SSM框架练习.html">
+            
+                <a href="../第十一章：SSM框架练习.html">
+            
+                    
+                    第十一章:SSM框架练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../第十一章：SSM框架练习/SSM框架练习一.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习一.html">
+            
+                    
+                    (一)SSM框架练习一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../第十一章：SSM框架练习/SSM框架练习二.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习二.html">
+            
+                    
+                    (二)SSM框架练习二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../第十一章：SSM框架练习/SSM框架练习三.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习三.html">
+            
+                    
+                    (三)SSM框架练习三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../第十一章：SSM框架练习/SSM框架练习四.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习四.html">
+            
+                    
+                    (四)SSM框架练习四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../第十一章：SSM框架练习/SSM框架练习五.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习五.html">
+            
+                    
+                    (四)SSM框架练习五
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../第十二章：全文检索.html">
+            
+                <a href="../第十二章：全文检索.html">
+            
+                    
+                    第十二章:全文检索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../第十二章：全文检索/Lucene.html">
+            
+                <a href="../第十二章：全文检索/Lucene.html">
+            
+                    
+                    (一)Lucene
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../第十二章：全文检索/ElasticSearch基础.html">
+            
+                <a href="../第十二章：全文检索/ElasticSearch基础.html">
+            
+                    
+                    (二)ElasticSearch基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../第十二章：全文检索/ElasticSearch高级.html">
+            
+                <a href="../第十二章：全文检索/ElasticSearch高级.html">
+            
+                    
+                    (三)ElasticSearch高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >(二)WEB前端技术-HTML表单与CSS</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x4E8C;web&#x524D;&#x7AEF;&#x6280;&#x672F;-html&#x8868;&#x5355;&#x4E0E;css"><b>1. </b>(&#x4E8C;)WEB&#x524D;&#x7AEF;&#x6280;&#x672F;-HTML&#x8868;&#x5355;&#x4E0E;CSS</a></li><ul><li><span class="title-icon "></span><a href="#html&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;"><b>1.1. </b>HTML&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;"><b>1.1.1. </b>&#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</a></li><li><span class="title-icon "></span><a href="#&#x5B9A;&#x4E49;&#x8868;&#x5355;"><b>1.1.2. </b>&#x5B9A;&#x4E49;&#x8868;&#x5355;</a></li><li><span class="title-icon "></span><a href="#&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;"><b>1.1.3. </b>&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;"><b>1.1.4. </b>&#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;</a></li><li><span class="title-icon "></span><a href="#&#x6848;&#x4F8B;&#x6CE8;&#x518C;&#x9875;&#x9762;"><b>1.1.5. </b>&#x6848;&#x4F8B;:&#x6CE8;&#x518C;&#x9875;&#x9762;</a></li></ul><li><span class="title-icon "></span><a href="#css&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;"><b>1.2. </b>CSS&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;"><b>1.2.1. </b>&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#css&#x7684;&#x4F7F;&#x7528;&#xFF1A;css&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;&#x638C;&#x63E1;"><b>1.2.2. </b>CSS&#x7684;&#x4F7F;&#x7528;&#xFF1A;CSS&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#css&#x8BED;&#x6CD5;"><b>1.2.3. </b>CSS&#x8BED;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;"><b>1.2.4. </b>&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;</a></li><li><span class="title-icon "></span><a href="#&#x6837;&#x5F0F;&#x5C5E;&#x6027;"><b>1.2.5. </b>&#x6837;&#x5F0F;&#x5C5E;&#x6027;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6848;&#x4F8B;&#xFF1A;"><b>1.3. </b>&#x6848;&#x4F8B;&#xFF1A;</a></li></ul></ul></div><a href="#&#x4E8C;web&#x524D;&#x7AEF;&#x6280;&#x672F;-html&#x8868;&#x5355;&#x4E0E;css" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E8C;web&#x524D;&#x7AEF;&#x6280;&#x672F;-html&#x8868;&#x5355;&#x4E0E;css"><a name="&#x4E8C;web&#x524D;&#x7AEF;&#x6280;&#x672F;-html&#x8868;&#x5355;&#x4E0E;css" class="anchor-navigation-ex-anchor" href="#&#x4E8C;web&#x524D;&#x7AEF;&#x6280;&#x672F;-html&#x8868;&#x5355;&#x4E0E;css"><i class="fa fa-link" aria-hidden="true"></i></a>1. (&#x4E8C;)WEB&#x524D;&#x7AEF;&#x6280;&#x672F;-HTML&#x8868;&#x5355;&#x4E0E;CSS</h1>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#&#x4E8C;web&#x524D;&#x7AEF;&#x6280;&#x672F;-html&#x8868;&#x5355;&#x4E0E;css"><b>1. </b>(&#x4E8C;)WEB&#x524D;&#x7AEF;&#x6280;&#x672F;-HTML&#x8868;&#x5355;&#x4E0E;CSS</a></li><ul><li><span class="title-icon "></span><a href="#html&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;"><b>1.1. </b>HTML&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;"><b>1.1.1. </b>&#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</a></li><li><span class="title-icon "></span><a href="#&#x5B9A;&#x4E49;&#x8868;&#x5355;"><b>1.1.2. </b>&#x5B9A;&#x4E49;&#x8868;&#x5355;</a></li><li><span class="title-icon "></span><a href="#&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;"><b>1.1.3. </b>&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;"><b>1.1.4. </b>&#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;</a></li><li><span class="title-icon "></span><a href="#&#x6848;&#x4F8B;&#x6CE8;&#x518C;&#x9875;&#x9762;"><b>1.1.5. </b>&#x6848;&#x4F8B;:&#x6CE8;&#x518C;&#x9875;&#x9762;</a></li></ul><li><span class="title-icon "></span><a href="#css&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;"><b>1.2. </b>CSS&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;"><b>1.2.1. </b>&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#css&#x7684;&#x4F7F;&#x7528;&#xFF1A;css&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;&#x638C;&#x63E1;"><b>1.2.2. </b>CSS&#x7684;&#x4F7F;&#x7528;&#xFF1A;CSS&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#css&#x8BED;&#x6CD5;"><b>1.2.3. </b>CSS&#x8BED;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;"><b>1.2.4. </b>&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;</a></li><li><span class="title-icon "></span><a href="#&#x6837;&#x5F0F;&#x5C5E;&#x6027;"><b>1.2.5. </b>&#x6837;&#x5F0F;&#x5C5E;&#x6027;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6848;&#x4F8B;&#xFF1A;"><b>1.3. </b>&#x6848;&#x4F8B;&#xFF1A;</a></li></ul></ul></div>
+
+<h2 id="html&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;"><a name="html&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;" class="anchor-navigation-ex-anchor" href="#html&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. HTML&#x6807;&#x7B7E;&#xFF1A;&#x8868;&#x5355;&#x6807;&#x7B7E;</h2>
+<h3 id="&#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;"><a name="&#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x6982;&#x5FF5;&#xFF1A;&#x7528;&#x4E8E;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x3002;&#x7528;&#x4E8E;&#x548C;&#x670D;&#x52A1;&#x5668;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x3002;</h3>
+<h3 id="&#x5B9A;&#x4E49;&#x8868;&#x5355;"><a name="&#x5B9A;&#x4E49;&#x8868;&#x5355;" class="anchor-navigation-ex-anchor" href="#&#x5B9A;&#x4E49;&#x8868;&#x5355;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x5B9A;&#x4E49;&#x8868;&#x5355;</h3>
+<p>html&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>&lt;form&gt;&lt;/form&gt;</code> &#x5B9A;&#x4E49;&#x8868;&#x5355;,&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x8303;&#x56F4;&#xFF0C;&#x8303;&#x56F4;&#x4EE3;&#x8868;&#x91C7;&#x96C6;&#x7528;&#x6237;&#x6570;&#x636E;&#x7684;&#x8303;&#x56F4;,&#x5E38;&#x7528;&#x5C5E;&#x6027;&#x5982;&#x4E0B;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x5C5E;&#x6027;&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">action</td>
+<td style="text-align:left">&#x6307;&#x5B9A;&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x7684;URL</td>
+</tr>
+<tr>
+<td style="text-align:left">method</td>
+<td style="text-align:left">&#x6307;&#x5B9A;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;,<code>GET</code>/<code>POST</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;"><a name="&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.3. &#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;</h3>
+<p>&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;&#x4E00;&#x5171;&#x6709;7&#x79CD;,&#x5176;&#x4E2D;2&#x79CD;&#x6BD4;&#x8F83;&#x5E38;&#x7528;</p>
+<pre><code>* get&#xFF1A;
+    1. &#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4F1A;&#x5728;&#x5730;&#x5740;&#x680F;&#x4E2D;&#x663E;&#x793A;&#x3002;&#x4F1A;&#x5C01;&#x88C5;&#x5230;&#x8BF7;&#x6C42;&#x884C;&#x4E2D;(HTTP&#x534F;&#x8BAE;&#x540E;&#x8BB2;&#x89E3;)&#x3002;
+    2. &#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x5927;&#x5C0F;&#x662F;&#x6709;&#x9650;&#x5236;&#x7684;&#x3002;
+    3. &#x4E0D;&#x592A;&#x5B89;&#x5168;&#x3002;
+* post&#xFF1A;
+    2. &#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E0D;&#x4F1A;&#x518D;&#x5730;&#x5740;&#x680F;&#x4E2D;&#x663E;&#x793A;&#x3002;&#x4F1A;&#x5C01;&#x88C5;&#x5728;&#x8BF7;&#x6C42;&#x4F53;&#x4E2D;(HTTP&#x534F;&#x8BAE;&#x540E;&#x8BB2;&#x89E3;)
+    2. &#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7684;&#x5927;&#x5C0F;&#x6CA1;&#x6709;&#x9650;&#x5236;&#x3002;
+    3. &#x8F83;&#x4E3A;&#x5B89;&#x5168;&#x3002;
+* &#x8868;&#x5355;&#x9879;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8981;&#x60F3;&#x88AB;&#x63D0;&#x4EA4;&#xFF1A;&#x5FC5;&#x987B;&#x6307;&#x5B9A;&#x5176;name&#x5C5E;&#x6027;
+</code></pre><h3 id="&#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;"><a name="&#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;" class="anchor-navigation-ex-anchor" href="#&#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.4. &#x8868;&#x5355;&#x9879;&#x6807;&#x7B7E;</h3>
+<h4 id="input&#x6807;&#x7B7E;&#x8F93;&#x5165;&#x6846;&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;type&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x5C55;&#x793A;&#x7684;&#x6837;&#x5F0F;"><a name="input&#x6807;&#x7B7E;&#x8F93;&#x5165;&#x6846;&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;type&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x5C55;&#x793A;&#x7684;&#x6837;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#input&#x6807;&#x7B7E;&#x8F93;&#x5165;&#x6846;&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;type&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x5C55;&#x793A;&#x7684;&#x6837;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><code>&lt;input&gt;</code>&#x6807;&#x7B7E;:&#x8F93;&#x5165;&#x6846;&#x6807;&#x7B7E;,&#x53EF;&#x4EE5;&#x901A;&#x8FC7;type&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x6539;&#x53D8;&#x5143;&#x7D20;&#x5C55;&#x793A;&#x7684;&#x6837;&#x5F0F;</h4>
+<h5 id="&#x5C5E;&#x6027;"><a name="&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C5E;&#x6027;</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x5C5E;&#x6027;&#x4ECB;&#x7ECD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">&#x8868;&#x5355;&#x9879;&#x7684;&#x540D;&#x79F0;(&#x63D0;&#x4EA4;&#x6570;&#x636E;&#x5FC5;&#x987B;)</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">text&#xFF1A;&#x6587;&#x672C;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C; <br>  password&#xFF1A;&#x5BC6;&#x7801;&#x8F93;&#x5165;&#x6846; <br>   radio:&#x5355;&#x9009;&#x6846;  <br>   checkbox&#xFF1A;&#x590D;&#x9009;&#x6846; <br>  file&#xFF1A;&#x6587;&#x4EF6;&#x9009;&#x62E9;&#x6846;  <br>   hidden&#xFF1A;&#x9690;&#x85CF;&#x57DF;&#xFF0C;&#x7528;&#x4E8E;&#x63D0;&#x4EA4;&#x4E00;&#x4E9B;&#x4FE1;&#x606F;  <br> submit&#xFF1A;&#x63D0;&#x4EA4;&#x6309;&#x94AE;&#x3002;&#x53EF;&#x4EE5;&#x63D0;&#x4EA4;&#x8868;&#x5355; <br> button&#xFF1A;&#x666E;&#x901A;&#x6309;&#x94AE;  <br></td>
+</tr>
+<tr>
+<td style="text-align:left">placeholder</td>
+<td style="text-align:left">&#x5982;&#x679C;&#x662F;<code>type=input</code>,&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6846;&#x7684;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x5F53;&#x8F93;&#x5165;&#x6846;&#x7684;&#x5185;&#x5BB9;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6E05;&#x7A7A;&#x63D0;&#x793A;&#x4FE1;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x6CE8;&#x610F;"><a name="&#x6CE8;&#x610F;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;</h5>
+<p>  <strong>&#x5982;&#x679C;<code>type=text</code></strong></p>
+<pre><code>1. &#x53EF;&#x4EE5;&#x4F7F;&#x7528;placeholder&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6846;&#x7684;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x5F53;&#x8F93;&#x5165;&#x6846;&#x7684;&#x5185;&#x5BB9;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6E05;&#x7A7A;&#x63D0;&#x793A;&#x4FE1;&#x606F;
+</code></pre><p>  <strong>&#x5982;&#x679C;<code>type=radio</code></strong></p>
+<pre><code>1. &#x8981;&#x60F3;&#x8BA9;&#x591A;&#x4E2A;&#x5355;&#x9009;&#x6846;&#x5B9E;&#x73B0;&#x5355;&#x9009;&#x7684;&#x6548;&#x679C;&#xFF0C;&#x5219;&#x591A;&#x4E2A;&#x5355;&#x9009;&#x6846;&#x7684;name&#x5C5E;&#x6027;&#x503C;&#x5FC5;&#x987B;&#x4E00;&#x6837;&#x3002;
+2. &#x4E00;&#x822C;&#x4F1A;&#x7ED9;&#x6BCF;&#x4E00;&#x4E2A;&#x5355;&#x9009;&#x6846;&#x63D0;&#x4F9B;value&#x5C5E;&#x6027;&#xFF0C;&#x6307;&#x5B9A;&#x5176;&#x88AB;&#x9009;&#x4E2D;&#x540E;&#x63D0;&#x4EA4;&#x7684;&#x503C;
+3. checked&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;
+</code></pre><p>  <strong>&#x5982;&#x679C;<code>type= checkbox</code></strong></p>
+<pre><code>1. &#x4E00;&#x822C;&#x4F1A;&#x7ED9;&#x6BCF;&#x4E00;&#x4E2A;&#x5355;&#x9009;&#x6846;&#x63D0;&#x4F9B;value&#x5C5E;&#x6027;&#xFF0C;&#x6307;&#x5B9A;&#x5176;&#x88AB;&#x9009;&#x4E2D;&#x540E;&#x63D0;&#x4EA4;&#x7684;&#x503C;
+2. checked&#x5C5E;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x9ED8;&#x8BA4;&#x503C;
+</code></pre><p>  <strong>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>&lt;label&gt;</code>&#x6807;&#x7B7E;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x9879;&#x7684;&#x6587;&#x5B57;&#x63CF;&#x8FF0;&#x4FE1;&#x606F;</strong></p>
+<pre><code>1. label&#x7684;for&#x5C5E;&#x6027;&#x4E00;&#x822C;&#x4F1A;&#x548C; input &#x7684; id&#x5C5E;&#x6027;&#x503C; &#x5BF9;&#x5E94;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x5E94;&#x4E86;&#xFF0C;&#x5219;&#x70B9;&#x51FB;label&#x533A;&#x57DF;&#xFF0C;&#x4F1A;&#x8BA9;input&#x8F93;&#x5165;&#x6846;&#x83B7;&#x53D6;&#x7126;&#x70B9;&#x3002;
+</code></pre><h5 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;</h5>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span> &#x7528;&#x6237;&#x540D; <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+&#x5BC6;&#x7801;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+&#x6027;&#x522B;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;male&quot;</span> &gt;</span>  &#x7537;
+     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;female&quot;</span> <span class="hljs-attr">checked</span>&gt;</span>  &#x5973;
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+&#x7231;&#x597D;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;shopping&quot;</span>&gt;</span> &#x901B;&#x8857;
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;java&quot;</span>  <span class="hljs-attr">checked</span>&gt;</span> Java
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;hobby&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;game&quot;</span>&gt;</span> &#x6E38;&#x620F;<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+&#x56FE;&#x7247;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;file&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+&#x9690;&#x85CF;&#x57DF;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;aaa&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- html5&#x65B0;&#x52A0;&#x5165;&#x7684; --&gt;</span>
+&#x53D6;&#x8272;&#x5668;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;color&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;color&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+&#x751F;&#x65E5;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;birthday&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+&#x751F;&#x65E5;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;datetime-local&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;birthday&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+&#x90AE;&#x7BB1;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+&#x5E74;&#x9F84;&#xFF1A;<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+</code></pre>
+<h4 id="select&#x6807;&#x7B7E;&#x4E0B;&#x62C9;&#x5217;&#x8868;&#x4F7F;&#x7528;option&#xFF0C;&#x6307;&#x5B9A;&#x5217;&#x8868;&#x9879;"><a name="select&#x6807;&#x7B7E;&#x4E0B;&#x62C9;&#x5217;&#x8868;&#x4F7F;&#x7528;option&#xFF0C;&#x6307;&#x5B9A;&#x5217;&#x8868;&#x9879;" class="anchor-navigation-ex-anchor" href="#select&#x6807;&#x7B7E;&#x4E0B;&#x62C9;&#x5217;&#x8868;&#x4F7F;&#x7528;option&#xFF0C;&#x6307;&#x5B9A;&#x5217;&#x8868;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a><code>&lt;select&gt;</code>&#x6807;&#x7B7E;:&#x4E0B;&#x62C9;&#x5217;&#x8868;,&#x4F7F;&#x7528;option&#xFF0C;&#x6307;&#x5B9A;&#x5217;&#x8868;&#x9879;</h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;province&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>--&#x8BF7;&#x9009;&#x62E9;--<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>&#x5317;&#x4EAC;<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>&#x4E0A;&#x6D77;<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">selected</span>&gt;</span>&#x9655;&#x897F;<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+</code></pre>
+<h4 id="textarea&#x6807;&#x7B7E;&#x6587;&#x672C;&#x57DF;"><a name="textarea&#x6807;&#x7B7E;&#x6587;&#x672C;&#x57DF;" class="anchor-navigation-ex-anchor" href="#textarea&#x6807;&#x7B7E;&#x6587;&#x672C;&#x57DF;"><i class="fa fa-link" aria-hidden="true"></i></a><code>&lt;textarea&gt;</code>&#x6807;&#x7B7E;:&#x6587;&#x672C;&#x57DF;</h4>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;20&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;des&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+</code></pre>
+<h3 id="&#x6848;&#x4F8B;&#x6CE8;&#x518C;&#x9875;&#x9762;"><a name="&#x6848;&#x4F8B;&#x6CE8;&#x518C;&#x9875;&#x9762;" class="anchor-navigation-ex-anchor" href="#&#x6848;&#x4F8B;&#x6CE8;&#x518C;&#x9875;&#x9762;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.5. &#x6848;&#x4F8B;:&#x6CE8;&#x518C;&#x9875;&#x9762;</h3>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x6CE8;&#x518C;&#x9875;&#x9762;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x5B9A;&#x4E49;&#x8868;&#x5355; form--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;center&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;500&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>&#x7528;&#x6237;&#x540D;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>&#x5BC6;&#x7801;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>&#x59D3;&#x540D;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;tel&quot;</span>&gt;</span>&#x624B;&#x673A;&#x53F7;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tel&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>&#x6027;&#x522B;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;male&quot;</span>&gt;</span> &#x7537;
+                    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;female&quot;</span>&gt;</span> &#x5973;
+                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;birthday&quot;</span>&gt;</span>&#x51FA;&#x751F;&#x65E5;&#x671F;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;birthday&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;birthday&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;checkcode&quot;</span>&gt;</span>&#x9A8C;&#x8BC1;&#x7801;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkcode&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;checkcode&quot;</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/verify_code.jpg&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;center&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x6CE8;&#x518C;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h2 id="css&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;"><a name="css&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;" class="anchor-navigation-ex-anchor" href="#css&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. CSS&#xFF1A;&#x9875;&#x9762;&#x7F8E;&#x5316;&#x548C;&#x5E03;&#x5C40;&#x63A7;&#x5236;</h2>
+<h3 id="&#x6982;&#x5FF5;"><a name="&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x6982;&#x5FF5;</h3>
+<pre><code>CSS: Cascading Style Sheets &#x5C42;&#x53E0;&#x6837;&#x5F0F;&#x8868;
+
+&#x5C42;&#x53E0;&#xFF1A;&#x591A;&#x4E2A;&#x6837;&#x5F0F;&#x53EF;&#x4EE5;&#x4F5C;&#x7528;&#x5728;&#x540C;&#x4E00;&#x4E2A;html&#x7684;&#x5143;&#x7D20;&#x4E0A;&#xFF0C;&#x540C;&#x65F6;&#x751F;&#x6548;
+
+&#x6837;&#x5F0F;&#x8868; : &#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x6837;&#x5F0F;&#x8C03;&#x6574;&#x7F51;&#x9875;&#x5C55;&#x793A;&#x6548;&#x679C;
+</code></pre><h4 id="&#x597D;&#x5904;"><a name="&#x597D;&#x5904;" class="anchor-navigation-ex-anchor" href="#&#x597D;&#x5904;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x597D;&#x5904;</h4>
+<pre><code>1. &#x529F;&#x80FD;&#x5F3A;&#x5927;
+2. &#x5C06;&#x5185;&#x5BB9;&#x5C55;&#x793A;&#x548C;&#x6837;&#x5F0F;&#x63A7;&#x5236;&#x5206;&#x79BB;
+    * &#x964D;&#x4F4E;&#x8026;&#x5408;&#x5EA6;&#x3002;&#x89E3;&#x8026;
+    * &#x8BA9;&#x5206;&#x5DE5;&#x534F;&#x4F5C;&#x66F4;&#x5BB9;&#x6613;
+    * &#x63D0;&#x9AD8;&#x5F00;&#x53D1;&#x6548;&#x7387;
+</code></pre><h3 id="css&#x7684;&#x4F7F;&#x7528;&#xFF1A;css&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;&#x638C;&#x63E1;"><a name="css&#x7684;&#x4F7F;&#x7528;&#xFF1A;css&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#css&#x7684;&#x4F7F;&#x7528;&#xFF1A;css&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. CSS&#x7684;&#x4F7F;&#x7528;&#xFF1A;CSS&#x4E0E;html&#x7ED3;&#x5408;&#x65B9;&#x5F0F;(&#x638C;&#x63E1;)</h3>
+<h4 id="&#x5185;&#x8054;&#x6837;&#x5F0F;"><a name="&#x5185;&#x8054;&#x6837;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x8054;&#x6837;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x8054;&#x6837;&#x5F0F;</h4>
+<pre><code>* &#x5728;&#x6807;&#x7B7E;&#x5185;&#x4F7F;&#x7528;style&#x5C5E;&#x6027;&#x6307;&#x5B9A;css&#x4EE3;&#x7801;
+* &#x5982;&#xFF1A;&lt;div style=&quot;color:red;&quot;&gt;hello css&lt;/div&gt;
+</code></pre><h4 id="&#x5185;&#x90E8;&#x6837;&#x5F0F;"><a name="&#x5185;&#x90E8;&#x6837;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x90E8;&#x6837;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x90E8;&#x6837;&#x5F0F;</h4>
+<pre><code>* &#x5728;head&#x6807;&#x7B7E;&#x5185;&#xFF0C;&#x5B9A;&#x4E49;style&#x6807;&#x7B7E;&#xFF0C;style&#x6807;&#x7B7E;&#x7684;&#x6807;&#x7B7E;&#x4F53;&#x5185;&#x5BB9;&#x5C31;&#x662F;css&#x4EE3;&#x7801;
+* &#x5982;&#xFF1A;
+  &lt;style&gt;
+        div{
+            color:blue;
+        }
+
+    &lt;/style&gt;
+  &lt;div&gt;hello css&lt;/div&gt;
+</code></pre><h4 id="&#x5916;&#x90E8;&#x6837;&#x5F0F;"><a name="&#x5916;&#x90E8;&#x6837;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x5916;&#x90E8;&#x6837;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5916;&#x90E8;&#x6837;&#x5F0F;</h4>
+<pre><code>1. &#x5B9A;&#x4E49;css&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x3002;
+2. &#x5728;head&#x6807;&#x7B7E;&#x5185;&#xFF0C;&#x5B9A;&#x4E49;link&#x6807;&#x7B7E;&#xFF0C;&#x5F15;&#x5165;&#x5916;&#x90E8;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;
+* &#x5982;&#xFF1A;
+  * a.css&#x6587;&#x4EF6;&#xFF1A;
+  div{
+      color:green;
+  }
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/a.css&quot;&gt;
+&lt;div&gt;hello css&lt;/div&gt;
+&lt;div&gt;hello css&lt;/div&gt;
+</code></pre><h4 id="&#x6CE8;&#x610F;_1"><a name="&#x6CE8;&#x610F;_1" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;</h4>
+<pre><code>1. 1,2,3&#x79CD;&#x65B9;&#x5F0F; css&#x4F5C;&#x7528;&#x8303;&#x56F4;&#x8D8A;&#x6765;&#x8D8A;&#x5927;
+2. 1&#x65B9;&#x5F0F;&#x4E0D;&#x5E38;&#x7528;&#xFF0C;&#x540E;&#x671F;&#x5E38;&#x7528;2,3
+3. 3&#x79CD;&#x683C;&#x5F0F;&#x53EF;&#x4EE5;&#x5199;&#x4E3A;&#xFF1A;
+  &lt;style&gt;
+        @import &quot;css/a.css&quot;;
+  &lt;/style&gt;
+</code></pre><h3 id="css&#x8BED;&#x6CD5;"><a name="css&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#css&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.3. CSS&#x8BED;&#x6CD5;</h3>
+<pre><code class="lang-css">&#x9009;&#x62E9;&#x5668; {
+  &#x5C5E;&#x6027;&#x540D;1:&#x5C5E;&#x6027;&#x503C;1;
+  &#x5C5E;&#x6027;&#x540D;2:&#x5C5E;&#x6027;&#x503C;2;
+  ...
+}
+</code></pre>
+<p>&#x9009;&#x62E9;&#x5668;:&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x6BCF;&#x4E00;&#x5BF9;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>;</code>&#x9694;&#x5F00;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x5BF9;&#x5C5E;&#x6027;&#x53EF;&#x4EE5;&#x4E0D;&#x52A0;</strong></p>
+<h3 id="&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;"><a name="&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.4. &#x9009;&#x62E9;&#x5668;&#xFF1A;&#x7B5B;&#x9009;&#x5177;&#x6709;&#x76F8;&#x4F3C;&#x7279;&#x5F81;&#x7684;&#x5143;&#x7D20;</h3>
+<h4 id="&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;"><a name="&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;</h4>
+<pre><code>1. id&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x9009;&#x62E9;&#x5177;&#x4F53;&#x7684;id&#x5C5E;&#x6027;&#x503C;&#x7684;&#x5143;&#x7D20;.&#x5EFA;&#x8BAE;&#x5728;&#x4E00;&#x4E2A;html&#x9875;&#x9762;&#x4E2D;id&#x503C;&#x552F;&#x4E00;
+    * &#x8BED;&#x6CD5;&#xFF1A;#id&#x5C5E;&#x6027;&#x503C;{}
+2. &#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x9009;&#x62E9;&#x5177;&#x6709;&#x76F8;&#x540C;&#x6807;&#x7B7E;&#x540D;&#x79F0;&#x7684;&#x5143;&#x7D20;
+    * &#x8BED;&#x6CD5;&#xFF1A; &#x6807;&#x7B7E;&#x540D;&#x79F0;{}
+    * &#x6CE8;&#x610F;&#xFF1A;id&#x9009;&#x62E9;&#x5668;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;
+3. &#x7C7B;&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x9009;&#x62E9;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;class&#x5C5E;&#x6027;&#x503C;&#x7684;&#x5143;&#x7D20;&#x3002;
+    * &#x8BED;&#x6CD5;&#xFF1A;.class&#x5C5E;&#x6027;&#x503C;{}
+    * &#x6CE8;&#x610F;&#xFF1A;&#x7C7B;&#x9009;&#x62E9;&#x5668;&#x9009;&#x62E9;&#x5668;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;
+</code></pre><h5 id="&#x793A;&#x4F8B;_1"><a name="&#x793A;&#x4F8B;_1" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;</h5>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-class">.cls1</span>{
+
+            <span class="hljs-attribute">color</span>: blue;
+        }
+
+        <span class="hljs-selector-tag">div</span>{
+            <span class="hljs-attribute">color</span>:green;
+        }
+
+        <span class="hljs-selector-id">#div1</span>{
+               <span class="hljs-attribute">color</span>: red;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;div1&quot;</span>&gt;</span>&#x4F20;&#x667A;&#x64AD;&#x5BA2;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cls1&quot;</span>&gt;</span>&#x9ED1;&#x9A6C;&#x7A0B;&#x5E8F;&#x5458;<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;cls1&quot;</span>&gt;</span>&#x4F20;&#x667A;&#x5B66;&#x9662;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h4 id="&#x6269;&#x5C55;&#x9009;&#x62E9;&#x5668;"><a name="&#x6269;&#x5C55;&#x9009;&#x62E9;&#x5668;" class="anchor-navigation-ex-anchor" href="#&#x6269;&#x5C55;&#x9009;&#x62E9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6269;&#x5C55;&#x9009;&#x62E9;&#x5668;</h4>
+<pre><code>1. &#x9009;&#x62E9;&#x6240;&#x6709;&#x5143;&#x7D20;&#xFF1A;
+  * &#x8BED;&#x6CD5;&#xFF1A; *{}
+2. &#x5E76;&#x96C6;&#x9009;&#x62E9;&#x5668;&#xFF1A;
+  * &#x9009;&#x62E9;&#x5668;1,&#x9009;&#x62E9;&#x5668;2{}
+
+3. &#x540E;&#x4EE3;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x9009;&#x62E9;&#x9009;&#x62E9;&#x5668;1&#x4E0B;&#x7684;&#x6240;&#x6709;&#x7B26;&#x5408;&#x9009;&#x62E9;&#x5668;2&#x7684;&#x6807;&#x7B7E;&#x5143;&#x7D20; &#x4E0D;&#x8BBA;&#x5C42;&#x7EA7;
+  * &#x8BED;&#x6CD5;&#xFF1A;  &#x9009;&#x62E9;&#x5668;1 &#x9009;&#x62E9;&#x5668;2{}
+4. &#x5B50;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x9009;&#x62E9;&#x9009;&#x62E9;&#x5668;1&#x4E0B;&#x7B26;&#x5408;&#x9009;&#x62E9;&#x5668;2&#x7684;&#x7B2C;&#x4E00;&#x5C42;&#x7EA7;&#x7684;&#x540E;&#x4EE3;&#x5143;&#x7D20;   &#x53EA;&#x9009;&#x62E9;&#x7B2C;&#x4E00;&#x5C42;&#x7EA7;
+  * &#x8BED;&#x6CD5;&#xFF1A;  &#x9009;&#x62E9;&#x5668;1 &gt; &#x9009;&#x62E9;&#x5668;2{}
+
+5. &#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x9009;&#x62E9;&#x5143;&#x7D20;&#x540D;&#x79F0;&#xFF0C;&#x5C5E;&#x6027;&#x540D;=&#x5C5E;&#x6027;&#x503C;&#x7684;&#x5143;&#x7D20;
+  * &#x8BED;&#x6CD5;&#xFF1A;  &#x5143;&#x7D20;&#x540D;&#x79F0;[&#x5C5E;&#x6027;&#x540D;=&quot;&#x5C5E;&#x6027;&#x503C;&quot;]{}
+
+6. &#x4F2A;&#x7C7B;&#x9009;&#x62E9;&#x5668;&#xFF1A;&#x9009;&#x62E9;&#x4E00;&#x4E9B;&#x5143;&#x7D20;&#x5177;&#x6709;&#x7684;&#x72B6;&#x6001;
+  * &#x8BED;&#x6CD5;&#xFF1A; &#x5143;&#x7D20;:&#x72B6;&#x6001;{}
+  * &#x5982;&#xFF1A; &lt;a&gt;
+    * &#x72B6;&#x6001;&#xFF1A;
+      * link&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x7684;&#x72B6;&#x6001;
+      * visited&#xFF1A;&#x88AB;&#x8BBF;&#x95EE;&#x8FC7;&#x7684;&#x72B6;&#x6001;
+      * active&#xFF1A;&#x6B63;&#x5728;&#x8BBF;&#x95EE;&#x72B6;&#x6001;
+      * hover&#xFF1A;&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x72B6;&#x6001;
+</code></pre><h5 id="&#x793A;&#x4F8B;_2"><a name="&#x793A;&#x4F8B;_2" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;_2"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;</h5>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x6269;&#x5C55;&#x9009;&#x62E9;&#x5668;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+
+        <span class="hljs-comment">/* &#x540E;&#x4EE3;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;:  &#x9009;&#x62E9;&#x9009;&#x62E9;&#x5668;1&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7B26;&#x5408;&#x9009;&#x62E9;&#x5668;2&#x7684;&#x5143;&#x7D20;   &#x4E0D;&#x8BBA;&#x5C42;&#x7EA7;   */</span>
+         <span class="hljs-selector-tag">div</span> <span class="hljs-selector-tag">span</span>{
+                <span class="hljs-attribute">color</span>: red;
+         }
+        <span class="hljs-comment">/* &#x5B50;&#x5143;&#x7D20;&#x9009;&#x62E9;&#x5668;  : &#x9009;&#x62E9;&#x7684;&#x662F;&#x9009;&#x62E9;&#x5668;1&#x4E2D;&#x7B2C;&#x4E00;&#x6B21;&#x5C42;&#x7EA7;&#x7684;&#x540E;&#x4EE3;&#x5143;&#x7D20;   &#x513F;&#x5B50;  */</span>
+        <span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">span</span>{
+            <span class="hljs-attribute">color</span>: red;
+            <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid red;
+        }
+
+
+        <span class="hljs-comment">/*&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x5668;:&#x9009;&#x62E9;&#x6307;&#x5B9A;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x7B49;&#x4E8E;&#x6307;&#x5B9A;&#x503C;&#x7684;&#x6807;&#x7B7E;&#x5143;&#x7D20;*/</span>
+        <span class="hljs-selector-tag">input</span><span class="hljs-selector-attr">[type=&apos;text&apos;]</span> {
+            <span class="hljs-attribute">border</span>: <span class="hljs-number">5px</span> solid;
+        }
+
+        <span class="hljs-comment">/*&#x4F2A;&#x7C7B;&#x9009;&#x62E9;&#x5668;:    :link  &#x94FE;&#x63A5;&#x72B6;&#x6001;   :hover &#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x72B6;&#x6001;   :active  &#x9F20;&#x6807;&#x6309;&#x4E0B;&#x72B6;&#x6001;  :visited &#x8BBF;&#x95EE;&#x72B6;&#x6001;   */</span>
+        <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:link</span> {
+            <span class="hljs-attribute">color</span>: pink;
+        }
+
+        <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span>{
+            <span class="hljs-attribute">color</span>: green;
+        }
+
+        <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:active</span>{
+            <span class="hljs-attribute">color</span>: yellow;
+        }
+
+        <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:visited</span>{
+            <span class="hljs-attribute">color</span>: red;
+        }
+
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#x4F20;&#x667A;&#x64AD;&#x5BA2;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>&#x9ED1;&#x9A6C;&#x7A0B;&#x5E8F;&#x5458;<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> &gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>&#x9ED1;&#x9A6C;&#x7A0B;&#x5E8F;&#x5458;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="&#x6837;&#x5F0F;&#x5C5E;&#x6027;"><a name="&#x6837;&#x5F0F;&#x5C5E;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x6837;&#x5F0F;&#x5C5E;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.5. &#x6837;&#x5F0F;&#x5C5E;&#x6027;</h3>
+<h4 id="&#x5B57;&#x4F53;&#x3001;&#x6587;&#x672C;"><a name="&#x5B57;&#x4F53;&#x3001;&#x6587;&#x672C;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x4F53;&#x3001;&#x6587;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x4F53;&#x3001;&#x6587;&#x672C;</h4>
+<pre><code>font-size&#xFF1A;10px ;       /*&#x5B57;&#x4F53;&#x5927;&#x5C0F;*/
+color&#xFF1A;#00FF00 ;        /*&#x6587;&#x672C;&#x989C;&#x8272;,&#x8272;&#x503C;&#x6216;&#x8005;&#x82F1;&#x6587;&#x5355;&#x8BCD;*/
+text-align&#xFF1A;left ;     /*&#x5BF9;&#x5176;&#x65B9;&#x5F0F;*/
+line-height&#xFF1A;100px;    /*&#x884C;&#x9AD8;,&#x53EF;&#x4EE5;&#x8BA9;&#x6587;&#x672C;&#x5782;&#x76F4;&#x5C45;&#x4E2D;*/
+</code></pre><h4 id="&#x80CC;&#x666F;"><a name="&#x80CC;&#x666F;" class="anchor-navigation-ex-anchor" href="#&#x80CC;&#x666F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x80CC;&#x666F;</h4>
+<pre><code>background-color&#xFF1A;red ; /*&#x80CC;&#x666F;&#x989C;&#x8272;,&#x8272;&#x503C;&#x6216;&#x8005;&#x82F1;&#x6587;&#x5355;&#x8BCD;*/
+background-image:url(imgs/1.jpg) ;   /*&#x80CC;&#x666F;&#x989C;&#x56FE;&#x7247;,&#x56FA;&#x5B9A;&#x5199;&#x6CD5;,url&#x4E2D;&#x56FE;&#x7247;&#x8DEF;&#x5F84;*/
+</code></pre><h4 id="&#x8FB9;&#x6846;"><a name="&#x8FB9;&#x6846;" class="anchor-navigation-ex-anchor" href="#&#x8FB9;&#x6846;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FB9;&#x6846;</h4>
+<pre><code>border&#xFF1A;1px solid red ;  /*&#x8BBE;&#x7F6E;&#x56DB;&#x5468;&#x8FB9;&#x6846;&#x5BBD;&#x5EA6;&#x4E3A;1px,&#x6837;&#x5F0F;&#x4E3A;&#x5B9E;&#x7EBF;,&#x989C;&#x8272;&#x4E3A;&#x7EA2;&#x8272;*/
+</code></pre><h4 id="&#x5C3A;&#x5BF8;"><a name="&#x5C3A;&#x5BF8;" class="anchor-navigation-ex-anchor" href="#&#x5C3A;&#x5BF8;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5C3A;&#x5BF8;</h4>
+<pre><code>width&#xFF1A;100px ;           /*&#x5BBD;&#x5EA6;*/
+height&#xFF1A;100px ;         /*&#x9AD8;&#x5EA6;*/
+</code></pre><h4 id="&#x76D2;&#x5B50;&#x6A21;&#x578B;&#xFF1A;&#x63A7;&#x5236;&#x5E03;&#x5C40;"><a name="&#x76D2;&#x5B50;&#x6A21;&#x578B;&#xFF1A;&#x63A7;&#x5236;&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#&#x76D2;&#x5B50;&#x6A21;&#x578B;&#xFF1A;&#x63A7;&#x5236;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76D2;&#x5B50;&#x6A21;&#x578B;&#xFF1A;&#x63A7;&#x5236;&#x5E03;&#x5C40;</h4>
+<pre><code>margin&#xFF1A;10px ;  /*&#x5916;&#x8FB9;&#x8DDD;*/
+padding&#xFF1A;10px ; /*&#x5185;&#x8FB9;&#x8DDD;*/
+/*&#x6CE8;&#x610F;:padding&#x4F1A;&#x5F71;&#x54CD;&#x76D2;&#x5B50;&#x6700;&#x7EC8;&#x7684;&#x5927;&#x5C0F;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;*/
+box-sizing: border-box;  /*&#x8BBE;&#x7F6E;&#x76D2;&#x5B50;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x8BA9;width&#x548C;height&#x5C31;&#x662F;&#x6700;&#x7EC8;&#x76D2;&#x5B50;&#x7684;&#x5927;&#x5C0F;*/
+</code></pre><h4 id="float&#xFF1A;&#x6D6E;&#x52A8;"><a name="float&#xFF1A;&#x6D6E;&#x52A8;" class="anchor-navigation-ex-anchor" href="#float&#xFF1A;&#x6D6E;&#x52A8;"><i class="fa fa-link" aria-hidden="true"></i></a>float&#xFF1A;&#x6D6E;&#x52A8;</h4>
+<pre><code>float: left ;   /*&#x5DE6;&#x6D6E;&#x52A8;*/
+float:right ;   /*&#x53F3;&#x8FB9;&#x8DDD;*/
+clear:both  ;   /*&#x6E05;&#x9664;&#x6D6E;&#x52A8;*/
+</code></pre><h2 id="&#x6848;&#x4F8B;&#xFF1A;"><a name="&#x6848;&#x4F8B;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#&#x6848;&#x4F8B;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x6848;&#x4F8B;&#xFF1A;</h2>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x6CE8;&#x518C;&#x9875;&#x9762;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    *{
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;
+        <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;
+        <span class="hljs-attribute">box-sizing</span>: border-box;
+    }
+    <span class="hljs-selector-tag">body</span>{
+        <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">&quot;img/register_bg.png&quot;</span>) no-repeat center;
+        <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">25px</span>;
+    }
+
+    <span class="hljs-selector-class">.rg_layout</span>{
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">900px</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">8px</span> solid <span class="hljs-number">#EEEEEE</span>;
+        <span class="hljs-attribute">background-color</span>: white;
+        <span class="hljs-comment">/*&#x8BA9;div&#x6C34;&#x5E73;&#x5C45;&#x4E2D;*/</span>
+        <span class="hljs-attribute">margin</span>: auto;
+    }
+
+    <span class="hljs-selector-class">.rg_left</span>{
+        <span class="hljs-comment">/*border: 1px solid red;*/</span>
+        <span class="hljs-attribute">float</span>: left;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">15px</span>;
+    }
+    <span class="hljs-selector-class">.rg_left</span> &gt; <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-child</span>{
+        <span class="hljs-attribute">color</span>:<span class="hljs-number">#FFD026</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+    }
+
+    <span class="hljs-selector-class">.rg_left</span> &gt; <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:last-child</span>{
+        <span class="hljs-attribute">color</span>:<span class="hljs-number">#A6A6A6</span>;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
+
+    }
+
+
+    <span class="hljs-selector-class">.rg_center</span>{
+        <span class="hljs-attribute">float</span>: left;
+       <span class="hljs-comment">/* border: 1px solid red;*/</span>
+
+    }
+
+    <span class="hljs-selector-class">.rg_right</span>{
+        <span class="hljs-comment">/*border: 1px solid red;*/</span>
+        <span class="hljs-attribute">float</span>: right;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">15px</span>;
+    }
+
+    <span class="hljs-selector-class">.rg_right</span> &gt; <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">:first-child</span>{
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">15px</span>;
+
+    }
+    <span class="hljs-selector-class">.rg_right</span> <span class="hljs-selector-tag">p</span> <span class="hljs-selector-tag">a</span> {
+        <span class="hljs-attribute">color</span>:pink;
+    }
+
+    <span class="hljs-selector-class">.td_left</span>{
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+        <span class="hljs-attribute">text-align</span>: right;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">45px</span>;
+    }
+    <span class="hljs-selector-class">.td_right</span>{
+        <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">50px</span> ;
+    }
+
+    <span class="hljs-selector-id">#username</span>,<span class="hljs-selector-id">#password</span>,<span class="hljs-selector-id">#email</span>,<span class="hljs-selector-id">#name</span>,<span class="hljs-selector-id">#tel</span>,<span class="hljs-selector-id">#birthday</span>,<span class="hljs-selector-id">#checkcode</span>{
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">251px</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">32px</span>;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#A6A6A6</span> ;
+        <span class="hljs-comment">/*&#x8BBE;&#x7F6E;&#x8FB9;&#x6846;&#x5706;&#x89D2;*/</span>
+        <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+        <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">10px</span>;
+    }
+    <span class="hljs-selector-id">#checkcode</span>{
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">110px</span>;
+    }
+
+    <span class="hljs-selector-id">#img_check</span>{
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">32px</span>;
+        <span class="hljs-attribute">vertical-align</span>: middle;
+    }
+
+    <span class="hljs-selector-id">#btn_sub</span>{
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">150px</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">40px</span>;
+        <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#FFD026</span>;
+        <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#FFD026</span> ;
+    }
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rg_layout&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rg_left&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x65B0;&#x7528;&#x6237;&#x6CE8;&#x518C;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>USER REGISTER<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rg_center&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rg_form&quot;</span>&gt;</span>
+            <span class="hljs-comment">&lt;!--&#x5B9A;&#x4E49;&#x8868;&#x5355; form--&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;#&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;username&quot;</span>&gt;</span>&#x7528;&#x6237;&#x540D;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;password&quot;</span>&gt;</span>&#x5BC6;&#x7801;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;email&quot;</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x90AE;&#x7BB1;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>&#x59D3;&#x540D;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x59D3;&#x540D;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;tel&quot;</span>&gt;</span>&#x624B;&#x673A;&#x53F7;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;tel&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tel&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x624B;&#x673A;&#x53F7;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>&#x6027;&#x522B;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;male&quot;</span>&gt;</span> &#x7537;
+                            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;gender&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;female&quot;</span>&gt;</span> &#x5973;
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;birthday&quot;</span>&gt;</span>&#x51FA;&#x751F;&#x65E5;&#x671F;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;date&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;birthday&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;birthday&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x51FA;&#x751F;&#x65E5;&#x671F;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_left&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;checkcode&quot;</span> &gt;</span>&#x9A8C;&#x8BC1;&#x7801;<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;td_right&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;checkcode&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;checkcode&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;&#x8BF7;&#x8F93;&#x5165;&#x9A8C;&#x8BC1;&#x7801;&quot;</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;img_check&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/verify_code.jpg&quot;</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">align</span>=<span class="hljs-string">&quot;center&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;btn_sub&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x6CE8;&#x518C;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rg_right&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x5DF2;&#x6709;&#x8D26;&#x53F7;?<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>&#x7ACB;&#x5373;&#x767B;&#x5F55;<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="WEB前端技术-HTML.html" class="navigation navigation-prev " aria-label="Previous page: (一)WEB前端技术-HTML">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="WEB前端技术-JavaScript基础.html" class="navigation navigation-next " aria-label="Next page: (三)WEB前端技术-JavaScript基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"(二)WEB前端技术-HTML表单与CSS","level":"1.4.2","depth":2,"next":{"title":"(三)WEB前端技术-JavaScript基础","level":"1.4.3","depth":2,"path":"docs/第三章：WEB前端技术/WEB前端技术-JavaScript基础.md","ref":"docs/第三章：WEB前端技术/WEB前端技术-JavaScript基础.md","articles":[]},"previous":{"title":"(一)WEB前端技术-HTML","level":"1.4.1","depth":2,"path":"docs/第三章：WEB前端技术/WEB前端技术-HTML.md","ref":"docs/第三章：WEB前端技术/WEB前端技术-HTML.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","anchor-navigation-ex@1.0.10"],"styles":{"website":"website.css"},"pluginsConfig":{"expandable-chapters":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"备课文档","language":"zh","gitbook":"*","description":"备课文档"},"file":{"path":"docs/第三章：WEB前端技术/WEB前端技术-HTML表单与CSS.md","mtime":"2018-08-22T07:46:33.554Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-21T00:30:29.955Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
