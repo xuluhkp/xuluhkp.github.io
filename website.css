@@ -1,0 +1,27 @@
+.page-inner {
+    max-width: 1000px;
+}
+
+a[href*="掌握"]{
+  color:red !important;
+}
+
+a[href*="理解"]{
+  color:yellowgreen !important;
+}
+
+a[href*="熟悉"]{
+  color:skyblue !important;
+}
+
+a[href*="了解"]{
+  color:gray !important;
+}
+
+.markdown-section img{
+  border: 1px solid skyblue!important;
+}
+
+#anchor-navigation-ex-pagetop-navbar ul{
+      padding-left: 25px;
+}

@@ -1,0 +1,1513 @@
+
+<!DOCTYPE HTML>
+<html lang="zh" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>(一)Tomcat与Servlet入门 · 备课文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Http协议请求与Request对象.html" />
+    
+    
+    <link rel="prev" href="../第四章：WEB核心技术.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    项目简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../第一章：数据库技术.html">
+            
+                <a href="../第一章：数据库技术.html">
+            
+                    
+                    第一章:数据库技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../第一章：数据库技术/数据库基础.html">
+            
+                <a href="../第一章：数据库技术/数据库基础.html">
+            
+                    
+                    (一)数据库基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../第一章：数据库技术/简单查询语句与约束.html">
+            
+                <a href="../第一章：数据库技术/简单查询语句与约束.html">
+            
+                    
+                    (二)简单查询语句与约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../第一章：数据库技术/多表设计与查询.html">
+            
+                <a href="../第一章：数据库技术/多表设计与查询.html">
+            
+                    
+                    (三)多表设计与查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../第一章：数据库技术/数据库事物与权限.html">
+            
+                <a href="../第一章：数据库技术/数据库事物与权限.html">
+            
+                    
+                    (四)数据库事物与权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../第二章：JDBC技术.html">
+            
+                <a href="../第二章：JDBC技术.html">
+            
+                    
+                    第二章:JDBC技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../第二章：JDBC技术/JDBC基础.html">
+            
+                <a href="../第二章：JDBC技术/JDBC基础.html">
+            
+                    
+                    (一)JDBC基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../第二章：JDBC技术/数据库连接池与Spring-JDBC介绍.html">
+            
+                <a href="../第二章：JDBC技术/数据库连接池与Spring-JDBC介绍.html">
+            
+                    
+                    (二)数据库连接池与Spring-JDBC介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../第三章：WEB前端技术.html">
+            
+                <a href="../第三章：WEB前端技术.html">
+            
+                    
+                    第三章:WEB前端技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../第三章：WEB前端技术/WEB前端技术-HTML.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-HTML.html">
+            
+                    
+                    (一)WEB前端技术-HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../第三章：WEB前端技术/WEB前端技术-HTML表单与CSS.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-HTML表单与CSS.html">
+            
+                    
+                    (二)WEB前端技术-HTML表单与CSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../第三章：WEB前端技术/WEB前端技术-JavaScript基础.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-JavaScript基础.html">
+            
+                    
+                    (三)WEB前端技术-JavaScript基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../第三章：WEB前端技术/WEB前端技术-JavaScript高级.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-JavaScript高级.html">
+            
+                    
+                    (四)WEB前端技术-JavaScript高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../第三章：WEB前端技术/WEB前端技术-综合练习.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-综合练习.html">
+            
+                    
+                    (五)WEB前端技术-综合练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../第三章：WEB前端技术/WEB前端技术-XML介绍与解析.html">
+            
+                <a href="../第三章：WEB前端技术/WEB前端技术-XML介绍与解析.html">
+            
+                    
+                    (六)WEB前端技术-XML介绍与解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../第四章：WEB核心技术.html">
+            
+                <a href="../第四章：WEB核心技术.html">
+            
+                    
+                    第四章:WEB核心技术
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="Tomcat与Servlet入门.html">
+            
+                <a href="Tomcat与Servlet入门.html">
+            
+                    
+                    (一)Tomcat与Servlet入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Http协议请求与Request对象.html">
+            
+                <a href="Http协议请求与Request对象.html">
+            
+                    
+                    (二)Http协议请求与Request对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Http协议响应与Response对象.html">
+            
+                <a href="Http协议响应与Response对象.html">
+            
+                    
+                    (三)Http协议响应与Response对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="会话技术-Cookie与Session.html">
+            
+                <a href="会话技术-Cookie与Session.html">
+            
+                    
+                    (四)会话技术-Cookie与Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="JSP与EL与JSTL.html">
+            
+                <a href="JSP与EL与JSTL.html">
+            
+                    
+                    (五)JSP与EL与JSTL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="综合练习.html">
+            
+                <a href="综合练习.html">
+            
+                    
+                    (六)综合练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="过滤器与监听器.html">
+            
+                <a href="过滤器与监听器.html">
+            
+                    
+                    (七)过滤器与监听器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../第五章：Jquery与异步Ajax.html">
+            
+                <a href="../第五章：Jquery与异步Ajax.html">
+            
+                    
+                    第五章:Jquery与异步Ajax
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../第五章：Jquery与异步Ajax/Jquery基础.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery基础.html">
+            
+                    
+                    (一)Jquery基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../第五章：Jquery与异步Ajax/Jquery高级.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery高级.html">
+            
+                    
+                    (二)Jquery高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../第五章：Jquery与异步Ajax/Jquery与异步Ajax.html">
+            
+                <a href="../第五章：Jquery与异步Ajax/Jquery与异步Ajax.html">
+            
+                    
+                    (三)Jquery与异步Ajax
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../第六章：WEB项目练习.html">
+            
+                <a href="../第六章：WEB项目练习.html">
+            
+                    
+                    第六章:WEB项目练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../第六章：WEB项目练习/Redis数据库.html">
+            
+                <a href="../第六章：WEB项目练习/Redis数据库.html">
+            
+                    
+                    (一)Redis数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../第六章：WEB项目练习/黑马旅游网一.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网一.html">
+            
+                    
+                    (二)黑马旅游网一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../第六章：WEB项目练习/黑马旅游网二.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网二.html">
+            
+                    
+                    (三)黑马旅游网二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../第六章：WEB项目练习/黑马旅游网三.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网三.html">
+            
+                    
+                    (四)黑马旅游网三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../第六章：WEB项目练习/黑马旅游网四.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网四.html">
+            
+                    
+                    (五)黑马旅游网四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../第六章：WEB项目练习/黑马旅游网五.html">
+            
+                <a href="../第六章：WEB项目练习/黑马旅游网五.html">
+            
+                    
+                    (六)黑马旅游网五
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../第六章：WEB项目练习/Linux基础一.html">
+            
+                <a href="../第六章：WEB项目练习/Linux基础一.html">
+            
+                    
+                    (七)Linux基础一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="../第六章：WEB项目练习/Linux基础二.html">
+            
+                <a href="../第六章：WEB项目练习/Linux基础二.html">
+            
+                    
+                    (八)Linux基础二
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../第七章：Mybatis框架.html">
+            
+                <a href="../第七章：Mybatis框架.html">
+            
+                    
+                    第七章:Mybatis框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../第七章：Mybatis框架/Mybatis框架一.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架一.html">
+            
+                    
+                    (一)Mybatis框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../第七章：Mybatis框架/Mybatis框架二.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架二.html">
+            
+                    
+                    (二)Mybatis框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../第七章：Mybatis框架/Mybatis框架三.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架三.html">
+            
+                    
+                    (三)Mybatis框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../第七章：Mybatis框架/Mybatis框架四.html">
+            
+                <a href="../第七章：Mybatis框架/Mybatis框架四.html">
+            
+                    
+                    (四)Mybatis框架四
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../第八章：Spring框架.html">
+            
+                <a href="../第八章：Spring框架.html">
+            
+                    
+                    第八章:Spring框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../第八章：Spring框架/Spring框架一.html">
+            
+                <a href="../第八章：Spring框架/Spring框架一.html">
+            
+                    
+                    (一)Spring框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../第八章：Spring框架/Spring框架二.html">
+            
+                <a href="../第八章：Spring框架/Spring框架二.html">
+            
+                    
+                    (二)Spring框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../第八章：Spring框架/Spring框架三.html">
+            
+                <a href="../第八章：Spring框架/Spring框架三.html">
+            
+                    
+                    (三)Spring框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../第八章：Spring框架/Spring框架四.html">
+            
+                <a href="../第八章：Spring框架/Spring框架四.html">
+            
+                    
+                    (四)Spring框架四
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../第九章：SpringMVC框架.html">
+            
+                <a href="../第九章：SpringMVC框架.html">
+            
+                    
+                    第九章:SpringMVC框架
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../第九章：SpringMVC框架/SpringMVC框架一.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架一.html">
+            
+                    
+                    (一)SpringMVC框架一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../第九章：SpringMVC框架/SpringMVC框架二.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架二.html">
+            
+                    
+                    (二)SpringMVC框架二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../第九章：SpringMVC框架/SpringMVC框架三.html">
+            
+                <a href="../第九章：SpringMVC框架/SpringMVC框架三.html">
+            
+                    
+                    (三)SpringMVC框架三
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../第十章：Oracle与Maven.html">
+            
+                <a href="../第十章：Oracle与Maven.html">
+            
+                    
+                    第十章:Oracle与Maven
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../第十章：Oracle与Maven/racle数据库一.html">
+            
+                <a href="../第十章：Oracle与Maven/racle数据库一.html">
+            
+                    
+                    (一)Oracle数据库一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../第十章：Oracle与Maven/racle数据库二.html">
+            
+                <a href="../第十章：Oracle与Maven/racle数据库二.html">
+            
+                    
+                    (二)Oracle数据库二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../第十章：Oracle与Maven/Maven基础.html">
+            
+                <a href="../第十章：Oracle与Maven/Maven基础.html">
+            
+                    
+                    (三)Maven基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../第十章：Oracle与Maven/Maven高级.html">
+            
+                <a href="../第十章：Oracle与Maven/Maven高级.html">
+            
+                    
+                    (四)Maven高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../第十一章：SSM框架练习.html">
+            
+                <a href="../第十一章：SSM框架练习.html">
+            
+                    
+                    第十一章:SSM框架练习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../第十一章：SSM框架练习/SSM框架练习一.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习一.html">
+            
+                    
+                    (一)SSM框架练习一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../第十一章：SSM框架练习/SSM框架练习二.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习二.html">
+            
+                    
+                    (二)SSM框架练习二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../第十一章：SSM框架练习/SSM框架练习三.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习三.html">
+            
+                    
+                    (三)SSM框架练习三
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../第十一章：SSM框架练习/SSM框架练习四.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习四.html">
+            
+                    
+                    (四)SSM框架练习四
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../第十一章：SSM框架练习/SSM框架练习五.html">
+            
+                <a href="../第十一章：SSM框架练习/SSM框架练习五.html">
+            
+                    
+                    (四)SSM框架练习五
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../第十二章：全文检索.html">
+            
+                <a href="../第十二章：全文检索.html">
+            
+                    
+                    第十二章:全文检索
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../第十二章：全文检索/Lucene.html">
+            
+                <a href="../第十二章：全文检索/Lucene.html">
+            
+                    
+                    (一)Lucene
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../第十二章：全文检索/ElasticSearch基础.html">
+            
+                <a href="../第十二章：全文检索/ElasticSearch基础.html">
+            
+                    
+                    (二)ElasticSearch基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../第十二章：全文检索/ElasticSearch高级.html">
+            
+                <a href="../第十二章：全文检索/ElasticSearch高级.html">
+            
+                    
+                    (三)ElasticSearch高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >(一)Tomcat与Servlet入门</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;"><b>1. </b>&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#web&#x76F8;&#x5173;&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><b>2. </b>web&#x76F8;&#x5173;&#x6982;&#x5FF5;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#x719F;&#x6089;"><b>3. </b>Tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;"><b>3.1. </b>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E0B;&#x8F7D;&#x719F;&#x6089;"><b>3.1.1. </b>&#x4E0B;&#x8F7D;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x719F;&#x6089;"><b>3.1.2. </b>&#x5B89;&#x88C5;(&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;)(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;&#x719F;&#x6089;"><b>3.1.3. </b>&#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x542F;&#x52A8;&#x719F;&#x6089;"><b>3.1.4. </b>&#x542F;&#x52A8;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x8BBF;&#x95EE;&#x719F;&#x6089;"><b>3.1.5. </b>&#x8BBF;&#x95EE;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x95ED;&#x719F;&#x6089;"><b>3.1.6. </b>&#x5173;&#x95ED;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x719F;&#x6089;"><b>3.1.7. </b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;&#x638C;&#x63E1;"><b>3.2. </b>&#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;(&#x638C;&#x63E1;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x65B9;&#x5F0F;&#x4E00;&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;&#x638C;&#x63E1;"><b>3.2.1. </b>&#x65B9;&#x5F0F;&#x4E00;:&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x5F0F;&#x4E8C;&#x914D;&#x7F6E;tomcatconfserverxml&#x6587;&#x4EF6;&#x638C;&#x63E1;"><b>3.2.2. </b>&#x65B9;&#x5F0F;&#x4E8C;:&#x914D;&#x7F6E;tomcat/conf/server.xml&#x6587;&#x4EF6;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x5F0F;&#x4E09;&#x5728;confcatalinalocalhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;&#x638C;&#x63E1;"><b>3.2.3. </b>&#x65B9;&#x5F0F;&#x4E09;:&#x5728;conf\Catalina\localhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;(&#x638C;&#x63E1;)</a></li></ul></ul><li><span class="title-icon "></span><a href="#servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><b>4. </b>Servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#javaweb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x719F;&#x6089;"><b>4.1. </b>JavaWeb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5C06;tomcat&#x96C6;&#x6210;&#x5230;idea&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;javaee&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;&#x719F;&#x6089;"><b>4.2. </b>&#x5C06;Tomcat&#x96C6;&#x6210;&#x5230;IDEA&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;JavaEE&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#idea&#x96C6;&#x6210;tomcat&#x719F;&#x6089;"><b>4.2.1. </b>IDEA&#x96C6;&#x6210;Tomcat(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;javaee&#x9879;&#x76EE;&#x719F;&#x6089;"><b>4.2.2. </b>&#x521B;&#x5EFA;JavaEE&#x9879;&#x76EE;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x542F;&#x52A8;&#x9879;&#x76EE;&#x719F;&#x6089;"><b>4.2.3. </b>&#x542F;&#x52A8;&#x9879;&#x76EE;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;servlet&#x7406;&#x89E3;"><b>4.3. </b>&#x4EC0;&#x4E48;&#x662F;Servlet?(&#x7406;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x638C;&#x63E1;"><b>4.3.1. </b>&#x5FEB;&#x901F;&#x5165;&#x95E8;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#servlet&#x6267;&#x884C;&#x539F;&#x7406;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><b>4.3.2. </b>Servlet&#x6267;&#x884C;&#x539F;&#x7406;(&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;)</a></li><li><span class="title-icon "></span><a href="#servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><b>4.3.3. </b>Servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;(&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;)</a></li></ul><li><span class="title-icon "></span><a href="#servlet30&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x638C;&#x63E1;"><b>4.4. </b>Servlet3.0&#x7B80;&#x5355;&#x4ECB;&#x7ECD;(&#x638C;&#x63E1;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x638C;&#x63E1;"><b>4.4.1. </b>&#x4F7F;&#x7528;&#x6B65;&#x9AA4;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#webservlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><b>4.4.2. </b>@WebServlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;&#x7406;&#x89E3;"><b>4.5. </b>Servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;(&#x7406;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#genericservlet&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;"><b>4.5.1. </b>GenericServlet:&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;</a></li><li><span class="title-icon "></span><a href="#httpservlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;"><b>4.5.2. </b>HttpServlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;httpservlet&#x638C;&#x63E1;"><b>4.5.3. </b>&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;HttpServlet(&#x638C;&#x63E1;)</a></li></ul><li><span class="title-icon "></span><a href="#servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><b>4.6. </b>Servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;(&#x7406;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7406;&#x89E3;"><b>4.6.1. </b>&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;?(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7406;&#x89E3;"><b>4.6.2. </b>&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x7EC3;&#x4E60;"><b>4.6.3. </b>&#x7EC3;&#x4E60;</a></li></ul><li><span class="title-icon "></span><a href="#idea&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><b>4.7. </b>IDEA&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;(&#x7406;&#x89E3;)</a></li></ul></ul></div><a href="#&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;"><a name="&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;</h1>
+<p><div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;"><b>1. </b>&#x4ECA;&#x65E5;&#x5185;&#x5BB9;&#x4ECB;&#x7ECD;</a></li><li><span class="title-icon "></span><a href="#web&#x76F8;&#x5173;&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><b>2. </b>web&#x76F8;&#x5173;&#x6982;&#x5FF5;(&#x4E86;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#x719F;&#x6089;"><b>3. </b>Tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;"><b>3.1. </b>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E0B;&#x8F7D;&#x719F;&#x6089;"><b>3.1.1. </b>&#x4E0B;&#x8F7D;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x719F;&#x6089;"><b>3.1.2. </b>&#x5B89;&#x88C5;(&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;)(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;&#x719F;&#x6089;"><b>3.1.3. </b>&#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x542F;&#x52A8;&#x719F;&#x6089;"><b>3.1.4. </b>&#x542F;&#x52A8;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x8BBF;&#x95EE;&#x719F;&#x6089;"><b>3.1.5. </b>&#x8BBF;&#x95EE;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x95ED;&#x719F;&#x6089;"><b>3.1.6. </b>&#x5173;&#x95ED;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x719F;&#x6089;"><b>3.1.7. </b>&#x6CE8;&#x610F;&#x4E8B;&#x9879;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;&#x638C;&#x63E1;"><b>3.2. </b>&#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;(&#x638C;&#x63E1;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x65B9;&#x5F0F;&#x4E00;&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;&#x638C;&#x63E1;"><b>3.2.1. </b>&#x65B9;&#x5F0F;&#x4E00;:&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x5F0F;&#x4E8C;&#x914D;&#x7F6E;tomcatconfserverxml&#x6587;&#x4EF6;&#x638C;&#x63E1;"><b>3.2.2. </b>&#x65B9;&#x5F0F;&#x4E8C;:&#x914D;&#x7F6E;tomcat/conf/server.xml&#x6587;&#x4EF6;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x5F0F;&#x4E09;&#x5728;confcatalinalocalhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;&#x638C;&#x63E1;"><b>3.2.3. </b>&#x65B9;&#x5F0F;&#x4E09;:&#x5728;conf\Catalina\localhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;(&#x638C;&#x63E1;)</a></li></ul></ul><li><span class="title-icon "></span><a href="#servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><b>4. </b>Servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#javaweb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x719F;&#x6089;"><b>4.1. </b>JavaWeb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x5C06;tomcat&#x96C6;&#x6210;&#x5230;idea&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;javaee&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;&#x719F;&#x6089;"><b>4.2. </b>&#x5C06;Tomcat&#x96C6;&#x6210;&#x5230;IDEA&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;JavaEE&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;(&#x719F;&#x6089;)</a></li><ul><li><span class="title-icon "></span><a href="#idea&#x96C6;&#x6210;tomcat&#x719F;&#x6089;"><b>4.2.1. </b>IDEA&#x96C6;&#x6210;Tomcat(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;javaee&#x9879;&#x76EE;&#x719F;&#x6089;"><b>4.2.2. </b>&#x521B;&#x5EFA;JavaEE&#x9879;&#x76EE;(&#x719F;&#x6089;)</a></li><li><span class="title-icon "></span><a href="#&#x542F;&#x52A8;&#x9879;&#x76EE;&#x719F;&#x6089;"><b>4.2.3. </b>&#x542F;&#x52A8;&#x9879;&#x76EE;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#&#x4EC0;&#x4E48;&#x662F;servlet&#x7406;&#x89E3;"><b>4.3. </b>&#x4EC0;&#x4E48;&#x662F;Servlet?(&#x7406;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x638C;&#x63E1;"><b>4.3.1. </b>&#x5FEB;&#x901F;&#x5165;&#x95E8;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#servlet&#x6267;&#x884C;&#x539F;&#x7406;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><b>4.3.2. </b>Servlet&#x6267;&#x884C;&#x539F;&#x7406;(&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;)</a></li><li><span class="title-icon "></span><a href="#servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><b>4.3.3. </b>Servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;(&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;)</a></li></ul><li><span class="title-icon "></span><a href="#servlet30&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x638C;&#x63E1;"><b>4.4. </b>Servlet3.0&#x7B80;&#x5355;&#x4ECB;&#x7ECD;(&#x638C;&#x63E1;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x638C;&#x63E1;"><b>4.4.1. </b>&#x4F7F;&#x7528;&#x6B65;&#x9AA4;(&#x638C;&#x63E1;)</a></li><li><span class="title-icon "></span><a href="#webservlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><b>4.4.2. </b>@WebServlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;(&#x719F;&#x6089;)</a></li></ul><li><span class="title-icon "></span><a href="#servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;&#x7406;&#x89E3;"><b>4.5. </b>Servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;(&#x7406;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#genericservlet&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;"><b>4.5.1. </b>GenericServlet:&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;</a></li><li><span class="title-icon "></span><a href="#httpservlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;"><b>4.5.2. </b>HttpServlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;httpservlet&#x638C;&#x63E1;"><b>4.5.3. </b>&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;HttpServlet(&#x638C;&#x63E1;)</a></li></ul><li><span class="title-icon "></span><a href="#servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><b>4.6. </b>Servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;(&#x7406;&#x89E3;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7406;&#x89E3;"><b>4.6.1. </b>&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;?(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7406;&#x89E3;"><b>4.6.2. </b>&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;(&#x7406;&#x89E3;)</a></li><li><span class="title-icon "></span><a href="#&#x7EC3;&#x4E60;"><b>4.6.3. </b>&#x7EC3;&#x4E60;</a></li></ul><li><span class="title-icon "></span><a href="#idea&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><b>4.7. </b>IDEA&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;(&#x7406;&#x89E3;)</a></li></ul></ul></div></p>
+<h1 id="web&#x76F8;&#x5173;&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><a name="web&#x76F8;&#x5173;&#x6982;&#x5FF5;&#x4E86;&#x89E3;" class="anchor-navigation-ex-anchor" href="#web&#x76F8;&#x5173;&#x6982;&#x5FF5;&#x4E86;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2. web&#x76F8;&#x5173;&#x6982;&#x5FF5;(&#x4E86;&#x89E3;)</h1>
+<pre><code>1. &#x8F6F;&#x4EF6;&#x67B6;&#x6784;
+    1. C/S&#xFF1A;&#x5BA2;&#x6237;&#x7AEF;/&#x670D;&#x52A1;&#x5668;&#x7AEF;
+    2. B/S&#xFF1A;&#x6D4F;&#x89C8;&#x5668;/&#x670D;&#x52A1;&#x5668;&#x7AEF;
+
+2. &#x8D44;&#x6E90;&#x5206;&#x7C7B;
+    1. &#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF1A;&#x6240;&#x6709;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x79F0;&#x4E3A;&#x9759;&#x6001;&#x8D44;&#x6E90;.&#x9759;&#x6001;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x89E3;&#x6790;
+        * &#x5982;&#xFF1A; html,css,JavaScript
+    2. &#x52A8;&#x6001;&#x8D44;&#x6E90;:&#x6BCF;&#x4E2A;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x76F8;&#x540C;&#x8D44;&#x6E90;&#x540E;&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E0D;&#x4E00;&#x6837;&#x3002;&#x79F0;&#x4E3A;&#x52A8;&#x6001;&#x8D44;&#x6E90;&#x3002;&#x52A8;&#x6001;&#x8D44;&#x6E90;&#x88AB;&#x8BBF;&#x95EE;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x8F6C;&#x6362;&#x4E3A;&#x9759;&#x6001;&#x8D44;&#x6E90;&#xFF0C;&#x5728;&#x8FD4;&#x56DE;&#x7ED9;&#x6D4F;&#x89C8;&#x5668;
+        * &#x5982;&#xFF1A;servlet/jsp,php,asp....
+
+3. &#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x4E09;&#x8981;&#x7D20;
+    1. IP&#xFF1A;&#x7535;&#x5B50;&#x8BBE;&#x5907;(&#x8BA1;&#x7B97;&#x673A;)&#x5728;&#x7F51;&#x7EDC;&#x4E2D;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x3002;
+    2. &#x7AEF;&#x53E3;&#xFF1A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x3002; 0~65536
+    3. &#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF1A;&#x89C4;&#x5B9A;&#x4E86;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x89C4;&#x5219;
+        1. &#x57FA;&#x7840;&#x534F;&#x8BAE;&#xFF1A;
+            1. tcp:&#x5B89;&#x5168;&#x534F;&#x8BAE;&#xFF0C;&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x3002; &#x901F;&#x5EA6;&#x7A0D;&#x6162;
+            2. udp&#xFF1A;&#x4E0D;&#x5B89;&#x5168;&#x534F;&#x8BAE;&#x3002; &#x901F;&#x5EA6;&#x5FEB;
+
+4. web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;(&#x4E86;&#x89E3;)
+      * &#x670D;&#x52A1;&#x5668;&#xFF1A;&#x5B89;&#x88C5;&#x4E86;&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#x7684;&#x8BA1;&#x7B97;&#x673A;
+      * &#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#xFF1A;&#x63A5;&#x6536;&#x7528;&#x6237;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#xFF0C;&#x505A;&#x51FA;&#x54CD;&#x5E94;
+      * web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#xFF1A;&#x63A5;&#x6536;&#x7528;&#x6237;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#xFF0C;&#x505A;&#x51FA;&#x54CD;&#x5E94;&#x3002;
+          * &#x5728;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x90E8;&#x7F72;web&#x9879;&#x76EE;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x6765;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x9879;&#x76EE;
+          * web&#x5BB9;&#x5668;
+
+5. &#x5E38;&#x89C1;&#x7684;java&#x76F8;&#x5173;&#x7684;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#xFF1A;
+        * webLogic&#xFF1A;oracle&#x516C;&#x53F8;&#xFF0C;&#x5927;&#x578B;&#x7684;JavaEE&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684;JavaEE&#x89C4;&#x8303;&#xFF0C;&#x6536;&#x8D39;&#x7684;&#x3002;
+        * webSphere&#xFF1A;IBM&#x516C;&#x53F8;&#xFF0C;&#x5927;&#x578B;&#x7684;JavaEE&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684;JavaEE&#x89C4;&#x8303;&#xFF0C;&#x6536;&#x8D39;&#x7684;&#x3002;
+        * JBOSS&#xFF1A;JBOSS&#x516C;&#x53F8;&#x7684;&#xFF0C;&#x5927;&#x578B;&#x7684;JavaEE&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684;JavaEE&#x89C4;&#x8303;&#xFF0C;&#x6536;&#x8D39;&#x7684;&#x3002;
+        * Tomcat&#xFF1A;Apache&#x57FA;&#x91D1;&#x7EC4;&#x7EC7;&#xFF0C;&#x4E2D;&#x5C0F;&#x578B;&#x7684;JavaEE&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EC5;&#x4EC5;&#x652F;&#x6301;&#x5C11;&#x91CF;&#x7684;JavaEE&#x89C4;&#x8303;servlet/jsp&#x3002;&#x5F00;&#x6E90;&#x7684;&#xFF0C;&#x514D;&#x8D39;&#x7684;&#x3002;
+
+6.  JavaEE&#xFF1A;Java&#x8BED;&#x8A00;&#x5728;&#x4F01;&#x4E1A;&#x7EA7;&#x5F00;&#x53D1;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x6280;&#x672F;&#x89C4;&#x8303;&#x7684;&#x603B;&#x548C;&#xFF0C;&#x4E00;&#x5171;&#x89C4;&#x5B9A;&#x4E86;13&#x9879;&#x5927;&#x7684;&#x89C4;&#x8303;
+</code></pre><h1 id="tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#x719F;&#x6089;"><a name="tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3. Tomcat&#xFF1A;web&#x670D;&#x52A1;&#x5668;&#x8F6F;&#x4EF6;(&#x719F;&#x6089;)</h1>
+<pre><code>Tomcat&#x662F;Apache &#x8F6F;&#x4EF6;&#x57FA;&#x91D1;&#x4F1A;(Apache Software Foundation)&#x7684;Jakarta &#x9879;&#x76EE;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x9879;&#x76EE;&#xFF0C;&#x7531;Apache&#x3001;Sun &#x548C;&#x5176;&#x4ED6;&#x4E00;&#x4E9B;&#x516C;&#x53F8;&#x53CA;&#x4E2A;&#x4EBA;&#x5171;&#x540C;&#x5F00;&#x53D1;&#x800C;&#x6210;&#x3002;
+&#x7531;&#x4E8E;&#x6709;&#x4E86;Sun &#x7684;&#x53C2;&#x4E0E;&#x548C;&#x652F;&#x6301;&#xFF0C;&#x6700;&#x65B0;&#x7684;Servlet &#x548C;JSP &#x89C4;&#x8303;&#x603B;&#x662F;&#x80FD;&#x5728;Tomcat &#x4E2D;&#x5F97;&#x5230;&#x4F53;&#x73B0;&#xFF0C;Tomcat &#x652F;&#x6301;&#x6700;&#x65B0;&#x7684;Servlet &#x548C;JSP&#x89C4;&#x8303;&#x3002;
+&#x56E0;&#x4E3A;Tomcat &#x6280;&#x672F;&#x5148;&#x8FDB;&#x3001;&#x6027;&#x80FD;&#x7A33;&#x5B9A;&#xFF0C;&#x800C;&#x4E14;&#x514D;&#x8D39;&#xFF0C;&#x56E0;&#x800C;&#x6DF1;&#x53D7;Java &#x7231;&#x597D;&#x8005;&#x7684;&#x559C;&#x7231;&#x5E76;&#x5F97;&#x5230;&#x4E86;&#x90E8;&#x5206;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x5546;&#x7684;&#x8BA4;&#x53EF;&#xFF0C;&#x6210;&#x4E3A;&#x76EE;&#x524D;&#x6BD4;&#x8F83;&#x6D41;&#x884C;&#x7684;Web &#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#x3002;
+Tomcat &#x670D;&#x52A1;&#x5668;&#x662F;&#x4E00;&#x4E2A;&#x514D;&#x8D39;&#x7684;&#x5F00;&#x653E;&#x6E90;&#x4EE3;&#x7801;&#x7684;Web &#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5C5E;&#x4E8E;&#x8F7B;&#x91CF;&#x7EA7;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x5728;&#x4E2D;&#x5C0F;&#x578B;&#x7CFB;&#x7EDF;&#x548C;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#x7528;&#x6237;&#x4E0D;&#x662F;&#x5F88;&#x591A;&#x7684;&#x573A;&#x5408;&#x4E0B;&#x88AB;&#x666E;&#x904D;&#x4F7F;&#x7528;&#xFF0C;&#x662F;&#x5F00;&#x53D1;&#x548C;&#x8C03;&#x8BD5;JSP &#x7A0B;&#x5E8F;&#x7684;&#x9996;&#x9009;&#x3002;
+&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x521D;&#x5B66;&#x8005;&#x6765;&#x8BF4;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x8BA4;&#x4E3A;&#xFF0C;&#x5F53;&#x5728;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x914D;&#x7F6E;&#x597D;Apache &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53EF;&#x5229;&#x7528;&#x5B83;&#x54CD;&#x5E94;HTML(&#x6807;&#x51C6;&#x901A;&#x7528;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x5E94;&#x7528;)&#x9875;&#x9762;&#x7684;&#x8BBF;&#x95EE;&#x8BF7;&#x6C42;&#x3002;
+&#x5B9E;&#x9645;&#x4E0A;Tomcat&#x662F;Apache &#x670D;&#x52A1;&#x5668;&#x7684;&#x6269;&#x5C55;&#xFF0C;&#x4F46;&#x8FD0;&#x884C;&#x65F6;&#x5B83;&#x662F;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x4F60;&#x8FD0;&#x884C;tomcat &#x65F6;&#xFF0C;&#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4E0E;Apache &#x72EC;&#x7ACB;&#x7684;&#x8FDB;&#x7A0B;&#x5355;&#x72EC;&#x8FD0;&#x884C;&#x7684;&#x3002;
+Tomcat&#x548C;IIS&#x7B49;Web&#x670D;&#x52A1;&#x5668;&#x4E00;&#x6837;&#xFF0C;&#x5177;&#x6709;&#x5904;&#x7406;HTML&#x9875;&#x9762;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x53E6;&#x5916;&#x5B83;&#x8FD8;&#x662F;&#x4E00;&#x4E2A;Servlet&#x548C;JSP&#x5BB9;&#x5668;&#xFF0C;&#x72EC;&#x7ACB;&#x7684;Servlet&#x5BB9;&#x5668;&#x662F;Tomcat&#x7684;&#x9ED8;&#x8BA4;&#x6A21;&#x5F0F;&#x3002;
+&#x4E0D;&#x8FC7;&#xFF0C;Tomcat&#x5904;&#x7406;&#x9759;&#x6001;HTML&#x7684;&#x80FD;&#x529B;&#x4E0D;&#x5982;Apache&#x670D;&#x52A1;&#x5668;&#x3002;&#x76EE;&#x524D;Tomcat&#x6700;&#x65B0;&#x7248;&#x672C;&#x4E3A;9.0&#x3002;
+</code></pre><h2 id="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;"><a name="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;" class="anchor-navigation-ex-anchor" href="#&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1. &#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x542F;&#x52A8;&#x53CA;&#x5173;&#x95ED;</h2>
+<h3 id="&#x4E0B;&#x8F7D;&#x719F;&#x6089;"><a name="&#x4E0B;&#x8F7D;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x4E0B;&#x8F7D;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.1. &#x4E0B;&#x8F7D;(&#x719F;&#x6089;)</h3>
+<ul>
+<li>&#x5B98;&#x7F51;&#x5730;&#x5740;:<a href="http://tomcat.apache.org/" target="_blank">http://tomcat.apache.org/</a></li>
+<li>&#x4E0B;&#x8F7D;&#x5730;&#x5740;:<a href="http://tomcat.apache.org/download-70.cgi" target="_blank">http://tomcat.apache.org/download-70.cgi</a></li>
+</ul>
+<h3 id="&#x5B89;&#x88C5;&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x719F;&#x6089;"><a name="&#x5B89;&#x88C5;&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.2. &#x5B89;&#x88C5;(&#x89E3;&#x538B;&#x5373;&#x53EF;&#x4F7F;&#x7528;)(&#x719F;&#x6089;)</h3>
+<p>  <img src="assets/markdown-img-paste-20180724154840949.png" alt=""></p>
+<p>  <strong>&#x6CE8;&#x610F;&#xFF1A;&#x5B89;&#x88C5;&#x76EE;&#x5F55;&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x6709;&#x4E2D;&#x6587;&#x548C;&#x7A7A;&#x683C;</strong></p>
+<h3 id="&#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;&#x719F;&#x6089;"><a name="&#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.3. &#x5378;&#x8F7D;&#xFF1A;&#x5220;&#x9664;&#x76EE;&#x5F55;&#x5C31;&#x884C;&#x4E86;(&#x719F;&#x6089;)</h3>
+<h3 id="&#x542F;&#x52A8;&#x719F;&#x6089;"><a name="&#x542F;&#x52A8;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x542F;&#x52A8;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.4. &#x542F;&#x52A8;(&#x719F;&#x6089;)</h3>
+<p><img src="assets/markdown-img-paste-20180724155110238.png" alt=""></p>
+<p>&#x542F;&#x52A8;&#x6210;&#x529F;&#x5F39;&#x51FA;&#x5C55;&#x793A;&#x5982;&#x4E0B;&#x8FD0;&#x884C;&#x754C;&#x9762;</p>
+<p><img src="assets/markdown-img-paste-20180724155227975.png" alt=""></p>
+<h3 id="&#x8BBF;&#x95EE;&#x719F;&#x6089;"><a name="&#x8BBF;&#x95EE;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x8BBF;&#x95EE;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.5. &#x8BBF;&#x95EE;(&#x719F;&#x6089;)</h3>
+<p>&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;&#x5730;&#x5740;&#xFF1A; <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> &#x5982;&#x679C;&#x51FA;&#x73B0;&#x4EE5;&#x4E0B;&#x754C;&#x9762;,&#x8BF4;&#x660E;&#x542F;&#x52A8;&#x6210;&#x529F;</p>
+<p><img src="assets/markdown-img-paste-20180724155310403.png" alt=""></p>
+<p>&#x6CE8;&#x610F;:&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;&#xFF1A;<a href="http://localhost:8080" target="_blank">http://localhost:8080</a> &#x56DE;&#x8F66;&#x8BBF;&#x95EE;&#x81EA;&#x5DF1;,&#x5982;&#x679C;&#x60F3;&#x8BBF;&#x95EE;&#x522B;&#x4EBA;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53EA;&#x8981;&#x5C06;<code>localhost</code>&#x6362;&#x6210;&#x8981;&#x670D;&#x52A1;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7684;ip&#x5730;&#x5740;&#x5373;&#x53EF;</p>
+<p>&#x4F8B;&#x5982;:<a href="http://192.168.26.100:8080" target="_blank">http://192.168.26.100:8080</a></p>
+<h3 id="&#x5173;&#x95ED;&#x719F;&#x6089;"><a name="&#x5173;&#x95ED;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x95ED;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.6. &#x5173;&#x95ED;(&#x719F;&#x6089;)</h3>
+<pre><code>1. &#x6B63;&#x5E38;&#x5173;&#x95ED;&#xFF1A;
+  * bin/shutdown.bat
+  * ctrl+c
+
+2. &#x5F3A;&#x5236;&#x5173;&#x95ED;&#xFF1A;
+  * &#x70B9;&#x51FB;&#x542F;&#x52A8;&#x7A97;&#x53E3;&#x7684;&#xD7;
+</code></pre><h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x719F;&#x6089;"><a name="&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1.7. &#x6CE8;&#x610F;&#x4E8B;&#x9879;(&#x719F;&#x6089;)</h3>
+<h4 id="&#x9ED1;&#x7A97;&#x53E3;&#x4E00;&#x95EA;&#x800C;&#x8FC7;"><a name="&#x9ED1;&#x7A97;&#x53E3;&#x4E00;&#x95EA;&#x800C;&#x8FC7;" class="anchor-navigation-ex-anchor" href="#&#x9ED1;&#x7A97;&#x53E3;&#x4E00;&#x95EA;&#x800C;&#x8FC7;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9ED1;&#x7A97;&#x53E3;&#x4E00;&#x95EA;&#x800C;&#x8FC7;</h4>
+<p>Tomcat&#x8FD0;&#x884C;&#x9700;&#x8981;&#x4F9D;&#x8D56;Java&#x73AF;&#x5883;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x9700;&#x8981;&#x5728;&#x7535;&#x8111;&#x4E0A;&#x5B89;&#x88C5;&#x4E86;JDK&#x4E4B;&#x540E;&#x624D;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x548C;&#x542F;&#x52A8;Tomcat&#x3002;</p>
+<p>&#x56E0;&#x4E3A;Tomcat&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x4F7F;&#x7528;JRE&#x7684;&#x73AF;&#x5883;&#x3002;&#x5FC5;&#x987B;&#x8981;&#x914D;&#x7F6E;JAVA_HOME&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x914D;&#x7F6E;JAVA_HOME&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x670D;&#x52A1;&#x5668;&#x5728;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x4E00;&#x95EA;&#x7136;&#x540E;&#x5173;&#x95ED;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#x65B9;&#x6848;: &#x914D;&#x7F6E;JAVA_HOME&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<h4 id="&#x542F;&#x52A8;&#x62A5;&#x9519;"><a name="&#x542F;&#x52A8;&#x62A5;&#x9519;" class="anchor-navigation-ex-anchor" href="#&#x542F;&#x52A8;&#x62A5;&#x9519;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x542F;&#x52A8;&#x62A5;&#x9519;</h4>
+<p>&#x679C;&#x7535;&#x8111;&#x4E0A;&#x5B89;&#x88C5;&#x4E86;&#x4E00;&#x4E2A;&#x5E94;&#x7528;&#x4E4B;&#x540E;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x4F1A;&#x5360;&#x7528;Tomcat&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x5982;&#x679C;&#x5C06;Tomcat&#x7AEF;&#x53E3;&#x5360;&#x7528;&#x4E86;&#xFF0C;&#x8FD9;&#x4E2A;Tomcat&#x542F;&#x52A8;&#x4E0D;&#x4E86;&#x7684;&#x3002;</p>
+<p>Tomcat&#x9ED8;&#x8BA4;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#x662F;8080&#x3002;&#x4E00;&#x822C;80&#x7AEF;&#x53E3;&#x5BB9;&#x6613;&#x88AB;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#x6240;&#x5360;&#x7528;&#x3002;&#x56E0;&#x4E3A;80&#x7AEF;&#x53E3;&#x662F;HTTP&#x534F;&#x8BAE;&#x7684;&#x9ED8;&#x8BA4;&#x7AEF;&#x53E3;(&#x53EF;&#x4EE5;&#x7701;&#x7565;)&#x3002;</p>
+<h4 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;&#x5C06;&#x5360;&#x7528;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x6389;"><a name="&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;&#x5C06;&#x5360;&#x7528;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x6389;" class="anchor-navigation-ex-anchor" href="#&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;&#x5C06;&#x5360;&#x7528;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x6389;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E00;:&#x5C06;&#x5360;&#x7528;&#x7AEF;&#x53E3;&#x7684;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x6389;</h4>
+<p>&#x6B65;&#x9AA4;&#x4E00;: &#x8F93;&#x5165;&#x547D;&#x4EE4;&#x67E5;&#x770B;8080&#x7AEF;&#x53E3;&#x7684;&#x5360;&#x7528;&#x60C5;</p>
+<p><img src="assets/markdown-img-paste-20180724155823826.png" alt=""></p>
+<p>&#x6B65;&#x9AA4;&#x4E8C;: &#x5728;&#x4EFB;&#x52A1;&#x7BA1;&#x7406;&#x5668;&#x627E;&#x5230;1732&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;,&#x7ED3;&#x675F;&#x8FDB;&#x7A0B;</p>
+<p><img src="assets/markdown-img-paste-2018072415584876.png" alt=""></p>
+<h4 id="&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E8C;&#x6539;&#x53D8;&#x81EA;&#x8EAB;&#x7A0B;&#x5E8F;&#x7684;&#x7AEF;&#x53E3;"><a name="&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E8C;&#x6539;&#x53D8;&#x81EA;&#x8EAB;&#x7A0B;&#x5E8F;&#x7684;&#x7AEF;&#x53E3;" class="anchor-navigation-ex-anchor" href="#&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E8C;&#x6539;&#x53D8;&#x81EA;&#x8EAB;&#x7A0B;&#x5E8F;&#x7684;&#x7AEF;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x4E8C;:&#x6539;&#x53D8;&#x81EA;&#x8EAB;&#x7A0B;&#x5E8F;&#x7684;&#x7AEF;&#x53E3;</h4>
+<p>&#x6253;&#x5F00;<code>tomcat/conf/server.xml</code>&#x4FEE;&#x6539;&#x7AEF;&#x53E3;</p>
+<p><img src="assets/markdown-img-paste-20180724155924221.png" alt=""></p>
+<h2 id="&#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;&#x638C;&#x63E1;"><a name="&#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2. &#x4F7F;&#x7528;tomcat&#x53D1;&#x5E03;&#x9879;&#x76EE;(&#x638C;&#x63E1;)</h2>
+<h3 id="&#x65B9;&#x5F0F;&#x4E00;&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;&#x638C;&#x63E1;"><a name="&#x65B9;&#x5F0F;&#x4E00;&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x5F0F;&#x4E00;&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.1. &#x65B9;&#x5F0F;&#x4E00;:&#x76F4;&#x63A5;&#x5C06;&#x9879;&#x76EE;&#x653E;&#x5230;webapps&#x76EE;&#x5F55;&#x4E0B;&#x5373;&#x53EF;&#x3002;(&#x638C;&#x63E1;)</h3>
+<p><img src="assets/markdown-img-paste-20180724160312335.png" alt=""></p>
+<p>&#x8BBF;&#x95EE;:<a href="http://localhost:8080/web04/03-baidu.html" target="_blank">http://localhost:8080/web04/03-baidu.html</a></p>
+<p><img src="assets/markdown-img-paste-20180724160649391.png" alt=""></p>
+<h3 id="&#x65B9;&#x5F0F;&#x4E8C;&#x914D;&#x7F6E;tomcatconfserverxml&#x6587;&#x4EF6;&#x638C;&#x63E1;"><a name="&#x65B9;&#x5F0F;&#x4E8C;&#x914D;&#x7F6E;tomcatconfserverxml&#x6587;&#x4EF6;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x5F0F;&#x4E8C;&#x914D;&#x7F6E;tomcatconfserverxml&#x6587;&#x4EF6;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.2. &#x65B9;&#x5F0F;&#x4E8C;:&#x914D;&#x7F6E;tomcat/conf/server.xml&#x6587;&#x4EF6;(&#x638C;&#x63E1;)</h3>
+<p><img src="assets/markdown-img-paste-20180724161048696.png" alt=""></p>
+<p><strong>path : &#x914D;&#x7F6E;&#x9879;&#x76EE;&#x7684;&#x865A;&#x62DF;&#x8DEF;&#x5F84;</strong></p>
+<p><strong>docBase :&#x914D;&#x7F6E;&#x9879;&#x76EE;&#x7684;&#x78C1;&#x76D8;&#x8DEF;&#x5F84;</strong></p>
+<p>&#x8BBF;&#x95EE;:<a href="http://localhost:8080/itcast/03-baidu.html" target="_blank">http://localhost:8080/itcast/03-baidu.html</a></p>
+<p><img src="assets/markdown-img-paste-20180724161023298.png" alt=""></p>
+<h3 id="&#x65B9;&#x5F0F;&#x4E09;&#x5728;confcatalinalocalhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;&#x638C;&#x63E1;"><a name="&#x65B9;&#x5F0F;&#x4E09;&#x5728;confcatalinalocalhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x5F0F;&#x4E09;&#x5728;confcatalinalocalhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.3. &#x65B9;&#x5F0F;&#x4E09;:&#x5728;conf\Catalina\localhost&#x521B;&#x5EFA;&#x4EFB;&#x610F;&#x540D;&#x79F0;&#x7684;xml&#x6587;&#x4EF6;&#x3002;(&#x638C;&#x63E1;)</h3>
+<h4 id="&#x6B65;&#x9AA4;&#x4E00;&#x5728;confcatalinalocalhost&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;xml&#x6587;&#x4EF6;"><a name="&#x6B65;&#x9AA4;&#x4E00;&#x5728;confcatalinalocalhost&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;xml&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x6B65;&#x9AA4;&#x4E00;&#x5728;confcatalinalocalhost&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;xml&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6B65;&#x9AA4;&#x4E00;:&#x5728;<code>conf\Catalina\localhost</code>&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;<code>xml&#x6587;&#x4EF6;</code></h4>
+<p><img src="assets/markdown-img-paste-20180724161432888.png" alt=""></p>
+<p><strong>&#x6CE8;&#x610F;:&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x5C31;&#x662F;&#x9879;&#x76EE;&#x8BBF;&#x95EE;&#x7684;&#x865A;&#x62DF;&#x8DEF;&#x5F84;</strong></p>
+<h4 id="&#x6B65;&#x9AA4;&#x4E8C;&#x7F16;&#x5199;xml&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x914D;&#x7F6E;&#x865A;&#x62DF;&#x8DEF;&#x5F84;"><a name="&#x6B65;&#x9AA4;&#x4E8C;&#x7F16;&#x5199;xml&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x914D;&#x7F6E;&#x865A;&#x62DF;&#x8DEF;&#x5F84;" class="anchor-navigation-ex-anchor" href="#&#x6B65;&#x9AA4;&#x4E8C;&#x7F16;&#x5199;xml&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x914D;&#x7F6E;&#x865A;&#x62DF;&#x8DEF;&#x5F84;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6B65;&#x9AA4;&#x4E8C;:&#x7F16;&#x5199;<code>xml</code>&#x6587;&#x4EF6;&#x5185;&#x5BB9;,&#x914D;&#x7F6E;&#x865A;&#x62DF;&#x8DEF;&#x5F84;</h4>
+<p><img src="assets/markdown-img-paste-20180724161608652.png" alt=""></p>
+<p><strong>&#x6CE8;&#x610F;1:xml&#x6587;&#x4EF6;&#x7684;&#x6587;&#x6863;&#x58F0;&#x660E;&#x4E0D;&#x8981;&#x5FD8;&#x4E86;,&#x53EF;&#x4EE5;&#x4ECE;&#x4E00;&#x4E2A;&#x6B63;&#x5E38;&#x7684;xml&#x6587;&#x4EF6;&#x4E2D;copy</strong></p>
+<p><strong>&#x6CE8;&#x610F;2:docBase&#x4E3A;&#x9879;&#x76EE;&#x7684;&#x78C1;&#x76D8;&#x8DEF;&#x5F84;</strong></p>
+<p>&#x8BBF;&#x95EE;:<a href="http://localhost:8080/itheima/03-baidu.html" target="_blank">http://localhost:8080/itheima/03-baidu.html</a></p>
+<p><img src="assets/markdown-img-paste-20180724161843769.png" alt=""></p>
+<h1 id="servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><a name="servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4. Servlet&#x7B80;&#x5355;&#x4ECB;&#x7ECD;(&#x719F;&#x6089;)</h1>
+<h2 id="javaweb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x719F;&#x6089;"><a name="javaweb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#javaweb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.1. JavaWeb&#x52A8;&#x6001;&#x9879;&#x76EE;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;(&#x719F;&#x6089;)</h2>
+<p><img src="assets/markdown-img-paste-20180724162048187.png" alt=""></p>
+<h2 id="&#x5C06;tomcat&#x96C6;&#x6210;&#x5230;idea&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;javaee&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;&#x719F;&#x6089;"><a name="&#x5C06;tomcat&#x96C6;&#x6210;&#x5230;idea&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;javaee&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x5C06;tomcat&#x96C6;&#x6210;&#x5230;idea&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;javaee&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2. &#x5C06;Tomcat&#x96C6;&#x6210;&#x5230;IDEA&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;JavaEE&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#x3002;(&#x719F;&#x6089;)</h2>
+<h3 id="idea&#x96C6;&#x6210;tomcat&#x719F;&#x6089;"><a name="idea&#x96C6;&#x6210;tomcat&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#idea&#x96C6;&#x6210;tomcat&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.1. IDEA&#x96C6;&#x6210;Tomcat(&#x719F;&#x6089;)</h3>
+<p><img src="assets/markdown-img-paste-2018072416300494.png" alt=""></p>
+<p><img src="assets/markdown-img-paste-20180724163148214.png" alt=""></p>
+<p><img src="assets/markdown-img-paste-20180724163256160.png" alt=""></p>
+<p><img src="assets/markdown-img-paste-20180724163342277.png" alt=""></p>
+<p><img src="assets/markdown-img-paste-2018072416372319.png" alt=""></p>
+<p><img src="assets/markdown-img-paste-20180724163849470.png" alt=""></p>
+<h3 id="&#x521B;&#x5EFA;javaee&#x9879;&#x76EE;&#x719F;&#x6089;"><a name="&#x521B;&#x5EFA;javaee&#x9879;&#x76EE;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;javaee&#x9879;&#x76EE;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.2. &#x521B;&#x5EFA;JavaEE&#x9879;&#x76EE;(&#x719F;&#x6089;)</h3>
+<p><img src="assets/markdown-img-paste-20180724164010455.png" alt=""></p>
+<p><img src="assets/markdown-img-paste-20180724164513783.png" alt=""></p>
+<p><img src="assets/markdown-img-paste-20180724164951565.png" alt=""></p>
+<h3 id="&#x542F;&#x52A8;&#x9879;&#x76EE;&#x719F;&#x6089;"><a name="&#x542F;&#x52A8;&#x9879;&#x76EE;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#&#x542F;&#x52A8;&#x9879;&#x76EE;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2.3. &#x542F;&#x52A8;&#x9879;&#x76EE;(&#x719F;&#x6089;)</h3>
+<p><img src="assets/markdown-img-paste-20180724164935988.png" alt=""></p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;servlet&#x7406;&#x89E3;"><a name="&#x4EC0;&#x4E48;&#x662F;servlet&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;servlet&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3. &#x4EC0;&#x4E48;&#x662F;Servlet?(&#x7406;&#x89E3;)</h2>
+<p>Servlet&#x5C31;&#x662F;&#x8FD0;&#x884C;&#x5728; Web &#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7684;&#x5C0F;&#x578B; Java &#x7A0B;&#x5E8F;&#x3002;&#x901A;&#x5E38;&#x901A;&#x8FC7; HTTP&#x534F;&#x8BAE;&#x63A5;&#x6536;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x4F1A;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x4E00;&#x4E2A;&#x54CD;&#x5E94;</p>
+<p><img src="assets/markdown-img-paste-20180724165146105.png" alt=""></p>
+<ul>
+<li>Servlet&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;Java&#x7C7B;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;&#x5230;(tomcat&#x8BC6;&#x522B;)&#x7684;&#x89C4;&#x5219;&#x3002;</li>
+<li>&#x5C06;&#x6765;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;Servlet&#x63A5;&#x53E3;&#xFF0C;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x5C31;&#x662F;&#x4E00;&#x4E2A;Servlet</li>
+</ul>
+<h3 id="&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x638C;&#x63E1;"><a name="&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x5165;&#x95E8;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3.1. &#x5FEB;&#x901F;&#x5165;&#x95E8;(&#x638C;&#x63E1;)</h3>
+<h4 id="&#x57FA;&#x672C;&#x6B65;&#x9AA4;"><a name="&#x57FA;&#x672C;&#x6B65;&#x9AA4;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x6B65;&#x9AA4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x6B65;&#x9AA4;</h4>
+<pre><code>    1. &#x521B;&#x5EFA;JavaEE&#x9879;&#x76EE;
+    2. &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;Servlet&#x63A5;&#x53E3;
+    3. &#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;
+    4. &#x914D;&#x7F6E;Servlet
+</code></pre><h4 id="&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><a name="&#x4EE3;&#x7801;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7801;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7801;&#x5B9E;&#x73B0;</h4>
+<h5 id="java&#x4EE3;&#x7801;"><a name="java&#x4EE3;&#x7801;" class="anchor-navigation-ex-anchor" href="#java&#x4EE3;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>java&#x4EE3;&#x7801;</h5>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.itheima.servlet;
+
+<span class="hljs-keyword">import</span> javax.servlet.*;
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Servlet</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(ServletConfig servletConfig)</span> <span class="hljs-keyword">throws</span> ServletException </span>{ }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ServletConfig <span class="hljs-title">getServletConfig</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">service</span><span class="hljs-params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+        System.out.println(<span class="hljs-string">&quot;hello servlet....&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getServletInfo</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">destroy</span><span class="hljs-params">()</span> </span>{
+
+    }
+}
+</code></pre>
+<h5 id="&#x914D;&#x7F6E;webweb-infwebxml&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a name="&#x914D;&#x7F6E;webweb-infwebxml&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;webweb-infwebxml&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;<code>web/WEB-INF/web.xml</code>&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h5>
+<pre><code class="lang-xml"><span class="hljs-comment">&lt;!--&#x914D;&#x7F6E;Servlet--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x914D;&#x7F6E;Servlet&#x540D;&#x79F0;--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x914D;&#x7F6E;Servlet&#x7C7B;&#x7684;&#x5168;&#x8DEF;&#x5F84;--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>com.itheima.servlet.HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span>
+<span class="hljs-comment">&lt;!--&#x914D;&#x7F6E;Servlet&#x6620;&#x5C04;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">servlet-mapping</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x914D;&#x7F6E;Servlet&#x540D;&#x79F0;--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>HelloServlet<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--&#x914D;&#x7F6E;Servlet&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">url-pattern</span>&gt;</span>/hello<span class="hljs-tag">&lt;/<span class="hljs-name">url-pattern</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-mapping</span>&gt;</span>
+</code></pre>
+<h3 id="servlet&#x6267;&#x884C;&#x539F;&#x7406;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><a name="servlet&#x6267;&#x884C;&#x539F;&#x7406;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#servlet&#x6267;&#x884C;&#x539F;&#x7406;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3.2. Servlet&#x6267;&#x884C;&#x539F;&#x7406;(&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;)</h3>
+<p><img src="assets/markdown-img-paste-20180724172853566.png" alt=""></p>
+<pre><code>1. &#x5F53;&#x670D;&#x52A1;&#x5668;&#x63A5;&#x53D7;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x4F1A;&#x89E3;&#x6790;&#x8BF7;&#x6C42;URL&#x8DEF;&#x5F84;&#xFF0C;&#x83B7;&#x53D6;&#x8BBF;&#x95EE;&#x7684;Servlet&#x7684;&#x8D44;&#x6E90;&#x8DEF;&#x5F84;
+2. &#x67E5;&#x627E;`web.xml`&#x6587;&#x4EF6;&#xFF0C;&#x662F;&#x5426;&#x6709;&#x5BF9;&#x5E94;&#x7684;`&lt;url-pattern&gt;`&#x6807;&#x7B7E;&#x4F53;&#x5185;&#x5BB9;&#x3002;
+3. &#x5982;&#x679C;&#x6709;&#xFF0C;&#x5219;&#x5728;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;`&lt;servlet-class&gt;`&#x5168;&#x7C7B;&#x540D;
+4. tomcat&#x4F1A;&#x5C06;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x8FDB;&#x5185;&#x5B58;&#xFF0C;&#x5E76;&#x4E14;&#x521B;&#x5EFA;&#x5176;&#x5BF9;&#x8C61;
+5. &#x8C03;&#x7528;&#x5176;`service`&#x65B9;&#x6CD5;
+</code></pre><h3 id="servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><a name="servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3.3. Servlet&#x4E2D;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x65B9;&#x6CD5;(&#x7406;&#x89E3;&#x5E76;&#x63CF;&#x8FF0;)</h3>
+<h4 id="&#x4EC0;&#x4E48;&#x662F;&#x751F;&#x547D;&#x5468;&#x671F;"><a name="&#x4EC0;&#x4E48;&#x662F;&#x751F;&#x547D;&#x5468;&#x671F;" class="anchor-navigation-ex-anchor" href="#&#x4EC0;&#x4E48;&#x662F;&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x662F;&#x751F;&#x547D;&#x5468;&#x671F;?</h4>
+<pre><code>&#x751F;&#x547D;&#x5468;&#x671F;&#xFF1A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x4ECE;&#x521B;&#x5EFA;&#x5230;&#x9500;&#x6BC1;&#x8FC7;&#x7A0B;&#x3002;
+</code></pre><h4 id="servlet&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4ECB;&#x7ECD;"><a name="servlet&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#servlet&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>Servlet&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4ECB;&#x7ECD;</h4>
+<pre><code>&#x521B;&#x5EFA; : &#x7528;&#x6237;&#x7B2C;&#x4E00;&#x6B21;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;servlet&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA; &#x6267;&#x884C;`init()` &#x53EA;&#x6267;&#x884C;&#x4E00;&#x6B21;
+&#x9500;&#x6BC1; : &#x670D;&#x52A1;&#x5668;&#x5173;&#x95ED;,&#x6216;&#x8005;&#x9879;&#x76EE;&#x88AB;&#x79FB;&#x9664; &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4F1A;&#x9500;&#x6BC1;servlet &#x6267;&#x884C;`destroy()`&#x53EA;&#x6267;&#x884C;&#x4E00;&#x6B21;
+&#x6267;&#x884C; : &#x6BCF;&#x4E00;&#x6B21;&#x7684;&#x7528;&#x6237;&#x8BF7;&#x6C42;,&#x90FD;&#x4F1A;&#x6267;&#x884C;&#x5176;&#x4E2D;&#x7684;`service()`&#x65B9;&#x6CD5;
+</code></pre><h4 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h4>
+<h5 id="&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x65F6;&#x52A0;&#x8F7D;"><a name="&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x65F6;&#x52A0;&#x8F7D;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x65F6;&#x52A0;&#x8F7D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x65F6;&#x52A0;&#x8F7D;</h5>
+<p> &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x88AB;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;Servlet&#x88AB;&#x521B;&#x5EFA;,&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6539;&#x53D8;Servlet&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x673A;</p>
+<p>&#x53EA;&#x9700;&#x8981;&#x5728;web.xml&#x9700;&#x8981;&#x542F;&#x52A8;&#x65F6;&#x52A0;&#x8F7D;&#x7684;servelt&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x4E2D;,&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#x914D;&#x7F6E;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;<code>&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;</code></p>
+<pre><code>&lt;servlet&gt;
+  &lt;servlet-name&gt;ServletLife&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;com.itheima.servlet.ServletLife&lt;/servlet-class&gt;
+  &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+  &lt;servlet-name&gt;ServletLife&lt;/servlet-name&gt;
+  &lt;url-pattern&gt;/ServletLife&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre><h5 id="&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;"><a name="&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;</h5>
+<p>&#x95EE;&#x9898;: Servelt&#x662F;&#x4E00;&#x4E2A;&#x5355;&#x4F8B;&#x5BF9;&#x8C61;,&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x4E4B;&#x4E2D;&#x76F8;&#x540C;&#x7C7B;&#x578B;&#x7684;Servlet&#x5B9E;&#x529B;&#x5BF9;&#x8C61;&#x53EA;&#x6709;&#x4E00;&#x4E2A;,&#x591A;&#x4E2A;&#x7528;&#x6237;&#x540C;&#x65F6;&#x8BBF;&#x95EE;&#x65F6;&#xFF0C;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x89E3;&#x51B3;&#xFF1A;&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x5728;Servlet&#x4E2D;&#x5B9A;&#x4E49;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3002;&#x5373;&#x4F7F;&#x5B9A;&#x4E49;&#x4E86;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x4E5F;&#x4E0D;&#x8981;&#x5BF9;&#x4FEE;&#x6539;&#x503C;</p>
+<h2 id="servlet30&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x638C;&#x63E1;"><a name="servlet30&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#servlet30&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4. Servlet3.0&#x7B80;&#x5355;&#x4ECB;&#x7ECD;(&#x638C;&#x63E1;)</h2>
+<p>&#x597D;&#x5904;: &#x652F;&#x6301;&#x6CE8;&#x89E3;&#x914D;&#x7F6E;&#x3002;&#x53EF;&#x4EE5;&#x4E0D;&#x9700;&#x8981;<code>web.xml</code>&#x4E86;&#x3002;</p>
+<h3 id="&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x638C;&#x63E1;"><a name="&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.1. &#x4F7F;&#x7528;&#x6B65;&#x9AA4;(&#x638C;&#x63E1;)</h3>
+<ol>
+<li>&#x521B;&#x5EFA;JavaEE&#x9879;&#x76EE;&#xFF0C;&#x9009;&#x62E9;Servlet&#x7684;&#x7248;&#x672C;3.0&#x4EE5;&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x521B;&#x5EFA;web.xml</li>
+<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;Servlet&#x63A5;&#x53E3;</li>
+<li>&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;</li>
+<li>&#x5728;&#x7C7B;&#x4E0A;&#x4F7F;&#x7528;@WebServlet&#x6CE8;&#x89E3;&#xFF0C;&#x8FDB;&#x884C;&#x914D;&#x7F6E;</li>
+</ol>
+<h4 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x793A;&#x4F8B;:</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.itheima.servlet;
+
+<span class="hljs-keyword">import</span> javax.servlet.*;
+<span class="hljs-keyword">import</span> javax.servlet.annotation.WebServlet;
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-comment">//@WebServlet(urlPatterns = &quot;/hello&quot;)</span>
+<span class="hljs-comment">//@WebServlet(value = &quot;/hello&quot;)</span>
+<span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;/hello&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Servlet</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">service</span><span class="hljs-params">(ServletRequest servletRequest, ServletResponse servletResponse)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+        System.out.println(<span class="hljs-string">&quot;hello servlet3.0...&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(ServletConfig servletConfig)</span> <span class="hljs-keyword">throws</span> ServletException </span>{
+
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> ServletConfig <span class="hljs-title">getServletConfig</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getServletInfo</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">destroy</span><span class="hljs-params">()</span> </span>{
+
+    }
+}
+</code></pre>
+<h3 id="webservlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><a name="webservlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#x719F;&#x6089;" class="anchor-navigation-ex-anchor" href="#webservlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;&#x719F;&#x6089;"><i class="fa fa-link" aria-hidden="true"></i></a>4.4.2. @WebServlet&#x6E90;&#x7801;&#x4ECB;&#x7ECD;(&#x719F;&#x6089;)</h3>
+<pre><code class="lang-java"><span class="hljs-meta">@Target</span>({ElementType.TYPE})
+<span class="hljs-meta">@Retention</span>(RetentionPolicy.RUNTIME)
+<span class="hljs-meta">@Documented</span>
+<span class="hljs-keyword">public</span> <span class="hljs-meta">@interface</span> WebServlet {
+    <span class="hljs-function">String <span class="hljs-title">name</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> &quot;&quot;</span>;<span class="hljs-comment">//&#x76F8;&#x5F53;&#x4E8E;&lt;Servlet-name&gt;</span>
+
+    String[] value() <span class="hljs-keyword">default</span> {};<span class="hljs-comment">//&#x4EE3;&#x8868;urlPatterns()&#x5C5E;&#x6027;&#x914D;&#x7F6E;</span>
+
+    String[] urlPatterns() <span class="hljs-keyword">default</span> {};<span class="hljs-comment">//&#x76F8;&#x5F53;&#x4E8E;&lt;url-pattern&gt;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">loadOnStartup</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> -1</span>;<span class="hljs-comment">//&#x76F8;&#x5F53;&#x4E8E;&lt;load-on-startup&gt;</span>
+
+    WebInitParam[] initParams() <span class="hljs-keyword">default</span> {};
+
+    <span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">asyncSupported</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">false</span></span>;
+
+    <span class="hljs-function">String <span class="hljs-title">smallIcon</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> &quot;&quot;</span>;
+
+    <span class="hljs-function">String <span class="hljs-title">largeIcon</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> &quot;&quot;</span>;
+
+    <span class="hljs-function">String <span class="hljs-title">description</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> &quot;&quot;</span>;
+
+    <span class="hljs-function">String <span class="hljs-title">displayName</span><span class="hljs-params">()</span> <span class="hljs-keyword">default</span> &quot;&quot;</span>;
+}
+</code></pre>
+<h2 id="servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;&#x7406;&#x89E3;"><a name="servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.5. Servelt&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x4ECB;&#x7ECD;(&#x7406;&#x89E3;)</h2>
+<p><img src="assets/markdown-img-paste-20180724181534178.png" alt=""></p>
+<h3 id="genericservlet&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;"><a name="genericservlet&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;" class="anchor-navigation-ex-anchor" href="#genericservlet&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;"><i class="fa fa-link" aria-hidden="true"></i></a>4.5.1. GenericServlet:&#x4E0E;&#x534F;&#x8BAE;&#x65E0;&#x5173;</h3>
+<pre><code>&#x5C06;Servlet&#x63A5;&#x53E3;&#x4E2D;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x6CD5;&#x505A;&#x4E86;&#x9ED8;&#x8BA4;&#x7A7A;&#x5B9E;&#x73B0;&#xFF0C;&#x53EA;&#x5C06;service()&#x65B9;&#x6CD5;&#x4F5C;&#x4E3A;&#x62BD;&#x8C61;&#x5C06;&#x6765;&#x5B9A;&#x4E49;Servlet&#x7C7B;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;GenericServlet&#xFF0C;&#x5B9E;&#x73B0;service()&#x65B9;&#x6CD5;&#x5373;&#x53EF;
+</code></pre><h3 id="httpservlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;"><a name="httpservlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#httpservlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>4.5.2. HttpServlet&#xFF1A;&#x5BF9;http&#x534F;&#x8BAE;&#x7684;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#xFF0C;&#x7B80;&#x5316;&#x64CD;&#x4F5C;</h3>
+<pre><code>1. &#x5B9A;&#x4E49;&#x7C7B;&#x7EE7;&#x627F;HttpServlet
+2. &#x590D;&#x5199;doGet/doPost&#x65B9;&#x6CD5;
+</code></pre><h3 id="&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;httpservlet&#x638C;&#x63E1;"><a name="&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;httpservlet&#x638C;&#x63E1;" class="anchor-navigation-ex-anchor" href="#&#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;httpservlet&#x638C;&#x63E1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.5.3. &#x5F00;&#x53D1;&#x4E2D;&#x4E00;&#x822C;&#x4F1A;&#x4F7F;&#x7528;HttpServlet(&#x638C;&#x63E1;)</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> com.itheima.servlet;
+
+<span class="hljs-keyword">import</span> javax.servlet.ServletException;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServlet;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;
+<span class="hljs-keyword">import</span> javax.servlet.http.HttpServletResponse;
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;hello2&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span> </span>{
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x63A5;&#x6536;&#x5230;GET&#x8BF7;&#x6C42;...&quot;</span>);
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doPost</span><span class="hljs-params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="hljs-keyword">throws</span> ServletException, IOException </span>{
+        System.out.println(<span class="hljs-string">&quot;&#x63A5;&#x6536;&#x5230;POST&#x8BF7;&#x6C42;...&quot;</span>);
+    }
+}
+</code></pre>
+<h2 id="servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><a name="servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.6. Servlet&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x914D;&#x7F6E;(&#x7406;&#x89E3;)</h2>
+<h3 id="&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7406;&#x89E3;"><a name="&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.6.1. &#x5982;&#x4F55;&#x914D;&#x7F6E;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;?(&#x7406;&#x89E3;)</h3>
+<p>&#x6240;&#x8C13;&#x7684;&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x6307;<code>Servlet</code>&#x4E2D;<code>url-pattern</code>&#x7684;&#x5199;&#x6CD5;</p>
+<p>&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x5206;&#x4E3A;&#xFF1A;<code>&#x5B8C;&#x5168;&#x8DEF;&#x5F84;&#x5339;&#x914D;</code>&#x3001;&#x76EE;&#x5F55;&#x5339;&#x914D;&#x3001;&#x6269;&#x5C55;&#x540D;&#x5339;&#x914D;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x76EE;&#x5F55;&#x5339;&#x914D;&#x4E5F;&#x5C5E;&#x4E8E;&#x5B8C;&#x5168;&#x8DEF;&#x5F84;&#x5339;&#x914D;&#x3002;</p>
+<ol>
+<li>&#x5B8C;&#x5168;&#x8DEF;&#x5F84;&#x5339;&#x914D;&#xFF1A;&#x4EE5;/&#x5F00;&#x5934;; &#x4F8B;&#x5982;&#xFF1A;<code>/ServletLife</code>&#x3001;<code>/abc/ServletLife</code>;</li>
+<li>&#x76EE;&#x5F55;&#x5339;&#x914D;&#xFF1A;&#x4EE5;/&#x5F00;&#x5934;&#xFF0C;<code>*</code>&#x7ED3;&#x5C3E;&#xFF08;<code>*</code>&#x4EE3;&#x8868;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#xFF09;; &#x4F8B;&#x5982;&#xFF1A;<code>/*</code>&#x3001;<code>/aaa/*</code></li>
+<li>&#x6269;&#x5C55;&#x540D;&#x5339;&#x914D;&#xFF1A;&#x4EE5;<code>*</code>&#x5F00;&#x5934;,<code>.xxx</code>&#x7ED3;&#x5C3E;&#xFF08;x&#x662F;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#xFF09;; &#x4F8B;&#x5982;&#xFF1A;<code>*.a</code>&#x3001;<code>*.do</code>&#x3001;<code>*.abc</code></li>
+</ol>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x4F7F;&#x7528;<code>/*</code>&#x5F00;&#x5934;,<code>.xxx</code>&#x7ED3;&#x5C3E;&#x7684;&#x8DEF;&#x5F84;&#xFF1B;&#x4F8B;&#x5982;&#xFF1A;<code>/*.do</code>&#x4E0D;&#x5141;&#x8BB8;</p>
+<h3 id="&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7406;&#x89E3;"><a name="&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.6.2. &#x8BBF;&#x95EE;&#x8DEF;&#x5F84;&#x7684;&#x4F18;&#x5148;&#x7EA7;(&#x7406;&#x89E3;)</h3>
+<p>&#x5BF9;&#x4E8E;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x4E00;&#x4E2A;URL,&#x670D;&#x52A1;&#x5668;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x591A;&#x4E2A;Servlet&#x7684;url-pattern &#x53EF;&#x4EE5;&#x5339;&#x914D;,&#x5230;&#x5E95;&#x662F;&#x90A3;&#x4E00;&#x4E2A;Servlet&#x4F1A;&#x6267;&#x884C;&#x5462;?</p>
+<p><strong>&#x5B8C;&#x5168;&#x8DEF;&#x5F84;&#x5339;&#x914D; &gt; &#x76EE;&#x5F55;&#x5339;&#x914D; &gt; &#x6269;&#x5C55;&#x540D;&#x5339;&#x914D;</strong>  &#x8D8A;&#x7CBE;&#x786E;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;;</p>
+<h3 id="&#x7EC3;&#x4E60;"><a name="&#x7EC3;&#x4E60;" class="anchor-navigation-ex-anchor" href="#&#x7EC3;&#x4E60;"><i class="fa fa-link" aria-hidden="true"></i></a>4.6.3. &#x7EC3;&#x4E60;</h3>
+<p>&#x6709;&#x5982;&#x4E0B;<code>url-pattern</code>,&#x5F53;&#x6D4F;&#x89C8;&#x5668;&#x8F93;&#x5165;&#x5982;&#x4E0B;&#x8DEF;&#x5F84;&#x65F6;,&#x54EA;&#x4E2A;&#x5339;&#x914D;&#x7684;Servlet&#x4F1A;&#x6267;&#x884C;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;/abc/*&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet1</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span></span>{}
+
+<span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;/*&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet2</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span></span>{}
+
+<span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;/abc&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet3</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span></span>{}
+
+<span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;*.do&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet4</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span></span>{}
+
+<span class="hljs-meta">@WebServlet</span>(<span class="hljs-string">&quot;/xxx/yyy/a.do&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloServlet5</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HttpServlet</span></span>{}
+</code></pre>
+<pre><code>1.    &#x5F53;&#x8BF7;&#x6C42;URL&#x4E3A;/abc/a.html,&#x54EA;&#x4E2A;servlet&#x6267;&#x884C;
+2.    &#x5F53;&#x8BF7;&#x6C42;URL&#x4E3A;/abc&#x65F6;,&#x54EA;&#x4E2A;servlet&#x6267;&#x884C;
+3.    &#x5F53;&#x8BF7;&#x6C42;URL&#x4E3A;/abc/a.do&#x65F6;,&#x54EA;&#x4E2A;servlet&#x6267;&#x884C;
+4.    &#x5F53;&#x8BF7;&#x6C42;URL&#x4E3A;/a.do&#x65F6;,&#x54EA;&#x4E2A;servlet&#x6267;&#x884C;
+5.    &#x5F53;&#x8BF7;&#x6C42;URL&#x4E3A;/xxx/yyy/abc.do&#x65F6;,&#x54EA;&#x4E2A;servlet&#x6267;&#x884C;
+6.    &#x5F53;&#x8BF7;&#x6C42;URL&#x4E3A; /xxx/yyy/a.do&#x65F6;,&#x54EA;&#x4E2A;servlet&#x6267;&#x884C;
+</code></pre><h2 id="idea&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><a name="idea&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x7406;&#x89E3;" class="anchor-navigation-ex-anchor" href="#idea&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x7406;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>4.7. IDEA&#x4E0E;tomcat&#x7684;&#x76F8;&#x5173;&#x914D;&#x7F6E;(&#x7406;&#x89E3;)</h2>
+<pre><code>  1. IDEA&#x4F1A;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;tomcat&#x90E8;&#x7F72;&#x7684;&#x9879;&#x76EE;&#x5355;&#x72EC;&#x5EFA;&#x7ACB;&#x4E00;&#x4EFD;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+      * &#x67E5;&#x770B;&#x63A7;&#x5236;&#x53F0;&#x7684;log&#xFF1A;`Using CATALINA_BASE`:`C:\Users\fqy\.IntelliJIdea2018.1\system\tomcat\_itcast`
+
+  2. &#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x9879;&#x76EE;    &#x548C;     tomcat&#x90E8;&#x7F72;&#x7684;web&#x9879;&#x76EE;
+      * tomcat&#x771F;&#x6B63;&#x8BBF;&#x95EE;&#x7684;&#x662F;`tomcat&#x4E0B;&#x90E8;&#x7F72;&#x7684;web&#x9879;&#x76EE;`
+  * `tomcat&#x4E0B;&#x90E8;&#x7F72;&#x7684;web&#x9879;&#x76EE;`&#x5BF9;&#x5E94;&#x7740;`&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x9879;&#x76EE;`&#x7684;web&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x8D44;&#x6E90;&#x4EE5;&#x53CA;`&#x5DE5;&#x4F5C;&#x7A7A;&#x95F4;&#x9879;&#x76EE;`&#x7684;src&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x7C7B;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;
+      * WEB-INF&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x8D44;&#x6E90;&#x4E0D;&#x80FD;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x3002;
+
+  3. &#x65AD;&#x70B9;&#x8C03;&#x8BD5;&#xFF1A;&#x4F7F;&#x7528;&quot;&#x5C0F;&#x866B;&#x5B50;&quot;&#x542F;&#x52A8; dubug &#x542F;&#x52A8;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../第四章：WEB核心技术.html" class="navigation navigation-prev " aria-label="Previous page: 第四章:WEB核心技术">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Http协议请求与Request对象.html" class="navigation navigation-next " aria-label="Next page: (二)Http协议请求与Request对象">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"(一)Tomcat与Servlet入门","level":"1.5.1","depth":2,"next":{"title":"(二)Http协议请求与Request对象","level":"1.5.2","depth":2,"path":"docs/第四章：WEB核心技术/Http协议请求与Request对象.md","ref":"docs/第四章：WEB核心技术/Http协议请求与Request对象.md","articles":[]},"previous":{"title":"第四章:WEB核心技术","level":"1.5","depth":1,"path":"docs/第四章：WEB核心技术.md","ref":"docs/第四章：WEB核心技术.md","articles":[{"title":"(一)Tomcat与Servlet入门","level":"1.5.1","depth":2,"path":"docs/第四章：WEB核心技术/Tomcat与Servlet入门.md","ref":"docs/第四章：WEB核心技术/Tomcat与Servlet入门.md","articles":[]},{"title":"(二)Http协议请求与Request对象","level":"1.5.2","depth":2,"path":"docs/第四章：WEB核心技术/Http协议请求与Request对象.md","ref":"docs/第四章：WEB核心技术/Http协议请求与Request对象.md","articles":[]},{"title":"(三)Http协议响应与Response对象","level":"1.5.3","depth":2,"path":"docs/第四章：WEB核心技术/Http协议响应与Response对象.md","ref":"docs/第四章：WEB核心技术/Http协议响应与Response对象.md","articles":[]},{"title":"(四)会话技术-Cookie与Session","level":"1.5.4","depth":2,"path":"docs/第四章：WEB核心技术/会话技术-Cookie与Session.md","ref":"docs/第四章：WEB核心技术/会话技术-Cookie与Session.md","articles":[]},{"title":"(五)JSP与EL与JSTL","level":"1.5.5","depth":2,"path":"docs/第四章：WEB核心技术/JSP与EL与JSTL.md","ref":"docs/第四章：WEB核心技术/JSP与EL与JSTL.md","articles":[]},{"title":"(六)综合练习","level":"1.5.6","depth":2,"path":"docs/第四章：WEB核心技术/综合练习.md","ref":"docs/第四章：WEB核心技术/综合练习.md","articles":[]},{"title":"(七)过滤器与监听器","level":"1.5.7","depth":2,"path":"docs/第四章：WEB核心技术/过滤器与监听器.md","ref":"docs/第四章：WEB核心技术/过滤器与监听器.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","anchor-navigation-ex@1.0.10"],"styles":{"website":"website.css"},"pluginsConfig":{"expandable-chapters":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"备课文档","language":"zh","gitbook":"*","description":"备课文档"},"file":{"path":"docs/第四章：WEB核心技术/Tomcat与Servlet入门.md","mtime":"2018-07-25T11:07:14.498Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-21T00:30:29.955Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
